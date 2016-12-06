@@ -16,7 +16,7 @@
 /**
  * @return sexo por provincia
  */
-Route::get('propietario/sexo/provincia/(:num)', function( $idprovincia = null ) {
+Route::get('propietario/sexo/provincia/(:num)', function( $idprovincia ) {
     $p = new Ubicacion();
     return ActiveRecord\Utils::results_to_json($p->sexoPorprovincia($idprovincia));
 });
@@ -24,7 +24,7 @@ Route::get('propietario/sexo/provincia/(:num)', function( $idprovincia = null ) 
  * @return sexo por distrito
  * idubicacion = distrito
  */
-Route::get('propietario/sexo/distrito/(:num)', function( $idubicacion = null ) {
+Route::get('propietario/sexo/distrito/(:num)', function( $idubicacion ) {
     $p = Ubicacion::find($idubicacion);
     return ActiveRecord\Utils::results_to_json($p->sexoPorDistrito());
 });

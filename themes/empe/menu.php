@@ -6,18 +6,14 @@
         </div>
         <div class="panel-body">
             <h4><i class="fa fa-bars" aria-hidden="true"></i> Navegación</h4>
+            <?php echo Uri::current(); ?>
             <div class="list-group">
-                <a href="#" class="list-group-item active">
-                    Cras justo odio
-                </a>
-                <a href="#" class="list-group-item">
+                <a href="<?php echo base_url(); ?>/" class="list-group-item active">
                     <i class="fa fa-home" aria-hidden="true"></i> Inicio
                 </a>
-                <a href="#" class="list-group-item">
-                    <i class="fa fa-bar-chart" aria-hidden="true"></i> Data
+                <a href="<?php echo base_url(); ?>/" class="list-group-item">
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i> Inicio
                 </a>
-                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                <a href="#" class="list-group-item">Vestibulum at eros</a>
             </div>
             <div class="well">
                 <img src="http://s.bootply.com/assets/example/bg_iphone.png" class="img-responsive">

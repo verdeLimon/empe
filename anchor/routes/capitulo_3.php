@@ -2,81 +2,62 @@
 
 //capitulo III Informacion complemetaria de la PYME
 /**
- * Datos del propietario
- * sexo ,edad  y grado de instruccioN
+ * Estado de formalizacion (SI, NO) de todo el departamento
  */
-//Route::get(array('propietario', 'propietario/(:num)'), function( $lugar = null ) {
-//    echo isset($lugar) ? $lugar . "<br>" : 'null';
-//    $p = Ubicacion::find(10);
-//    echo "<pre>";
-//    echo count($p->sexoPorDistrito()) . "<br>";
-//    echo ActiveRecord\Utils::results_to_json($p->sexoPorDistrito(true));
-//    "</pre>";
-//});
-/**
- * @return sexo por provincia
- */
-Route::get('propietario/sexo/provincia/(:num)', function( $idprovincia = null ) {
-    $p = new Ubicacion();
-    return ActiveRecord\Utils::results_to_json($p->sexoPorprovincia($idprovincia));
+Route::get('propietario/formalizacion/departamento', function() {
+    $select = "COUNT(case when semp.formalizacion='SI' then 1 end) as f_si, "
+            . "count(case when semp.formalizacion='NO' then 1 end) as f_no, "
+            . "count(*) as total_cnt";
+    $data = Encuestado::first(array(
+                'select' => $select,
+                'from' => 'encuestados encu',
+                'joins' => 'LEFT JOIN situacionempresa semp ON (encu.idencuestado = semp.idencuestado)'
+    ));
+    $rretunr = array(
+        array('formalizacion' => 'SI', 'total' => $data->f_si),
+        array('formalizacion' => 'NO', 'total' => $data->f_no));
+    return Json::encode($rretunr);
 });
 /**
- * @return sexo por distrito
- * idubicacion = distrito
+ * Estado de formalizacion (SI, NO) por provincia
  */
-Route::get('propietario/sexo/distrito/(:num)', function( $idubicacion = null ) {
-    $p = Ubicacion::find($idubicacion);
-    return ActiveRecord\Utils::results_to_json($p->sexoPorDistrito());
-});
-
-/**
- * @return 'sexo' de toda la region
- */
-Route::get('propietario/sexo/departamento', function() {
-    $p = new Ubicacion();
-    return ActiveRecord\Utils::results_to_json($p->sexoPorDistrito(true));
-});
-
-/**
- * @return 'grado de instruccion' de toda la region
- */
-Route::get('propietario/instruccion/departamento', function() {
-
-    $join = "left join encargados enca on (inst.idinstruccion=enca.instruccion) "
-            . "left join encuestados encu on (encu.idencuestado = enca.idencuestado)";
-    $inst = Instruccion::all(array(
-                'select' => 'inst.*,count(enca.instruccion) as total',
-                'from' => 'instruccion inst',
-                'conditions' => "enca.cargo = 'Propietario' OR enca.idencargado is null",
-                'group' => 'inst.idinstruccion',
-                'joins' => $join)
-    );
-    return ActiveRecord\Utils::results_to_json($inst);
+Route::get('propietario/formalizacion/provincia/(:num)', function($idprovincia) {
+    $lugar = new Ubicacion();
+    $lugarids = $lugar->idLugares($idprovincia);
+    $select = "COUNT(case when semp.formalizacion='SI' then 1 end) as f_si, "
+            . "count(case when semp.formalizacion='NO' then 1 end) as f_no, "
+            . "count(*) as total_cnt";
+    $joinss = "LEFT JOIN ubicacion ubic ON (encu.idubicacion = ubic.idubicacion) "
+            . "LEFT JOIN situacionempresa semp ON (encu.idencuestado = semp.idencuestado)";
+    $data = Encuestado::first(array(
+                'select' => $select,
+                'from' => 'encuestados encu',
+                'joins' => $joinss,
+                'conditions' => "ubic.idubicacion IN (" . implode(", ", $lugarids) . ")"
+    ));
+    $rretunr = array(
+        array('formalizacion' => 'SI', 'total' => $data->f_si),
+        array('formalizacion' => 'NO', 'total' => $data->f_no));
+    return Json::encode($rretunr);
 });
 /**
- * @return 'grado de instruccion' de una provincia
+ * Estado de formalizacion (SI, NO) por distrito
+ * @param pk de la table ubicacion
  */
-Route::get('propietario/instruccion/provincia/(:num)', function( $idprovincia) {
-    $rreturn = array();
-    $inst = Instruccion::all();
-    foreach ($inst as $key => $ins) {
-        $rreturn[$key]['id'] = $ins->idinstruccion;
-        $rreturn[$key]['instruccion'] = $ins->descripcion;
-        $rreturn[$key]['total'] = $ins->totalprovincia($idprovincia)[0]->total;
-    }
-    return Json::encode($rreturn);
-    //return ActiveRecord\Utils::results_to_json($inst, array('methods' => array('totalprovincia' => 1)));
-});
-/**
- * @return 'grado de instruccion' de un distrito
- */
-Route::get('propietario/instruccion/distrito/(:num)', function( $idubicacion) {
-    $rreturn = array();
-    $inst = Instruccion::all();
-    foreach ($inst as $key => $ins) {
-        $rreturn[$key]['id'] = $ins->idinstruccion;
-        $rreturn[$key]['instruccion'] = $ins->descripcion;
-        $rreturn[$key]['total'] = $ins->totaldistrito($idubicacion)[0]->total;
-    }
-    return Json::encode($rreturn);
+Route::get('propietario/formalizacion/distrito/(:num)', function($idubicacion) {
+    $select = "COUNT(case when semp.formalizacion='SI' then 1 end) as f_si, "
+            . "count(case when semp.formalizacion='NO' then 1 end) as f_no, "
+            . "count(*) as total_cnt";
+    $joinss = "LEFT JOIN ubicacion ubic ON (encu.idubicacion = ubic.idubicacion) "
+            . "LEFT JOIN situacionempresa semp ON (encu.idencuestado = semp.idencuestado)";
+    $data = Encuestado::first(array(
+                'select' => $select,
+                'from' => 'encuestados encu',
+                'joins' => $joinss,
+                'conditions' => 'ubic.idubicacion = ' . $idubicacion
+    ));
+    $rretunr = array(
+        array('formalizacion' => 'SI', 'total' => $data->f_si),
+        array('formalizacion' => 'NO', 'total' => $data->f_no));
+    return Json::encode($rretunr);
 });

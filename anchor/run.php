@@ -96,4 +96,6 @@ if (is_admin()) {
     //require APP . 'routes/site' . EXT;
     require APP . 'routes/index' . EXT;
     require APP . 'routes/capitulo_1' . EXT;
+    require APP . 'routes/capitulo_2' . EXT;
+    require APP . 'routes/capitulo_3' . EXT;
 }

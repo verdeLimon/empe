@@ -77,6 +77,10 @@ class Ubicacion extends ActiveRecord\Model {
         return $spd;
     }
 
+    /**
+     * @return Estado de formalizacion (SI, NO) por distrito
+     *
+     */
 //    public function grado2provincia($idprovincia) {
 //
 //        $lugarids = $this->idLugares($idprovincia);
