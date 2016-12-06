@@ -36,3 +36,12 @@ Route::get('propietario/sexo/departamento', function() {
     $p = new Ubicacion();
     return ActiveRecord\Utils::results_to_json($p->sexoPorDistrito(true));
 });
+
+/**
+ * @return 'sexo' de toda la region
+ */
+Route::get('propietario/instruccion/departamento', function() {
+    $p = new Ubicacion();
+    //print_r($p->grado2departamento());
+    return json_encode($p->grado2departamento());
+});

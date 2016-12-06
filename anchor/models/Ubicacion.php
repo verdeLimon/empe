@@ -37,13 +37,18 @@ class Ubicacion extends ActiveRecord\Model {
         return $distrito;
     }
 
-    public function sexoPorprovincia($idprovincia) {
+    private function idLugares($idprovincia) {
         $lugarids = array();
         $lugares = $this->all(array('conditions' => 'idprovincia = ' . $idprovincia));
 
         foreach ($lugares as $lugar) {
             $lugarids[] = $lugar->idubicacion;
         }
+        return $lugarids;
+    }
+
+    public function sexoPorprovincia($idprovincia) {
+        $lugarids = $this->idLugares($idprovincia);
         $sql = "SELECT 'masculino' AS sexo,COUNT(*) `total` FROM encuestados "
                 . "LEFT JOIN encargados enc ON(encuestados.idencuestado = enc.idencuestado) "
                 . "WHERE enc.sexo = 'M' AND enc.cargo = 'Propietario' AND encuestados.idubicacion IN (" . implode(", ", $lugarids) . ") "
@@ -52,8 +57,8 @@ class Ubicacion extends ActiveRecord\Model {
                 . "LEFT JOIN encargados enc ON(encuestados.idencuestado = enc.idencuestado) "
                 . "WHERE enc.sexo = 'F' AND enc.cargo = 'Propietario' AND encuestados.idubicacion IN (" . implode(", ", $lugarids) . ")";
         //echo $sql;
-        $p = $this->find_by_sql($sql);
-        return $p;
+        $spp = $this->find_by_sql($sql);
+        return $spp;
     }
 
     /**
@@ -61,7 +66,6 @@ class Ubicacion extends ActiveRecord\Model {
      *
      */
     public function sexoPorDistrito($todo = false) {
-
         $sql = "SELECT 'masculino' AS sexo, COUNT(*) `total` FROM encuestados "
                 . "LEFT JOIN encargados enc ON(encuestados.idencuestado = enc.idencuestado) "
                 . "WHERE enc.sexo = 'M' AND enc.cargo = 'Propietario'" . (!$todo ? " AND encuestados.idubicacion = {$this->idubicacion} " : " ")
@@ -69,8 +73,53 @@ class Ubicacion extends ActiveRecord\Model {
                 . "SELECT 'femenino' AS sexo, COUNT(*) `total` FROM encuestados "
                 . "LEFT JOIN encargados enc ON(encuestados.idencuestado = enc.idencuestado) "
                 . "WHERE enc.sexo = 'F' AND enc.cargo = 'Propietario'" . (!$todo ? " AND encuestados.idubicacion = {$this->idubicacion} " : " ");
-        $p = $this->find_by_sql($sql);
-        return $p;
+        $spd = $this->find_by_sql($sql);
+        return $spd;
+    }
+
+    public function grado2provincia($idprovincia) {
+
+        $lugarids = $this->idLugares($idprovincia);
+        $sql = "SELECT  ins.`descripcion`, enc.`instruccion`,COUNT(*) `total` FROM `encuestados` "
+                . "LEFT JOIN `encargados` enc ON(`encuestados`.idencuestado = enc.idencuestado) "
+                . "LEFT JOIN `instruccion` ins ON(enc.`instruccion` = ins.`idinstruccion`) "
+                . "WHERE enc.cargo = 'Propietario' AND `encuestados`.idubicacion IN (" . implode(", ", $lugarids) . ") "
+                . "group by enc.`instruccion`";
+        //echo $sql;
+        $spp = $this->find_by_sql($sql);
+        return $spp;
+    }
+
+    public function grado2departamento() {
+        // $rreturn = array();
+
+        $sql = "SELECT  ins.`idinstruccion`, ins.`descripcion`, enc.`instruccion`,COUNT(*) `total` FROM `encuestados` "
+                . "LEFT JOIN `encargados` enc ON(`encuestados`.idencuestado = enc.idencuestado) "
+                . "LEFT JOIN `instruccion` ins ON(enc.`instruccion` = ins.`idinstruccion`) "
+                . "WHERE enc.cargo = 'Propietario' "
+                . "group by enc.`instruccion`";
+        //echo $sql;
+        $gpd = $this->find_by_sql($sql);
+
+        $bd = Instruccion::all(array('select' => 'idinstruccion,descripcion,idinstruccion as instruccion,0 as total'));
+        $total = ActiveRecord\collect($bd, 'idinstruccion'); //total de la base de datos
+        $actual = ActiveRecord\collect($gpd, 'idinstruccion'); //en existencia
+        print_r($actual);
+        print_r($total);
+        $resultado = array_diff($total, $actual);
+
+        foreach ($bd as $val) {
+            if (!in_array($val->idinstruccion, $actual)) {
+                echo $val->idinstruccion . "NOO esta<br>";
+                $obj = new stdClass();
+                $obj->idinstruccion = $val->idinstruccion;
+                $obj->descripcion = $val->descripcion;
+                $obj->instruccion = $val->instruccion;
+                $obj->total = 0;
+                $gpd[] = $obj;
+            }
+        }
+        return $gpd;
     }
 
 }
