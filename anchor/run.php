@@ -94,6 +94,6 @@ if (is_admin()) {
     require APP . 'routes/pagetypes' . EXT;
 } else {
     //require APP . 'routes/site' . EXT;
-    //require APP . 'routes/index' . EXT;
-    require APP . 'routes/capitulo' . EXT;
+    require APP . 'routes/index' . EXT;
+    require APP . 'routes/capitulo_1' . EXT;
 }

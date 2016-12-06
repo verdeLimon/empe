@@ -37,7 +37,7 @@ class Ubicacion extends ActiveRecord\Model {
         return $distrito;
     }
 
-    private function idLugares($idprovincia) {
+    public function idLugares($idprovincia) {
         $lugarids = array();
         $lugares = $this->all(array('conditions' => 'idprovincia = ' . $idprovincia));
 
@@ -56,7 +56,7 @@ class Ubicacion extends ActiveRecord\Model {
                 . "SELECT 'femenino' AS sexo, COUNT(*) `total` FROM encuestados "
                 . "LEFT JOIN encargados enc ON(encuestados.idencuestado = enc.idencuestado) "
                 . "WHERE enc.sexo = 'F' AND enc.cargo = 'Propietario' AND encuestados.idubicacion IN (" . implode(", ", $lugarids) . ")";
-        //echo $sql;
+//echo $sql;
         $spp = $this->find_by_sql($sql);
         return $spp;
     }
@@ -77,49 +77,47 @@ class Ubicacion extends ActiveRecord\Model {
         return $spd;
     }
 
-    public function grado2provincia($idprovincia) {
-
-        $lugarids = $this->idLugares($idprovincia);
-        $sql = "SELECT  ins.`descripcion`, enc.`instruccion`,COUNT(*) `total` FROM `encuestados` "
-                . "LEFT JOIN `encargados` enc ON(`encuestados`.idencuestado = enc.idencuestado) "
-                . "LEFT JOIN `instruccion` ins ON(enc.`instruccion` = ins.`idinstruccion`) "
-                . "WHERE enc.cargo = 'Propietario' AND `encuestados`.idubicacion IN (" . implode(", ", $lugarids) . ") "
-                . "group by enc.`instruccion`";
-        //echo $sql;
-        $spp = $this->find_by_sql($sql);
-        return $spp;
-    }
-
-    public function grado2departamento() {
-        // $rreturn = array();
-
-        $sql = "SELECT  ins.`idinstruccion`, ins.`descripcion`, enc.`instruccion`,COUNT(*) `total` FROM `encuestados` "
-                . "LEFT JOIN `encargados` enc ON(`encuestados`.idencuestado = enc.idencuestado) "
-                . "LEFT JOIN `instruccion` ins ON(enc.`instruccion` = ins.`idinstruccion`) "
-                . "WHERE enc.cargo = 'Propietario' "
-                . "group by enc.`instruccion`";
-        //echo $sql;
-        $gpd = $this->find_by_sql($sql);
-
-        $bd = Instruccion::all(array('select' => 'idinstruccion,descripcion,idinstruccion as instruccion,0 as total'));
-        $total = ActiveRecord\collect($bd, 'idinstruccion'); //total de la base de datos
-        $actual = ActiveRecord\collect($gpd, 'idinstruccion'); //en existencia
-        print_r($actual);
-        print_r($total);
-        $resultado = array_diff($total, $actual);
-
-        foreach ($bd as $val) {
-            if (!in_array($val->idinstruccion, $actual)) {
-                echo $val->idinstruccion . "NOO esta<br>";
-                $obj = new stdClass();
-                $obj->idinstruccion = $val->idinstruccion;
-                $obj->descripcion = $val->descripcion;
-                $obj->instruccion = $val->instruccion;
-                $obj->total = 0;
-                $gpd[] = $obj;
-            }
-        }
-        return $gpd;
-    }
-
+//    public function grado2provincia($idprovincia) {
+//
+//        $lugarids = $this->idLugares($idprovincia);
+//        $sql = "SELECT  ins.`descripcion`, enc.`instruccion`,COUNT(*) `total` FROM `encuestados` "
+//                . "LEFT JOIN `encargados` enc ON(`encuestados`.idencuestado = enc.idencuestado) "
+//                . "LEFT JOIN `instruccion` ins ON(enc.`instruccion` = ins.`idinstruccion`) "
+//                . "WHERE enc.cargo = 'Propietario' AND `encuestados`.idubicacion IN (" . implode(", ", $lugarids) . ") "
+//                . "group by enc.`instruccion`";
+//        //echo $sql;
+//        $spp = $this->find_by_sql($sql);
+//        return $spp;
+//    }
+//    public function grado2departamento() {
+//        // $rreturn = array();
+//
+//        $sql = "SELECT  ins.`idinstruccion`, ins.`descripcion`, enc.`instruccion`,COUNT(*) `total` FROM `encuestados` "
+//                . "LEFT JOIN `encargados` enc ON(`encuestados`.idencuestado = enc.idencuestado) "
+//                . "LEFT JOIN `instruccion` ins ON(enc.`instruccion` = ins.`idinstruccion`) "
+//                . "WHERE enc.cargo = 'Propietario' "
+//                . "group by enc.`instruccion`";
+//        //echo $sql;
+//        $gpd = $this->find_by_sql($sql);
+//
+//        $bd = Instruccion::all(array('select' => 'idinstruccion,descripcion,idinstruccion as instruccion,0 as total'));
+//        $total = ActiveRecord\collect($bd, 'idinstruccion'); //total de la base de datos
+//        $actual = ActiveRecord\collect($gpd, 'idinstruccion'); //en existencia
+//        print_r($actual);
+//        print_r($total);
+//        $resultado = array_diff($total, $actual);
+//
+//        foreach ($bd as $val) {
+//            if (!in_array($val->idinstruccion, $actual)) {
+//                echo $val->idinstruccion . "NOO esta<br>";
+//                $obj = new stdClass();
+//                $obj->idinstruccion = $val->idinstruccion;
+//                $obj->descripcion = $val->descripcion;
+//                $obj->instruccion = $val->instruccion;
+//                $obj->total = 0;
+//                $gpd[] = $obj;
+//            }
+//        }
+//        return $gpd;
+//    }
 }

@@ -5,7 +5,8 @@ class Encargado extends ActiveRecord\Model {
     static $table_name = 'encargados';
     static $primary_key = 'idencargado';
     static $belongs_to = array(
-        array('encuestado', 'foreign_key' => 'idencuestado')
+        array('encuestado', 'foreign_key' => 'idencuestado'),
+        array('instruccion', 'foreign_key' => 'instruccion')
     );
 
 //   static $has_one = array(
