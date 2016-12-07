@@ -1,67 +1,294 @@
-/*
-	Login
-*/
-body.login {
+/* open-sans-regular - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/open-sans-v13-latin/open-sans-v13-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Open Sans'), local('OpenSans'),
+        url('../fonts/open-sans-v13-latin/open-sans-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/open-sans-v13-latin/open-sans-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../fonts/open-sans-v13-latin/open-sans-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('../fonts/open-sans-v13-latin/open-sans-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/open-sans-v13-latin/open-sans-v13-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+/* roboto-slab-regular - latin */
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto-slab-v6-latin/roboto-slab-v6-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'),
+        url('../fonts/roboto-slab-v6-latin/roboto-slab-v6-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/roboto-slab-v6-latin/roboto-slab-v6-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../fonts/roboto-slab-v6-latin/roboto-slab-v6-latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('../fonts/roboto-slab-v6-latin/roboto-slab-v6-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/roboto-slab-v6-latin/roboto-slab-v6-latin-regular.svg#RobotoSlab') format('svg'); /* Legacy iOS */
+}
+/* line 3,  . ./sass/authenty .scss */
+.authenty {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #373746;
+}
+/* line 6,  . ./sass/authenty .scss */
+.authenty [data-animation] {
+    opacity: 0;
+}
+/* line 9,  . ./sass/authenty .scss */
+.authenty ul {
+    list-style-type: none;
+}
+/* line 12,  . ./sass/authenty .scss */
+.authenty h1,  .authenty h2,  .authenty h3,  .authenty h4,  .authenty h5,  .authenty h6 {
+    font-weight: 400;
+}
+/* line 15,  . ./sass/authenty .scss */
+.authenty h1 {
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+/* line 19,  . ./sass/authenty .scss */
+.authenty a:hover {
+    text-decoration: none;
+}
+/* line 22,  . ./sass/authenty .scss */
+.authenty  .btn {
+    border-radius: 0;
+}
+/* line 24,  . ./sass/authenty .scss */
+.authenty  .btn:active {
+    box-shadow: none;
+    border-radius: 0px !important;
+}
+/* line 28,  . ./sass/authenty .scss */
+.authenty  .btn:focus {
+    outline: thin dotted #fff;
+    outline-offset: 0;
+}
+/* line 32,  . ./sass/authenty .scss */
+.authenty  .btn:hover,  .authenty  .btn:focus {
+    color: #fff;
+}
+/* line 36,  . ./sass/authenty .scss */
+.authenty  .form-control:focus {
+    border-color: #ff7000;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0 .075), 0 0 8px rgba(255, 112, 0, 0 .6);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0 .075), 0 0 8px rgba(255, 122, 0, 0 .6);
+    transition: border-color 0 .7s, box-shadow 0 .7s;
+    -webkit-transition: border-color 0 .7s, box-shadow 0 .7s;
+}
+/* line 43,  . ./sass/authenty .scss */
+.authenty  .wrap {
+    width: 100%;
+}
+/* line 46,  . ./sass/authenty .scss */
+.authenty  .top-buffer {
+    margin-top: 20px;
+}
+
+
+
+/* line 193,  . ./sass/authenty .scss */
+.authenty .signin-alt {
+    background-color: #373746;
+    color: #eaeaea;
+}
+.authenty .signin-alt  .form-header {
+    /*    background-color: #fff;*/
+    /*    border-radius: 10px 10px 0 0;*/
+    padding: 20px 0;
+    text-align: center;
+}
+.authenty .signin-alt .form-header i {
+    background: rgba(0, 0, 0, 0) linear-gradient(135deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%) repeat scroll 0 0;
+    border: 3px solid #e7e7e7;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 50px;
+    padding: 15px 20px;
+}
+/* line 196,  . ./sass/authenty .scss */
+.authenty .signin-alt  .section-content {
+    padding: 0;
+}
+
+/* line 199,  . ./sass/authenty .scss */
+.authenty .signin-alt  .title {
+    margin-bottom: 50px;
+    text-align: left;
+}
+/* line 203,  . ./sass/authenty .scss */
+.authenty .signin-alt label {
+    font-weight: normal;
+}
+/* line 206,  . ./sass/authenty .scss */
+.authenty .signin-alt  .wrap {
+    padding-top: 50px;
+}
+/* line 209,  . ./sass/authenty .scss */
+.authenty .signin-alt  .bottom-wrap {
+    padding-top: 30px;
+    border-top: 1px solid #7A8086;
+}
+/* line 212,  . ./sass/authenty .scss */
+.authenty .signin-alt  .bottom-wrap .top-buffer {
+    margin-top: 130px;
+}
+/* line 214,  . ./sass/authenty .scss */
+.authenty .signin-alt  .bottom-wrap .top-buffer a {
+    color: #fff;
+    -webkit-transition: color 300ms linear;
+    -moz-transition: color 300ms linear;
+    -o-transition: color 300ms linear;
+    -ms-transition: color 300ms linear;
+    transition: color 300ms linear;
+}
+/* line 221,  . ./sass/authenty .scss */
+.authenty .signin-alt  .bottom-wrap .top-buffer a:hover {
+    color: #ff7000;
+}
+/* line 228,  . ./sass/authenty .scss */
+.authenty .signin-alt  .normal-signin  .un-wrap {
+    position: relative;
+}
+/* line 230,  . ./sass/authenty .scss */
+.authenty .signin-alt  .normal-signin  .un-wrap  .fa-user {
     position: absolute;
-    top: 25%;
-    left: 50%;
-    margin-left: -150px;
-	background: #444f5f;
+    top: 2px;
+    left: 1px;
+    color: #515561;
+    font-size: 14pt;
+    padding: 10px 14px;
+    background-color: #1C1F25;
+}
+/* line 240,  . ./sass/authenty .scss */
+.authenty .signin-alt  .normal-signin  .pw-wrap {
+    position: relative;
+}
+/* line 242,  . ./sass/authenty .scss */
+.authenty .signin-alt  .normal-signin  .pw-wrap  .fa-lock {
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    color: #515561;
+    font-size: 14pt;
+    padding: 10px 16px;
+    background-color: #1C1F25;
+}
+/* line 252,  . ./sass/authenty .scss */
+.authenty .signin-alt  .normal-signin input[type="text"],  .authenty .signin-alt  .normal-signin input[type="password"] {
+    padding-left: 60px;
+    border-radius: 0;
+    border: 1px solid #7A8086;
+    margin-bottom: 20px;
+    color: #ccc;
+    background-color: #282A38;
+    height: 42px;
+}
+/* line 261,  . ./sass/authenty .scss */
+.authenty .signin-alt  .normal-signin  .signin {
+    padding: 10px 15px;
+    background-color: #3e4764;
+    border: 1px solid #7A8086;
+    color: #fff;
+    -webkit-transition: background-color 300ms linear;
+    -moz-transition: background-color 300ms linear;
+    -o-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+/* line 271,  . ./sass/authenty .scss */
+.authenty .signin-alt  .normal-signin  .signin:hover {
+    background-color: #1E2B46;
+}
+/* line 276,  . ./sass/authenty .scss */
+.authenty .signin-alt  .horizontal-divider {
+    margin: 0 auto;
+    position: relative;
+    width: 0px;
+    top: 0;
+    background-color: #fff;
+}
+/* line 282,  . ./sass/authenty .scss */
+.authenty .signin-alt  .horizontal-divider:before {
+    content: 'OR';
+    /*    position: absolute;*/
+    top: 110px;
+    left: -30px;
+    padding: 20px;
+    font-size: 18px;
+    background: #3e4764;
+    border-radius: 50%;
+    color: #fff;
+}
+/* line 294,  . ./sass/authenty .scss */
+.authenty .signin-alt  .sns-signin {
+    margin-top: 94px;
+}
+/* line 296,  . ./sass/authenty .scss */
+.authenty .signin-alt  .sns-signin a {
+    margin-bottom: 22px;
+    display: block;
+    color: #fff;
+}
+/* line 300,  . ./sass/authenty .scss */
+.authenty .signin-alt  .sns-signin a span {
+    margin-left: 30px;
+}
+/* line 304,  . ./sass/authenty .scss */
+.authenty .signin-alt  .sns-signin  .facebook {
+    background-color: #3e4764;
+    -webkit-transition: background-color 300ms linear;
+    -moz-transition: background-color 300ms linear;
+    -o-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+/* line 311,  . ./sass/authenty .scss */
+.authenty .signin-alt  .sns-signin  .facebook:hover {
+    background-color: #235B97;
+}
+/* line 314,  . ./sass/authenty .scss */
+.authenty .signin-alt  .sns-signin  .facebook  .fa-facebook {
+    color: #505050;
+    background-color: #eaeaea;
+    padding: 15px 19px 15px 18px;
+}
+/* line 320,  . ./sass/authenty .scss */
+.authenty .signin-alt  .sns-signin  .google-plus {
+    background-color: #e66060;
+    -webkit-transition: background-color 300ms linear;
+    -moz-transition: background-color 300ms linear;
+    -o-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+/* line 327,  . ./sass/authenty .scss */
+.authenty .signin-alt  .sns-signin  .google-plus:hover {
+    background-color: #EC574B;
+}
+/* line 330,  . ./sass/authenty .scss */
+.authenty .signin-alt  .sns-signin  .google-plus  .fa-google-plus {
+    color: #505050;
+    background-color: #eaeaea;
+    padding: 15px;
 }
 
-.login .wrap, .login .content {
-	width: 300px;
+@media screen and (max-width: 991px) {
+    /* line 342,  . ./sass/authenty .scss */
+    .authenty .signin-alt  .horizontal-divider:before {
+        top: 10px;
+        left: -30px;
+        padding: 20px;
+        font-size: 16px;
+    }
+    /* line 348,  . ./sass/authenty .scss */
+    .authenty .signin-alt  .bottom-wrap .top-buffer {
+        margin-top: 50px;
+    }
+    /* line 351,  . ./sass/authenty .scss */
+    .authenty .signin-alt  .container {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
 }
-	.login h1 {
-		padding-bottom: 25px;
-
-		font-size: 25px;
-		line-height: 60px;
-		font-weight: lighter;
-		color: #fff;
-	}
-
-	.login label {
-		display: none;
-	}
-
-	.login fieldset {
-		border: none;
-	}
-
-	.login input {
-		width: 300px;
-		margin-bottom: 20px;
-
-		padding: 14px 16px;
-	}
-
-	.login .buttons a {
-		float: right;
-		font-size: 13px;
-		line-height: 38px;
-	}
-
-	.login .buttons button {
-		float: left;
-	}
-
-	.login a {
-		color: #8491a5;
-	}
-
-		.login a:hover {
-			color: #fff;
-		}
-
-	.login button {
-		background: #2f3744;
-		color: #96a4bb;
-		font-size: 13px;
-		font-weight: 500;
-	}
-
-	.login .notification {
-		width: 300px;
-	}
 

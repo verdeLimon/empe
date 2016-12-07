@@ -44,7 +44,7 @@ return array(
     'editor' => 'Editor',
     'user' => 'User',
     'log_in' => 'Log in',
-    'login' => 'Login',
+    'login' => 'Ingresar',
     'log_out' => 'Log out',
     'logout' => 'cerrar sesion',
     // phrases

@@ -1,14 +1,26 @@
 <?php echo $header; ?>
+<div class="row">
+    <div class="col-sm-4">
+        <a href="#" class="btn btn-default btn-block"> <br>
+            <img src="assets/icons/Timeline-48.png"><br>
+            Módulo Registro de Avances<br><br>
+        </a>
+    </div>
+    <div class="col-sm-4">
+        <a href="#" class="btn btn-default btn-block"> <br>
+            <img src="assets/icons/report-48.png"><br>
+            Módulo Reportes preliminar
+            <br><br>
+        </a>
+    </div>
+    <div class="col-sm-4">
+        <a href="#" class="btn btn-default btn-block"> <br>
+            <img src="assets/icons/icon-48-copy.png"><br>
+            Módulo Estudios y Publicaciones
+            <br><br>
+        </a>
+    </div>
+</div>
 
-<hgroup class="wrap">
-    <h1><?php echo __('panel.panel', 'Administration Panel'); ?></h1>
-</hgroup>
-
-<section class="wrap">
-    <h3><?php echo __('panel.title', 'Welcome'); ?></h3>
-    <br>
-    <textarea name="moxie"></textarea>
-    <p><?php echo __('panel.message', 'For more information see <a href="https://anchorcms.com/docs">http://anchorcms.com/docs</a>'); ?></p>
-</section>
 
 <?php echo $footer; ?>

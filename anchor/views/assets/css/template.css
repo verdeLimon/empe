@@ -1,0 +1,385 @@
+html{
+    height: 100%
+}
+body {
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    height: 100%;
+    margin-bottom: 60px;
+}
+#oe_main_menu_navbar {
+    min-height: 34px;
+    z-index: 1001;
+    border-radius: 0
+}
+#oe_main_menu_navbar li a,
+#oe_main_menu_navbar li button
+{
+    padding: 6px 8px;
+    margin-top: 2px;
+    font-size: 13px
+}
+#oe_main_menu_navbar .navbar-brand {
+    padding: 6px 25px;
+    margin-top: 2px;
+    font-size: 20px;
+    float: left;
+    height: 5px;
+    color: #7c7bad
+}
+#oe_main_menu_navbar .oe_topbar_avatar {
+    max-height: 18px;
+    width: 18px
+}
+#oe_main_menu_navbar.navbar {
+    margin-bottom: 0
+}
+
+.navbar .oe_topbar_name {
+    max-width: 150px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle
+}
+
+.openerp {
+    padding: 0;
+    margin: 0;
+    font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+    color: #4c4c4c;
+    font-size: 13px;
+    background: #fff
+}
+.openerp.openerp_webclient_container {
+    height: 95%;
+    height: -webkit-calc(100% - 34px);
+    height: calc(100% - 34px);
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex
+}
+@media (max-width: 768px) {
+    .openerp.openerp_webclient_container {
+        height: 95%;
+        height: -webkit-calc(100% - 52px);
+        height: calc(100% - 52px)
+    }
+}
+.openerp:-moz-placeholder {
+    color: #afafb6!important;
+    font-style: italic!important
+}
+.openerp::-webkit-input-placeholder {
+    color: #afafb6!important;
+    font-style: italic!important
+}
+.openerp:-ms-input-placeholder {
+    color: #afafb6!important;
+    font-style: italic!important
+}
+.openerp a {
+    text-decoration: none;
+    cursor: pointer!important
+}
+.openerp .oe_leftbar {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex: 0 0 auto;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    width: 220px;
+    height: 100%;
+    background: #f0eeee;
+    border-right: 1px solid #afafb6;
+    position: relative;
+    display: inline-block\9;
+    vertical-align: top\9
+}
+.openerp .oe_leftbar a.oe_logo {
+    text-align: center;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0
+}
+.openerp .oe_leftbar a.oe_logo img {
+    margin: 14px 0;
+    border: 0
+}
+.openerp .oe_leftbar a.oe_logo .oe_logo_edit {
+    margin: 14px 0;
+    position: absolute;
+    top: 1px;
+    padding: 4px;
+    width: 100%;
+    display: none;
+    text-align: center;
+    color: #eee;
+    background: rgba(37, 37, 37, .9);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box
+}
+.openerp .oe_leftbar a.oe_logo:hover .oe_logo_edit_admin {
+    display: block
+}
+.openerp .oe_leftbar .oe_secondary_menus_container {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    overflow-y: auto
+}
+.openerp .oe_leftbar .oe_footer {
+    background: #f0eeee;
+    text-align: center;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0
+}
+.openerp .oe_leftbar .oe_footer a {
+    font-weight: 700
+}
+.openerp .oe_leftbar .oe_footer a span {
+    color: #a24689
+}
+.openerp .oe_secondary_menu_section {
+    font-weight: 700;
+    margin-left: 8px;
+    color: #7C7BAD
+}
+.openerp .oe_secondary_menu_section>.oe_menu_leaf {
+    font-weight: 700;
+    color: #7C7BAD
+}
+.openerp .oe_secondary_submenu {
+    margin-bottom: 10px!important;
+    line-height: 1.1em;
+    margin-top: 3px
+}
+.openerp .oe_secondary_submenu .oe_menu_text {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 85%;
+    margin-top: 1px
+}
+.openerp .oe_secondary_submenu .badge:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1)
+}
+.openerp .oe_secondary_submenu .oe_menu_toggler:before {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    content: "&darr";
+    text-indent: -99999px;
+    vertical-align: top;
+    margin-left: -12px;
+    margin-top: 4px;
+    margin-right: 4px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #4c4c4c;
+    filter: alpha(opacity=50);
+    opacity: .5
+}
+.openerp .oe_secondary_submenu .oe_menu_opened:before {
+    margin-top: 6px;
+    margin-left: -16px;
+    margin-right: 4px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #4c4c4c
+}
+.openerp .oe_secondary_submenu .oe_secondary_submenu li {
+    margin-left: 20px
+}
+
+.openerp .oe_application {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column
+}
+.openerp .oe_application .oe_application {
+    width: 100%
+}
+.openerp .oe_application .oe_client_action {
+    height: 100%;
+    overflow: auto;
+    position: relative
+}
+.openerp .oe-view-manager {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    overflow: auto;
+    position: relative;
+    background: url(../img/form_sheetbg.png);
+    border-bottom: 1px solid #ddd;
+    padding:25px 0;
+}
+.openerp .oe-view-manager .oe-view-manager-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0
+}
+.openerp .oe-view-manager .oe-view-manager-content>div {
+    height: 100%;
+    position: static;
+    display: none
+}
+.openerp .oe-view-manager .oe-view-manager-content .oe-view-manager-content {
+    position: static
+}
+.openerp .oe-view-manager .oe-view-manager-content .oe-view-manager-content>div {
+    display: block
+}
+
+.openerp .oe-x2m-control-panel .oe-cp-buttons div,
+.openerp .oe-x2m-control-panel .oe-cp-pager div {
+    display: inline-block;
+    padding: 5px
+}
+.openerp .oe-control-panel {
+    background-color: #f0eeee;
+    border-bottom: 1px solid #afafb6;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    user-select: none
+}
+.oe-control-panel  .oe-view-title {
+    background-color: #f0eeee;
+    font-size: 18px;
+    margin: 0;
+    padding-left: 0;
+}
+.openerp .oe-control-panel>.container-fluid {
+    width: 100%
+}
+
+
+/*.openerp .oe_form_sheetbg {
+    padding: 16px 0;
+    position: relative
+}*/
+.openerp .oe_form_sheet {
+    min-width: 650px;
+    max-width: 860px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 330px;
+    padding: 16px;
+}
+/*.openerp .oe_form_sheet {
+
+}*/
+/*.openerp .oe_application .oe_form_sheetbg {
+    background: url(../img/form_sheetbg.png);
+    border-bottom: 1px solid #ddd
+}*/
+
+.openerp .oe_application .oe_form_sheet {
+    border: 1px solid #c8c8d3;
+    -moz-box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+    -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .15)
+}
+
+.openerp .nav-pills li>a {
+    padding: 6px 4px 2px 18px;
+    color: #4c4c4c
+}
+
+.openerp .nav-pills>li.active>a,
+.openerp a.list-group-item.active>a {
+    background-color: #7c7bad;
+    color: #fff;
+    border-radius: 0
+}
+
+.openerp a.list-group-item.active a:focus,
+.openerp a.list-group-item.active a:hover {
+    background-color: #7c7bad
+}
+
+
+body.oe_single_form {
+    background: url(../img/form_sheetbg.png) #eee;
+    height: 100%
+}
+
+body {
+    overflow: hidden
+}
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .oe-view-manager-content>div {
+        position: absolute!important;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0
+    }
+    .oe-view-manager-content .oe-view-manager-content>div {
+        position: relative!important
+    }
+    .modal .oe-view-manager-content>div {
+        position: static!important;
+        max-height: 450px
+    }
+    .modal>.modal-dialog>.modal-content {
+        max-height: 450px
+    }
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background: #f0eeee none repeat scroll 0 0;
+    border-top: 1px solid #afafb6;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+    padding: 60px 15px 0;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+

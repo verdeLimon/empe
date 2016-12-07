@@ -48,9 +48,7 @@ Route::get('admin/login', array('before' => 'guest', 'main' => function() {
         $vars['messages'] = Notify::read();
         $vars['token'] = Csrf::token();
 
-        return View::create('users/login', $vars)
-                        ->partial('header', 'partials/header')
-                        ->partial('footer', 'partials/footer');
+        return View::create('auth/login', $vars);
     }));
 
 Route::post('admin/login', array('before' => 'csrf', 'main' => function() {
