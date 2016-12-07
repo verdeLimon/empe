@@ -47,7 +47,7 @@ class Ubicacion extends ActiveRecord\Model {
         return $lugarids;
     }
 
-    public function sexoPorprovincia($idprovincia) {
+    public function generoPorprovincia($idprovincia) {
         $lugarids = $this->idLugares($idprovincia);
         $sql = "SELECT 'masculino' AS sexo,COUNT(*) `total` FROM encuestados "
                 . "LEFT JOIN encargados enc ON(encuestados.idencuestado = enc.idencuestado) "
@@ -62,10 +62,10 @@ class Ubicacion extends ActiveRecord\Model {
     }
 
     /**
-     * @return sexo por distrito y toda la region
+     * @return genero por distrito y toda la region
      *
      */
-    public function sexoPorDistrito($todo = false) {
+    public function generoPorDistrito($todo = false) {
         $sql = "SELECT 'masculino' AS sexo, COUNT(*) `total` FROM encuestados "
                 . "LEFT JOIN encargados enc ON(encuestados.idencuestado = enc.idencuestado) "
                 . "WHERE enc.sexo = 'M' AND enc.cargo = 'Propietario'" . (!$todo ? " AND encuestados.idubicacion = {$this->idubicacion} " : " ")
@@ -105,7 +105,7 @@ class Ubicacion extends ActiveRecord\Model {
 //        $gpd = $this->find_by_sql($sql);
 //
 //        $bd = Instruccion::all(array('select' => 'idinstruccion,descripcion,idinstruccion as instruccion,0 as total'));
-//        $total = ActiveRecord\collect($bd, 'idinstruccion'); //total de la base de datos
+//       $total = ActiveRecord\collect($bd, 'idinstruccion'); //total de la base de datos
 //        $actual = ActiveRecord\collect($gpd, 'idinstruccion'); //en existencia
 //        print_r($actual);
 //        print_r($total);

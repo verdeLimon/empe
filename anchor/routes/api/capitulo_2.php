@@ -16,31 +16,31 @@
 /**
  * @return genero por provincia
  */
-Route::get('genero/provincia/(:num)', function( $idprovincia ) {
-
+Route::get('api/genero/provincia/(:num)', function( $idprovincia ) {
+    $p = new Ubicacion();
+    return ActiveRecord\Utils::results_to_json($p->generoPorprovincia($idprovincia));
 });
 /**
  * @return genero por distrito
  * idubicacion = distrito
  */
-Route::get('genero/distrito/(:num)', function( $idubicacion ) {
-
+Route::get('api/genero/distrito/(:num)', function( $idubicacion ) {
+    $p = Ubicacion::find($idubicacion);
+    return ActiveRecord\Utils::results_to_json($p->generoPorDistrito());
 });
 
 /**
  * @return 'genero' de toda la region
  */
-Route::get('genero/departamento', function() {
-    return Template::create('capitulo_2/genero')
-                    ->partial('header', 'header')
-                    ->partial('footer', 'footer');
-    //return new Template('capitulo_2/genero');
+Route::get('api/genero/departamento', function() {
+    $p = new Ubicacion();
+    return ActiveRecord\Utils::results_to_json($p->generoPorDistrito(true));
 });
 
 /**
  * @return 'grado de instruccion' de toda la region
  */
-Route::get('instruccion/departamento', function() {
+Route::get('api/instruccion/departamento', function() {
 
     $join = "left join encargados enca on (inst.idinstruccion=enca.instruccion) "
             . "left join encuestados encu on (encu.idencuestado = enca.idencuestado)";
@@ -56,7 +56,7 @@ Route::get('instruccion/departamento', function() {
 /**
  * @return 'grado de instruccion' de una provincia
  */
-Route::get('instruccion/provincia/(:num)', function( $idprovincia) {
+Route::get('api/instruccion/provincia/(:num)', function( $idprovincia) {
     $rreturn = array();
     $inst = Instruccion::all();
     foreach ($inst as $key => $ins) {
@@ -70,7 +70,7 @@ Route::get('instruccion/provincia/(:num)', function( $idprovincia) {
 /**
  * @return 'grado de instruccion' de un distrito
  */
-Route::get('instruccion/distrito/(:num)', function( $idubicacion) {
+Route::get('api/instruccion/distrito/(:num)', function( $idubicacion) {
     $rreturn = array();
     $inst = Instruccion::all();
     foreach ($inst as $key => $ins) {
