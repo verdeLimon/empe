@@ -6,10 +6,9 @@
     $(function () {
         $('#paginas').DataTable({
             //"pageLength": 5,
-            "dom": 'rtp',
+            "dom": '<"wrapper"flipt>',
             language: {
-                url: '//cdn.datatables.net/plug-ins/1.10.13/i18n/Spanish.json',
-
+                url: '//cdn.datatables.net/plug-ins/1.10.13/i18n/Spanish.json'
             }
         });
     });
