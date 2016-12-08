@@ -85,7 +85,7 @@ if (is_admin()) {
     require APP . 'routes/fields' . EXT;
     require APP . 'routes/menu' . EXT;
     require APP . 'routes/metadata' . EXT;
-    require APP . 'routes/pages' . EXT;
+    require APP . 'routes/paginas' . EXT;
     require APP . 'routes/panel' . EXT;
     require APP . 'routes/plugins' . EXT;
     require APP . 'routes/posts' . EXT;
