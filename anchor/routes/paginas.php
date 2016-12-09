@@ -35,25 +35,9 @@ Route::collection(array('before' => 'auth,csrf'), function() {
      */
     Route::post('admin/paginas/nuevo', function() {
         $input = Input::get(array('titulo', 'descripcion', 'html', 'slug', 'estado', 'usuario_id'));
-
-        // if there is no slug try and create one from the title
-//        if (empty($input['slug'])) {
-//            $input['slug'] = $input['title'];
-//        }
-        // convert to ascii
         $input['slug'] = slug($input['titulo']);
         $input['usuario_id'] = Auth::user()->id;
-        // an array of items that we shouldn't encode - they're no XSS threat
-        $dont_encode = array('html');
-
-        foreach ($input as $key => &$value) {
-            if (in_array($key, $dont_encode))
-                continue;
-            $value = eq($value);
-        }
-
         $validator = new Validator($input);
-        var_dump(Pagina::first(array('conditions' => "slug = 'ttttt-t-r-ertr'")));
         $validator->add('duplicate', function($str) {
             return count(Pagina::all(array('conditions' => "slug = '" . $str . "'"))) == 0;
         });
@@ -69,21 +53,66 @@ Route::collection(array('before' => 'auth,csrf'), function() {
             return Response::redirect('admin/paginas/nuevo');
         }
         $pg = new Pagina();
-        //'titulo', 'descripcion', 'html', 'slug', 'estado', 'fecha', 'usuario_id'
         $pg->titulo = $input['titulo'];
         $pg->descripcion = $input['descripcion'];
-        $pg->html = $input['html'];
+        $pg->html = $_POST['html'];
         $pg->slug = $input['slug'];
         $pg->estado = $input['estado'];
         $pg->usuario_id = $input['usuario_id'];
         $pg->save();
-        //
-        # same sql as above
-
         Notify::success(__('pages.created'));
-
         return Response::redirect('admin/paginas/');
     });
+    /**
+     * Editar pagina
+     * GET
+     */
+    Route::get('admin/paginas/editar/(:num)', function($id) {
+        $vars['messages'] = Notify::read();
+        $vars['token'] = Csrf::token();
+        $vars['_pg'] = Pagina::find($id);
+        return View::create('paginas/editar', $vars)
+                        ->partial('header', 'paginas/header')
+                        ->partial('menu', 'paginas/menu')
+                        ->partial('nuevojs', 'paginas/nuevojs')
+                        ->partial('footer', 'partials/footer');
+    });
+    /**
+     * Editar pagina
+     * POST
+     */
+    Route::post('admin/paginas/editar/(:num)', function($id) {
+        $input = Input::get(array('titulo', 'descripcion', 'html', 'slug', 'estado', 'usuario_id'));
+        $input['slug'] = slug($input['titulo']);
+        $input['usuario_id'] = Auth::user()->id;
+        $validator = new Validator($input);
+//        $validator->add('duplicate', function($str) {
+//            return count(Pagina::all(array('conditions' => "slug = '" . $str . "'"))) == 0;
+//        });
+        $validator->check('titulo')
+                ->is_max(3, __('pages.title_missing'));
+        $validator->check('descripcion')
+                ->is_max(3, __('pages.description_missing'));
+//        $validator->check('slug')
+//                ->is_duplicate(__('pages.slug_duplicate'));
+        if ($errors = $validator->errors()) {
+            Input::flash();
+            Notify::danger($errors);
+            return Response::redirect('admin/paginas/editar/' . $id);
+        }
+        $pg = Pagina::find($id);
+        $pg->titulo = $input['titulo'];
+        $pg->descripcion = $input['descripcion'];
+        $pg->html = $_POST['html'];
+        $pg->slug = $input['slug'];
+        $pg->estado = $input['estado'];
+        $pg->usuario_id = $input['usuario_id'];
+        $pg->save();
+        Notify::success(__('pages.updated'));
+        return Response::redirect('admin/paginas');
+    });
+
+
     /*
       List pages by status and paginate through them
      */

@@ -26,18 +26,18 @@ $nuevo = $menup['submenu']['nuevo'];
                     </div>
                 </div>
                 <div class="subhead">
-                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/' . $nuevo['url']); ?>" class="btn btn-green btn-menu">
+<!--                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/' . $nuevo['url']); ?>" class="btn btn-green btn-menu">
                         <i class="fa fa-plus-circle fa-15px"></i> <?php echo $nuevo['titulo']; ?>
                     </a>
-                    <!--                    <a href="?m=ravance" class="btn btn-light-grey btn-menu">
+                                        <a href="?m=ravance" class="btn btn-light-grey btn-menu">
                                             <i class="fa fa-mail-reply"></i> Volver a registro de avances
-                                        </a>-->
-                    <!--                    <a class="btn btn-default btn-menu">
+                                        </a>
+                                        <a class="btn btn-default btn-menu">
                                             <i class="fa fa-refresh"></i> Recargar datos
-                                        </a>-->
-                    <a  href="<?php echo Uri::to('admin/' . $menup['url'] . '/' . $nuevo['url']); ?>" class="btn btn-default btn-menu">
+                                        </a>
+                    <a  href="<?php echo Uri::to('admin/' . $menup['url'] . '/papelera'); ?>" class="btn btn-default btn-menu">
                         <i class="fa fa-trash"></i> Ir a la papelera
-                    </a>
+                    </a>-->
                 </div>
             </div>
         </div>
@@ -65,10 +65,10 @@ $nuevo = $menup['submenu']['nuevo'];
                                                     <a href="#" data-toggle="tooltip" data-placement="top" title="<?php echo ($_p->estado == 'publicado') ? 'Archivar' : 'Publicar'; ?>" class="btn btn-default active">
                                                         <i class="fa <?php echo ($_p->estado == 'publicado') ? 'fa-check color-green' : 'fa-window-close color-red'; ?>"></i>
                                                     </a>
-                                                    <a href="" data-toggle="tooltip" data-placement="top" title="Editar p&aacute;gina" class="btn btn-default">
+                                                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/editar/' . $_p->id); ?>" data-toggle="tooltip" data-placement="top" title="Editar p&aacute;gina" class="btn btn-default">
                                                         <i class="fa fa-edit color-green"></i> Editar
                                                     </a>
-                                                    <a data-toggle="tooltip" data-placement="top" title="Enviar a la papelera" class="btn btn-default" href="javascript:;">
+                                                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/papelera/' . $_p->id); ?>" data-toggle="tooltip" data-placement="top" title="Enviar a la papelera" class="btn btn-default">
                                                         <i class="fa fa-trash color-green"></i> Papelera
                                                     </a>
                                                 </div>
