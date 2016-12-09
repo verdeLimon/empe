@@ -68,7 +68,7 @@ class Anchor {
     public static function register() {
         // register home page
         Registry::set('meta', Config::app('url'));
-
+        Registry::set('menus', menus());
         // register posts page
         //    Registry::set('posts_page', Page::posts());
 //        if (!is_admin()) {

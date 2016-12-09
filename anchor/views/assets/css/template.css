@@ -393,8 +393,8 @@ body {
     background: -webkit-linear-gradient(center top , #ffffff 0%, #ededed 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
     background: linear-gradient(#ffffff, #ededed);
     border-bottom: 1px solid #d3d3d3;
-    padding: 10px 30px;
-    height: 45px;
+    padding: 8px 30px;
+    /*    height: 45px;*/
     top: 50px;
     width:100%;
     z-index:1000;
@@ -649,6 +649,9 @@ body {
 .btn {
     transition: all 0.3s ease 0s !important;
 }
+
+
+/*font and icon size*/
 .fa-12px {
     font-size: 12px;
 }
@@ -660,6 +663,61 @@ body {
 }
 .fa-15px {
     font-size: 15px;
+}
+/*font and icon colors*/
+.color-teal {
+    color: #569099;
+}
+.color-beige {
+    color: #cc9;
+}
+.color-dark-beige {
+    color: #afaa6d;
+}
+.color-orange {
+    color: #e6674a;
+}
+.color-purple {
+    color: #57517b;
+}
+
+.color-dark-grey {
+    color: #333;
+}
+.color-med-grey {
+    color: #666;
+
+}
+.color-light-grey {
+    color: #999;
+}
+.color-bricky {
+    color: #C83A2A;
+}
+.color-green {
+    color: #3D9400;
+}
+.color-blue {
+    color: #364F6A;
+}
+
+.color-yellow {
+    color: #FFB848;
+}
+.color-red {
+    color: #E02222;
+}
+/*datatables override*/
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left;
+}
+div.dataTables_wrapper div.dataTables_length {
+    text-align: right;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: left;
 }
 /* Custom page CSS
 -------------------------------------------------- */

@@ -9,8 +9,8 @@
         <link rel="shortcut icon" type="image/png" href="<?php echo asset('anchor/views/assets/img/favicon.png'); ?>" />
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/bootstrap/css/bootstrap.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/font-awesome/css/font-awesome.min.css'); ?>">
-        <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/css/template.css'); ?>">
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/datatables/css/dataTables.bootstrap.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/css/template.css'); ?>">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -34,101 +34,8 @@
             <div class="navbar-collapse collapse" id="oe_main_menu_placeholder">
                 <ul class="nav navbar-nav navbar-left oe_application_menu_placeholder">
                     <?php
-                    $menus = array(
-                        'panel' => array(
-                            'titulo' => 'Panel',
-                            'icon' => 'fa-desktop',
-                            'url' => 'panel',
-                            'submenu' => array(
-                                array(
-                                    'titulo' => 'Portada',
-                                    'icon' => 'fa-home',
-                                    'url' => ''
-                                ))
-                        ),
-                        'paginas' => array(
-                            'titulo' => 'P&aacute;ginas',
-                            'icon' => 'fa-sticky-note-o',
-                            'url' => 'paginas',
-                            'submenu' => array(
-                                array(
-                                    'titulo' => 'Crear p&aacute;gina',
-                                    'icon' => 'fa-pencil',
-                                    'url' => 'nuevo'
-                                ),
-                                array(
-                                    'titulo' => 'Categorias',
-                                    'icon' => 'fa-tags',
-                                    'url' => 'categorias'
-                                ),
-                                array(
-                                    'titulo' => 'Media',
-                                    'icon' => 'fa-picture-o',
-                                    'url' => 'media'
-                                )
-                            )
-                        ),
-                        'categorias' => array(
-                            'titulo' => 'Categorias',
-                            'icon' => 'fa-tags',
-                            'url' => 'categorias',
-                            'submenu' => array(
-                                array(
-                                    'titulo' => 'Crear categoria',
-                                    'icon' => 'fa-pencil',
-                                    'url' => 'nuevo'
-                                ))
-                        ),
-                        'usuarios' => array(
-                            'titulo' => 'Usuarios',
-                            'icon' => 'fa-user',
-                            'url' => 'usuarios',
-                            'submenu' => array(
-                                array(
-                                    'titulo' => 'Crear usuarios',
-                                    'icon' => 'fa-plus',
-                                    'url' => 'nuevo'
-                                )
-                            )
-                        ),
-                        'modulos' => array(
-                            'titulo' => 'M&oacute;dulos',
-                            'icon' => 'fa-bars',
-                            'url' => 'modulos',
-                            'submenu' => array(
-                                array(
-                                    'titulo' => 'Crear m&oacute;dulo',
-                                    'icon' => 'fa-plus',
-                                    'url' => 'nuevo'
-                                ))
-                        ),
-                        'media' => array(
-                            'titulo' => 'Media',
-                            'icon' => 'fa-picture-o',
-                            'url' => 'media',
-                            'submenu' => array(
-                                array(
-                                    'titulo' => 'Media',
-                                    'icon' => 'fa-picture-o',
-                                    'url' => ''
-                                )
-                            )
-                        ),
-                        'config' => array(
-                            'titulo' => 'Configuraciones',
-                            'icon' => 'fa-cogs',
-                            'url' => 'config',
-                            'submenu' => array(
-                                array(
-                                    'titulo' => 'Configuraci&oacute;n general',
-                                    'icon' => 'fa-cog',
-                                    'url' => ''
-                                ))
-                        )
-                    );
-                    Registry::set('menus', $menus);
+                    $menus = Registry::get('menus');
                     ?>
-
                     <?php foreach ($menus as $menu): ?>
                         <li <?php if (strpos(Uri::current(), $menu['url']) !== false) echo 'class="active"'; ?>>
                             <a href="<?php echo Uri::to('admin/' . $menu['url']); ?>">

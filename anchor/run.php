@@ -48,6 +48,7 @@ ActiveRecord\Config::initialize(function($cfg) {
     $cfg->set_connections(array(
         'development' => $conectionString));
     ActiveRecord\Serialization::$DATETIME_FORMAT = 'd-m-Y H:i:s';
+    //ActiveRecord\Connection::$date_format = 'd-m-Y H:i:s';
 });
 /**
  * Helpers
@@ -94,6 +95,7 @@ if (is_admin()) {
     require APP . 'routes/pagetypes' . EXT;
 } else {
     //require APP . 'routes/site' . EXT;
+
     require APP . 'routes/index' . EXT;
     require APP . 'routes/api/comunes' . EXT;
     require APP . 'routes/capitulo_1' . EXT;

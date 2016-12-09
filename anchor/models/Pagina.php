@@ -4,10 +4,10 @@ class Pagina extends ActiveRecord\Model {
     # explicit table name since our table is not "books"
 
     static $table_name = 'web_posts';
+    static $belongs_to = array(
+        array('autor', 'foreign_key' => 'usuario_id', 'class_name' => 'Usuario')
+    );
 
-//    static $belongs_to = array(
-//        array('contraparte', 'foreign_key' => 'contraparte')
-//    );
 //   static $has_one = array(
 //     array('marcologico','foreign_key'=>'proy_id')
 //   );

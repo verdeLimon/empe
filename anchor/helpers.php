@@ -59,6 +59,103 @@ function readable_size($size) {
     return round($size / pow(1024, ($i = floor(log($size, 1024)))), 2) . ' ' . $unit[$i];
 }
 
-function arr2str($arr) {
-
+function menus() {
+    $menus = array(
+        'panel' => array(
+            'titulo' => 'Panel',
+            'icon' => 'fa-desktop',
+            'url' => 'panel',
+            'submenu' => array(
+                array(
+                    'titulo' => 'Portada',
+                    'icon' => 'fa-home',
+                    'url' => ''
+                ))
+        ),
+        'paginas' => array(
+            'titulo' => 'P&aacute;ginas',
+            'icon' => 'fa-sticky-note-o',
+            'url' => 'paginas',
+            'submenu' => array(
+                'nuevo' => array(
+                    'titulo' => 'Crear p&aacute;gina',
+                    'icon' => 'fa-pencil',
+                    'url' => 'nuevo'
+                ),
+                'categoria' => array(
+                    'titulo' => 'Categorias',
+                    'icon' => 'fa-tags',
+                    'url' => 'categorias'
+                ),
+                'papelera' => array(
+                    'titulo' => 'Papelera',
+                    'icon' => 'fa-trash',
+                    'url' => 'papelera'
+                ),
+                'media' => array(
+                    'titulo' => 'Media',
+                    'icon' => 'fa-picture-o',
+                    'url' => 'media'
+                )
+            )
+        ),
+        'categorias' => array(
+            'titulo' => 'Categorias',
+            'icon' => 'fa-tags',
+            'url' => 'categorias',
+            'submenu' => array(
+                'nuevo' => array(
+                    'titulo' => 'Crear categoria',
+                    'icon' => 'fa-pencil',
+                    'url' => 'nuevo'
+                ))
+        ),
+        'usuarios' => array(
+            'titulo' => 'Usuarios',
+            'icon' => 'fa-user',
+            'url' => 'usuarios',
+            'submenu' => array(
+                'nuevo' => array(
+                    'titulo' => 'Crear usuarios',
+                    'icon' => 'fa-plus',
+                    'url' => 'nuevo'
+                )
+            )
+        ),
+        'modulos' => array(
+            'titulo' => 'M&oacute;dulos',
+            'icon' => 'fa-bars',
+            'url' => 'modulos',
+            'submenu' => array(
+                'nuevo' => array(
+                    'titulo' => 'Crear m&oacute;dulo',
+                    'icon' => 'fa-plus',
+                    'url' => 'nuevo'
+                ))
+        ),
+        'media' => array(
+            'titulo' => 'Media',
+            'icon' => 'fa-picture-o',
+            'url' => 'media',
+            'submenu' => array(
+                'nuevo' => array(
+                    'titulo' => 'Media',
+                    'icon' => 'fa-picture-o',
+                    'url' => ''
+                )
+            )
+        ),
+        'config' => array(
+            'titulo' => 'Configuraciones',
+            'icon' => 'fa-cogs',
+            'url' => 'config',
+            'submenu' => array(
+                'nuevo' => array(
+                    'titulo' => 'Configuraci&oacute;n general',
+                    'icon' => 'fa-cog',
+                    'url' => ''
+                ))
+        )
+    );
+    return $menus;
 }

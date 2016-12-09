@@ -2,9 +2,9 @@
 
 class Notify {
 
-    public static $types = array('error', 'notice', 'success', 'warning');
+    public static $types = array('danger', 'info', 'success', 'warning');
     public static $wrap = '<div class="alert ">%s</div>';
-    public static $mwrap = '<span class="%s">%s</span>';
+    public static $mwrap = '<div class="alert alert-%s">%s</div>';
 
     public static function add($type, $messages) {
         if (!in_array($type, static::$types)) {
