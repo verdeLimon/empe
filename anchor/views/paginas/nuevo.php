@@ -9,7 +9,6 @@
 $menus = Registry::get('menus');
 $menup = $menus['paginas'];
 $nuevo = $menup['submenu']['nuevo'];
-//var_dump($submenu);
 ?>
 <div class="openerp openerp_webclient_container" style="height: calc(100% - 34px);">
     <?php echo $menu; ?>
@@ -94,17 +93,10 @@ $nuevo = $menup['submenu']['nuevo'];
                                             <label for="form-field-22">
                                                 <i class="fa fa-check-square-o"></i> Estado
                                             </label>
-                                            <select name="estado" class="form-control">
-                                                <option value="publicado">
-                                                    Publicado
-                                                </option>
-                                                <option value="archivado">
-                                                    Archivado
-                                                </option>
-                                                <option value="papelera">
-                                                    Papelera
-                                                </option>
-                                            </select>
+                                            <?php
+                                            $estados = array('publicado' => 'Publicado', 'archivado' => 'Archivado');
+                                            echo Form::select('estado', $estados, Input::previous('estado'), array('class' => 'form-control'));
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
@@ -119,6 +111,32 @@ $nuevo = $menup['submenu']['nuevo'];
 </div>
 <!-- /container -->
 <?php echo $footer; ?>
-<?php echo $nuevojs; ?>
+<script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/jquery.validate.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/localization/messages_es_PE.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/tinymce/js/tinymce/tinymce.min.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/js/default.js'); ?>" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+
+        tinymce.init({
+            selector: 'textarea#field-3',
+            language: 'es',
+            theme: 'modern',
+            relative_urls: true,
+            plugins: [
+                'moxiemanager advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
+            ],
+            toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image preview media | forecolor backcolor emoticons',
+            image_advtab: true
+        });
+        //$('#form_nuevo').validate();
+
+    });
+</script>
 </body>
 </html>

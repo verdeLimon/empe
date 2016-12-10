@@ -9,7 +9,6 @@
  * @link		http://madebykieron.co.uk
  * @copyright	http://unlicense.org/
  */
-
 /**
  * Composer
  */

@@ -29,6 +29,7 @@ class Input {
     public static function detect($method) {
         switch ($method) {
             case 'GET':
+                // echo "<h1>GET</h1>";
                 $query = parse_url(Arr::get($_SERVER, 'REQUEST_URI'), PHP_URL_QUERY);
                 parse_str($query, static::$array);
                 break;
@@ -99,6 +100,10 @@ class Input {
 
     public static function all() {
         return static::$array;
+    }
+
+    public static function clean() {
+        Session::erase('_in');
     }
 
 }

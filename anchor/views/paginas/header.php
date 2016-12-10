@@ -11,6 +11,12 @@
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/font-awesome/css/font-awesome.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/datatables/css/dataTables.bootstrap.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/css/template.css'); ?>">
+        <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+        <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/elFinder/css/elfinder.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/assets/elFinder/css/theme.css'); ?>">
+        <!-- elFinder CSS (REQUIRED) -->
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -42,7 +48,6 @@
                                 <i class="fa <?php echo $menu['icon']; ?>" aria-hidden="true"></i>
                                 <?php echo $menu['titulo']; ?>
                             </a>
-
                         </li>
                     <?php endforeach; ?>
                     <li id="menu_more_container" class="dropdown">
@@ -88,4 +93,9 @@
                 </ul>
             </div>
         </nav>
+
+        <?php
+        //print_r($_SESSION);
+        ?>
+
         <!-- /menu top -->

@@ -74,7 +74,7 @@ function menus() {
         ),
         'paginas' => array(
             'titulo' => 'P&aacute;ginas',
-            'icon' => 'fa-sticky-note-o',
+            'icon' => 'fa-file-text-o',
             'url' => 'paginas',
             'submenu' => array(
                 'nuevo' => array(
@@ -96,6 +96,18 @@ function menus() {
                     'titulo' => 'Media',
                     'icon' => 'fa-picture-o',
                     'url' => 'media'
+                )
+            )
+        ),
+        'menu' => array(
+            'titulo' => 'Menu',
+            'icon' => 'fa-list',
+            'url' => 'menu',
+            'submenu' => array(
+                'nuevo' => array(
+                    'titulo' => 'Crear men&uacute;',
+                    'icon' => 'fa-pencil',
+                    'url' => 'nuevo'
                 )
             )
         ),
@@ -124,7 +136,7 @@ function menus() {
         ),
         'modulos' => array(
             'titulo' => 'M&oacute;dulos',
-            'icon' => 'fa-bars',
+            'icon' => 'fa-th-large',
             'url' => 'modulos',
             'submenu' => array(
                 'nuevo' => array(
@@ -133,18 +145,18 @@ function menus() {
                     'url' => 'nuevo'
                 ))
         ),
-        'media' => array(
-            'titulo' => 'Media',
-            'icon' => 'fa-picture-o',
-            'url' => 'media',
-            'submenu' => array(
-                'nuevo' => array(
-                    'titulo' => 'Media',
-                    'icon' => 'fa-picture-o',
-                    'url' => ''
-                )
-            )
-        ),
+        /*        'media' => array(
+          'titulo' => 'Media',
+          'icon' => 'fa-picture-o',
+          'url' => 'media',
+          'submenu' => array(
+          'nuevo' => array(
+          'titulo' => 'Media',
+          'icon' => 'fa-picture-o',
+          'url' => ''
+          )
+          )
+          ), */
         'config' => array(
             'titulo' => 'Configuraciones',
             'icon' => 'fa-cogs',

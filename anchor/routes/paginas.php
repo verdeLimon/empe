@@ -13,7 +13,6 @@ Route::collection(array('before' => 'auth,csrf'), function() {
         return View::create('paginas/index', $vars)
                         ->partial('header', 'paginas/header')
                         ->partial('menu', 'paginas/menu')
-                        ->partial('indexjs', 'paginas/indexjs')
                         ->partial('footer', 'partials/footer');
     });
     /**
@@ -26,7 +25,6 @@ Route::collection(array('before' => 'auth,csrf'), function() {
         return View::create('paginas/nuevo', $vars)
                         ->partial('header', 'paginas/header')
                         ->partial('menu', 'paginas/menu')
-                        ->partial('nuevojs', 'paginas/nuevojs')
                         ->partial('footer', 'partials/footer');
     });
     /**
@@ -60,6 +58,7 @@ Route::collection(array('before' => 'auth,csrf'), function() {
         $pg->estado = $input['estado'];
         $pg->usuario_id = $input['usuario_id'];
         $pg->save();
+        Input::clean();
         Notify::success(__('pages.created'));
         return Response::redirect('admin/paginas/');
     });
@@ -74,7 +73,6 @@ Route::collection(array('before' => 'auth,csrf'), function() {
         return View::create('paginas/editar', $vars)
                         ->partial('header', 'paginas/header')
                         ->partial('menu', 'paginas/menu')
-                        ->partial('nuevojs', 'paginas/nuevojs')
                         ->partial('footer', 'partials/footer');
     });
     /**
@@ -109,8 +107,81 @@ Route::collection(array('before' => 'auth,csrf'), function() {
         $pg->usuario_id = $input['usuario_id'];
         $pg->save();
         Notify::success(__('pages.updated'));
+        Input::clean();
         return Response::redirect('admin/paginas');
     });
+    /**
+     * Archivar pagina
+     * GET
+     */
+    Route::get('admin/paginas/editar/(:any)/(:num)', function($op, $id) {
+        try {
+            $pg = Pagina::find($id);
+            $pg->estado = $op;
+            $pg->save();
+            Notify::success('<b>' . ucfirst($op) . '</b> correctamente.');
+        } catch (Exception $exc) {
+            Notify::error('No se pudo completar la peticion.' . $exc->getMessage());
+        }
+        return Response::redirect('admin/paginas');
+    });
+    /**
+     * Enviar pagina a la papelera
+     * GET
+     */
+    Route::get('admin/paginas/papelera/enviar/(:num)', function( $id ) {
+        try {
+            $pg = Pagina::find($id);
+            $pg->estado = 'papelera';
+            $pg->save();
+            Notify::success('<b>Enviado a la papelera</b> correctamente.');
+        } catch (Exception $exc) {
+            Notify::error('No se pudo completar la peticion.' . $exc->getMessage());
+        }
+        return Response::redirect('admin/paginas');
+    });
+    /**
+     * papelera restaurar pagina
+     */
+    Route::get('admin/paginas/papelera/restaurar/(:num)', function( $id ) {
+        try {
+            $pg = Pagina::find($id);
+            $pg->estado = 'publicado';
+            $pg->save();
+            Notify::success('<b>P&aacute;gina restaurada</b> correctamente.');
+        } catch (Exception $exc) {
+            Notify::error('No se pudo completar la peticion.' . $exc->getMessage());
+        }
+        return Response::redirect('admin/paginas/papelera');
+    });
+
+    /**
+     * papelera index
+     */
+    Route::get('admin/paginas/papelera', function() {
+        $pagination = Pagina::all(array(
+                    'conditions' => "estado='papelera'"
+        ));
+        $vars['messages'] = Notify::read();
+        $vars['paginas'] = $pagination;
+        return View::create('paginas/papelera', $vars)
+                        ->partial('header', 'paginas/header')
+                        ->partial('menu', 'paginas/menu')
+                        ->partial('footer', 'partials/footer');
+    });
+
+    /**
+     * papelera index
+     */
+    Route::get('admin/paginas/media', function() {
+        return View::create('paginas/media')
+                        ->partial('header', 'paginas/header')
+                        ->partial('menu', 'paginas/menu')
+                        ->partial('footer', 'partials/footer');
+    });
+
+
+
 
 
     /*

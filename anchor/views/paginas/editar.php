@@ -21,7 +21,7 @@ $nuevo = $menup['submenu']['nuevo'];
                     <div class="ol-md-12">
                         <ol class="breadcrumb">
                             <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Paginas</a></li>
-                            <li class="active">Nuevo</li>
+                            <li class="active">Editar</li>
                         </ol>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                                 <i class="fa fa-angle-double-right"></i> Titulo
                                             </label>
                                             <?php
-                                            echo Form::text('titulo', $_pg->titulo, array(
+                                            echo Form::text('titulo', Input::previous('titulo', $_pg->titulo), array(
                                                 'placeholder' => 'Titulo',
                                                 'autocomplete' => 'off',
                                                 'class' => 'form-control',
@@ -67,7 +67,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                                 <i class="fa fa-angle-double-right"></i> Descripcion
                                             </label>
                                             <?php
-                                            echo Form::text('descripcion', $_pg->descripcion, array(
+                                            echo Form::text('descripcion', Input::previous('descripcion', $_pg->descripcion), array(
                                                 'placeholder' => 'Descripcion',
                                                 'autocomplete' => 'off',
                                                 'class' => 'form-control',
@@ -81,7 +81,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                                 <i class="fa fa-file-text-o"></i> Contenido
                                             </label>
                                             <?php
-                                            echo Form::textarea('html', $_pg->html, array(
+                                            echo Form::textarea('html', Input::previous('html', $_pg->html), array(
                                                 'id' => 'field-3',
                                                 'data-rule-required' => 'true',
                                                 'rows' => '17'
@@ -94,7 +94,11 @@ $nuevo = $menup['submenu']['nuevo'];
                                             <label for="form-field-22">
                                                 <i class="fa fa-check-square-o"></i> Estado
                                             </label>
-                                            <select name="estado" class="form-control">
+                                            <?php
+                                            $estados = array('publicado' => 'Publicado', 'archivado' => 'Archivado', 'papelera' => 'Papelera');
+                                            echo Form::select('estado', $estados, Input::previous('estado', $_pg->estado), array('class' => 'form-control'));
+                                            ?>
+<!--                                            <select name="estado" class="form-control">
                                                 <option value="publicado">
                                                     Publicado
                                                 </option>
@@ -104,7 +108,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                                 <option value="papelera">
                                                     Papelera
                                                 </option>
-                                            </select>
+                                            </select>-->
                                         </div>
                                     </div>
                                 </div>
@@ -119,6 +123,32 @@ $nuevo = $menup['submenu']['nuevo'];
 </div>
 <!-- /container -->
 <?php echo $footer; ?>
-<?php echo $nuevojs; ?>
+<script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/jquery.validate.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/localization/messages_es_PE.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/tinymce/js/tinymce/tinymce.min.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/js/default.js'); ?>" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+
+        tinymce.init({
+            selector: 'textarea#field-3',
+            language: 'es',
+            theme: 'modern',
+            relative_urls: true,
+            plugins: [
+                'moxiemanager advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
+            ],
+            toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image preview media | forecolor backcolor emoticons',
+            image_advtab: true
+        });
+        //$('#form_nuevo').validate();
+
+    });
+</script>
 </body>
 </html>

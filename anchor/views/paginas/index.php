@@ -25,19 +25,21 @@ $nuevo = $menup['submenu']['nuevo'];
                         </ol>
                     </div>
                 </div>
-                <div class="subhead">
-<!--                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/' . $nuevo['url']); ?>" class="btn btn-green btn-menu">
+                <div class="subhead text-right clearfix">
+
+                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/' . $nuevo['url']); ?>" class="btn btn-green btn-menu">
                         <i class="fa fa-plus-circle fa-15px"></i> <?php echo $nuevo['titulo']; ?>
                     </a>
-                                        <a href="?m=ravance" class="btn btn-light-grey btn-menu">
+                    <!--                    <a href="?m=ravance" class="btn btn-light-grey btn-menu">
                                             <i class="fa fa-mail-reply"></i> Volver a registro de avances
                                         </a>
                                         <a class="btn btn-default btn-menu">
                                             <i class="fa fa-refresh"></i> Recargar datos
-                                        </a>
+                                        </a>-->
                     <a  href="<?php echo Uri::to('admin/' . $menup['url'] . '/papelera'); ?>" class="btn btn-default btn-menu">
                         <i class="fa fa-trash"></i> Ir a la papelera
-                    </a>-->
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -51,38 +53,40 @@ $nuevo = $menup['submenu']['nuevo'];
                                 <thead>
                                     <tr>
                                         <th>Acciones</th>
-                                        <th>Estado</th>
+                                        <th class="hidden-xs">Estado</th>
                                         <th>T&iacute;tulo</th>
-                                        <th class="text-center">Autor</th>
-                                        <th class="text-center">Fecha</th>
-                                        <th class="text-center col-md-2">ID</th>
+                                        <th class="text-center hidden-xs">Autor</th>
+                                        <th class="text-center hidden-xs">Fecha</th>
+                                        <th class="text-center hidden-xs">ID</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($paginas as $_p): ?>
                                         <tr>
-                                            <td><div class="btn-group btn-group-sm">
-                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="<?php echo ($_p->estado == 'publicado') ? 'Archivar' : 'Publicar'; ?>" class="btn btn-default active">
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <?php $op = ($_p->estado == 'publicado') ? 'archivado' : 'publicado'; ?>
+                                                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/editar/' . $op . '/' . $_p->id); ?>" data-toggle="tooltip" data-placement="top" title="<?php echo ($_p->estado == 'publicado') ? 'Archivar' : 'Publicar'; ?>" class="btn btn-default active">
                                                         <i class="fa <?php echo ($_p->estado == 'publicado') ? 'fa-check color-green' : 'fa-window-close color-red'; ?>"></i>
                                                     </a>
                                                     <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/editar/' . $_p->id); ?>" data-toggle="tooltip" data-placement="top" title="Editar p&aacute;gina" class="btn btn-default">
                                                         <i class="fa fa-edit color-green"></i> Editar
                                                     </a>
-                                                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/papelera/' . $_p->id); ?>" data-toggle="tooltip" data-placement="top" title="Enviar a la papelera" class="btn btn-default">
+                                                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/papelera/enviar/' . $_p->id); ?>" data-toggle="tooltip" data-placement="top" title="Enviar a la papelera" class="btn btn-default o-trash">
                                                         <i class="fa fa-trash color-green"></i> Papelera
                                                     </a>
                                                 </div>
                                             </td>
-                                            <td>
+                                            <td class="hidden-xs">
                                                 <a href="#" class="btn btn-default btn-xs disabled">
                                                     <i class="fa <?php echo ($_p->estado == 'publicado') ? 'fa-check color-green' : 'fa-window-close color-red'; ?>"></i>
                                                     <?php echo ($_p->estado == 'publicado') ? 'Publicado' : 'Archivado'; ?>
                                                 </a>
                                             </td>
                                             <td><?php echo $_p->titulo; ?></td>
-                                            <td class="text-center"><?php echo $_p->autor->username; ?></td>
-                                            <td class="text-center"><?php echo $_p->created_at->format('d-m-Y'); ?></td>
-                                            <td class="text-center"><?php echo $_p->id; ?></td>
+                                            <td class="text-center hidden-xs"><?php echo $_p->autor->username; ?></td>
+                                            <td class="text-center hidden-xs"><?php echo $_p->created_at->format('d-m-Y'); ?></td>
+                                            <td class="text-center hidden-xs"><?php echo $_p->id; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -97,6 +101,33 @@ $nuevo = $menup['submenu']['nuevo'];
 </div>
 <!-- /container -->
 <?php echo $footer; ?>
-<?php echo $indexjs; ?>
+<script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/jquery.validate.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/datatables/js/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/datatables/js/dataTables.bootstrap.min.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout-3.4.1.debug.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/js/default.js'); ?>" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#paginas').DataTable({
+            //"pageLength": 5,
+            //"dom": '<"pull-left"f><"pull-right"l>tip',
+            "ordering": false,
+//            responsive: true,
+//            "columnDefs": [
+//                {"width": "90px", "targets": 0},
+//                {"width": "90px", "targets": 4}
+//            ],
+
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.10.13/i18n/Spanish.json'
+            }
+        });
+        $('.o-trash').click(function () {
+            return confirm("Seguro que desea enviar a la papelera?");
+        })
+    });
+</script>
 </body>
 </html>

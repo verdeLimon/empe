@@ -1,0 +1,123 @@
+<?php echo $header; ?>
+<!-- container -->
+<!--<div class="row">
+    <div class="col-md-12">
+        degjdogjdo
+    </div>
+</div>-->
+<?php
+$menus = Registry::get('menus');
+$menup = $menus['paginas'];
+$nuevo = $menup['submenu']['nuevo'];
+//var_dump($submenu);
+?>
+<div class="openerp openerp_webclient_container" style="height: calc(100% - 34px);">
+    <?php echo $menu; ?>
+    <!-- main -->
+    <div class="oe_application">
+        <div class="oe-control-panel">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="ol-md-12">
+                        <ol class="breadcrumb">
+                            <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Paginas</a></li>
+                            <li class="active">papelera</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="subhead">
+                    <a href="<?php echo Uri::to('admin/' . $menup['url']); ?>" class="btn btn-light-grey btn-menu">
+                        <i class="fa fa-mail-reply fa-15px"></i> Volver a paginas
+                    </a>
+                    <!--                    <a href="?m=ravance" class="btn btn-light-grey btn-menu">
+                                            <i class="fa fa-mail-reply"></i> Volver a registro de avances
+                                        </a>
+                                        <a class="btn btn-default btn-menu">
+                                            <i class="fa fa-refresh"></i> Recargar datos
+                                        </a>-->
+<!--                    <a  href="<?php echo Uri::to('admin/' . $menup['url'] . '/papelera'); ?>" class="btn btn-default btn-menu">
+                        <i class="fa fa-trash"></i> Ir a la papelera
+                    </a>-->
+                </div>
+            </div>
+        </div>
+        <div class="oe-view-manager">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <?php echo $messages; ?>
+                            <table id="paginas" class="table table-striped table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Acciones</th>
+                                        <th class="hidden-xs">Estado</th>
+                                        <th>T&iacute;tulo</th>
+                                        <th class="text-center hidden-xs">Autor</th>
+                                        <th class="text-center hidden-xs">Fecha</th>
+                                        <th class="text-center hidden-xs">ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($paginas as $_p): ?>
+                                        <tr>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/papelera/restaurar/' . $_p->id); ?>" data-toggle="tooltip" data-placement="top" title="Restaurar p&aacute;gina" class="btn btn-default">
+                                                        <i class="fa fa-mail-reply color-green"></i> Restaurar
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="hidden-xs">
+                                                <a href="#" class="btn btn-default btn-xs disabled">
+                                                    <i class="fa fa-trash"></i> eliminado
+                                                </a>
+                                            </td>
+                                            <td><?php echo $_p->titulo; ?></td>
+                                            <td class="text-center hidden-xs"><?php echo $_p->autor->username; ?></td>
+                                            <td class="text-center hidden-xs"><?php echo $_p->created_at->format('d-m-Y'); ?></td>
+                                            <td class="text-center hidden-xs"><?php echo $_p->id; ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /main -->
+</div>
+<!-- /container -->
+<?php echo $footer; ?>
+<script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/jquery.validate.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/datatables/js/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/datatables/js/dataTables.bootstrap.min.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout-3.4.1.debug.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/js/default.js'); ?>" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#paginas').DataTable({
+            //"pageLength": 5,
+            //"dom": '<"pull-left"f><"pull-right"l>tip',
+            "ordering": false,
+//            responsive: true,
+//            "columnDefs": [
+//                {"width": "90px", "targets": 0},
+//                {"width": "90px", "targets": 4}
+//            ],
+
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.10.13/i18n/Spanish.json'
+            }
+        });
+        $('.o-trash').click(function () {
+            return confirm("Seguro que desea enviar a la papelera?");
+        })
+    });
+</script>
+</body>
+</html>

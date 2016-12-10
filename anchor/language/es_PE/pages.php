@@ -32,5 +32,6 @@ return array(
     // messages
     'updated' => 'La pagina fue actualizada.',
     'created' => 'La pagina fue creada.',
-    'deleted' => 'La pagina fue enviada a la papelera.'
+    'deleted' => 'La pagina fue enviada a la papelera.',
+    'custom' => 'La pagina fue ',
 );
