@@ -37,7 +37,7 @@ function noty2(text, type) {
         type: type,
         layout: 'topCenter',
         theme: 'defaultTheme',
-        timeout: 3000,
-        modal: true
+        timeout: 3000
+                //, modal: true
     });
 }

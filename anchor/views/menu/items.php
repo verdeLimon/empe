@@ -69,8 +69,8 @@ $nuevo = $menup['submenu']['nuevo'];
                                     <span  class="name" style="min-width: 120px; display: inline-block;">
                                         <strong>Titulo</strong>
                                     </span>
-                                    <span class=""><strong>Tipo</strong></span>
-                                    <span class="text-muted" style="font-size: 11px;"></span>
+                                    <span class="hidden-sm hidden-xs"><strong>Tipo</strong></span>
+                                    <span class="text-muted hidden-sm hidden-xs" style="font-size: 11px;"></span>
                                     <strong class="pull-right">
                                         operaciones
                                     </strong>
@@ -84,8 +84,8 @@ $nuevo = $menup['submenu']['nuevo'];
 <!--                                    <span class="glyphicon glyphicon-star-empty"></span>-->
                                     <span data-bind="text:texto" class="name" style="min-width: 120px; display: inline-block;">
                                     </span>
-                                    <span data-bind="text:tipo2" class=""></span>
-                                    <span data-bind="html:url2" class="text-muted" style="font-size: 11px;"></span>
+                                    <span data-bind="text:tipo2" class="hidden-sm hidden-xs"></span>
+                                    <span data-bind="html:url2" class="text-muted hidden-sm hidden-xs" style="font-size: 11px;"></span>
                                     <div class="btn-group btn-group-xs pull-right">
                                         <a data-bind="click:$parent.operar" href="#" class="btn btn-default active">
                                             <i data-bind="css:icono" class="fa"></i>
@@ -198,6 +198,7 @@ $nuevo = $menup['submenu']['nuevo'];
 <script>var base = '<?php echo Uri::to(''); ?>';</script>
 <script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/jquery-ui-1.12.1/jquery-ui.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jquery.ui.touch-punch.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/js/jquery.blockUI.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/js/noty/jquery.noty.packaged.min.js'); ?>" type="text/javascript"></script>
@@ -230,9 +231,7 @@ $nuevo = $menup['submenu']['nuevo'];
             self.icono = ko.computed(function () {
                 return self.estado() == 0 ? 'fa-window-close color-red' : 'fa-check color-green';
             });
-
         }
-
         function ViewModel(data) {
             var mapping = {'menuitems_o': {create: function (options) {
                         return new Item(options.data);

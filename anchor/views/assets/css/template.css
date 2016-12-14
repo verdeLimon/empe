@@ -305,8 +305,8 @@ body {
     position: relative
 }*/
 .openerp .oe_form_sheet {
-    min-width: 650px;
-    max-width: 860px;
+    /*    min-width: 650px;*/
+    max-width: 960px;
     margin: 0 auto;
     background: #fff;
     min-height: 330px;

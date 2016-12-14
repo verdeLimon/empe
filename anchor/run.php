@@ -81,6 +81,7 @@ if (is_admin()) {
     //Config::set('admin.posts_per_page', 6);
 
     require APP . 'routes/admin' . EXT;
+
     //require APP . 'routes/categories' . EXT;
     //require APP . 'routes/comments' . EXT;
     //require APP . 'routes/fields' . EXT;
@@ -97,7 +98,7 @@ if (is_admin()) {
     //require APP . 'routes/site' . EXT;
 
     require APP . 'routes/index' . EXT;
-    // require APP . 'routes/api/comunes' . EXT;
+    require APP . 'routes/api/comunes' . EXT;
     require APP . 'routes/capitulo_1' . EXT;
     require APP . 'routes/capitulo_2' . EXT;
     require APP . 'routes/capitulo_3' . EXT;
