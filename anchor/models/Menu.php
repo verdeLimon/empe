@@ -5,7 +5,8 @@ class Menu extends ActiveRecord\Model {
 
     static $table_name = 'web_menu';
     static $has_many = array(
-        array('menuitems', 'foreign_key' => 'menu_id')
+        array('menuitems', 'class_name' => 'Menuitem', 'foreign_key' => 'menu_id'),
+        array('menuitems_o', 'class_name' => 'Menuitem', 'foreign_key' => 'menu_id', 'order' => 'orden asc')
     );
 
 //    static $belongs_to = array(
