@@ -6,11 +6,11 @@ return array(
     'connections' => array(
         'mysql' => array(
             'driver' => 'mysql',
-            'hostname' => '127.0.0.1',
+            'hostname' => '192.168.3.99',
             'port' => '3306',
             'username' => 'root',
             'password' => 'root',
-            'database' => 'anchor',
+            'database' => 'empe_database',
             'charset' => 'utf8'
         )
     )

@@ -59,12 +59,30 @@ Route::get('instruccion/departamento', function() {
 Route::get('instruccion/provincia/(:num)', function( $idprovincia) {
     $rreturn = array();
     $inst = Instruccion::all();
+    $suma = 0;
     foreach ($inst as $key => $ins) {
         $rreturn[$key]['id'] = $ins->idinstruccion;
         $rreturn[$key]['instruccion'] = $ins->descripcion;
         $rreturn[$key]['total'] = $ins->totalprovincia($idprovincia)[0]->total;
+        $suma += $ins->totalprovincia($idprovincia)[0]->total;
     }
-    return Json::encode($rreturn);
+
+    $total = 0;
+    echo "<table border='0'>";
+    echo "<tr>";
+    echo "<td>Provincia</td><td>Instrucción</td><td>Cantidad</td><td>CPorcentaje</td>";
+    echo "</tr>";
+    foreach ($rreturn as $_d) {
+        $total += $_d["total"];
+        echo "<tr>";
+        echo "<td></td><td>" . $_d["instruccion"] . "</td><td>" . $_d["total"] . "</td><td>" . ((int) $_d["total"] / $suma) . "</td>";
+        echo "</tr>";
+    }
+    echo "<tr>";
+    echo "<td></td><td>" . $total . "</td>";
+    echo "</tr>";
+    echo "</table>";
+
     //return ActiveRecord\Utils::results_to_json($inst, array('methods' => array('totalprovincia' => 1)));
 });
 /**
