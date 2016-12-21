@@ -92,6 +92,14 @@ $nuevo = $menup['submenu']['nuevo'];
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="form-field-22">
+                                                <i class="fa fa-check-square-o"></i> Categoria
+                                            </label>
+                                            <?php
+                                            echo Form::select('categoria_id', $categorias, Input::previous('categoria_id', $_pg->categoria_id), array('class' => 'form-control'));
+                                            ?>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="form-field-22">
                                                 <i class="fa fa-check-square-o"></i> Estado
                                             </label>
                                             <?php
@@ -125,6 +133,7 @@ $nuevo = $menup['submenu']['nuevo'];
 <?php echo $footer; ?>
 <script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jquery.blockUI.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/jquery.validate.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/localization/messages_es_PE.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/tinymce/js/tinymce/tinymce.min.js'); ?>"></script>
@@ -146,7 +155,7 @@ $nuevo = $menup['submenu']['nuevo'];
             toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image preview media | forecolor backcolor emoticons',
             image_advtab: true
         });
-        //$('#form_nuevo').validate();
+        $('#form_nuevo').validate();
 
     });
 </script>

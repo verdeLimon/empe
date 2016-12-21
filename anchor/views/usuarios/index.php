@@ -7,7 +7,7 @@
 </div>-->
 <?php
 $menus = Registry::get('menus');
-$menup = $menus['menu'];
+$menup = $menus['usuarios'];
 $nuevo = $menup['submenu']['nuevo'];
 //var_dump($submenu);
 ?>
@@ -20,7 +20,7 @@ $nuevo = $menup['submenu']['nuevo'];
                 <div class="row">
                     <div class="ol-md-12">
                         <ol class="breadcrumb">
-                            <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Men&uacute;</a></li>
+                            <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Usuarios</a></li>
                             <li class="active">principal</li>
                         </ol>
                     </div>
@@ -60,27 +60,24 @@ $nuevo = $menup['submenu']['nuevo'];
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($menusbd as $_m): ?>
+                                            <?php foreach ($usuarios as $_m): ?>
                                                 <tr>
                                                     <td>
                                                         <div class="btn-group btn-group-sm">
-                                                            <?php $op = ($_m->estado) ? '0' : '1'; ?>
-                                                            <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/editar/' . $op . '/' . $_m->id); ?>" data-toggle="tooltip" data-placement="top" title="<?php echo ($_m->estado) ? 'Archivar' : 'Publicar'; ?>" class="btn btn-default active">
-                                                                <i class="fa <?php echo ($_m->estado) ? 'fa-check color-green' : 'fa-window-close color-red'; ?>"></i>
+                                                            <?php $op = ($_m->status) ? '0' : '1'; ?>
+                                                            <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/editar/' . $op . '/' . $_m->id); ?>" data-toggle="tooltip" data-placement="top" title="<?php echo ($_m->status) ? 'Archivar' : 'Publicar'; ?>" class="btn btn-default active">
+                                                                <i class="fa <?php echo ($_m->status) ? 'fa-check color-green' : 'fa-window-close color-red'; ?>"></i>
                                                             </a>
-                                                            <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/editar/' . $_m->id); ?>" data-toggle="tooltip" data-placement="top" title="Editar menu" class="btn btn-default">
+                                                            <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/editar/' . $_m->id); ?>" data-toggle="tooltip" data-placement="top" title="Editar usuario" class="btn btn-default">
                                                                 <i class="fa fa-edit color-green"></i> Editar
-                                                            </a>
-                                                            <a href="<?php echo Uri::to('admin/' . $menup['url'] . '/items/' . $_m->id); ?>" data-toggle="tooltip" data-placement="top" title="Men&uacute; items" class="btn btn-default">
-                                                                <i class="fa fa-list"></i> Items
                                                             </a>
                                                         </div>
                                                     </td>
-                                                    <td><?php echo $_m->nombre; ?></td>
+                                                    <td><?php echo $_m->username; ?></td>
                                                     <td class="hidden-xs">
                                                         <a href="#" class="btn btn-default btn-xs disabled">
-                                                            <i class="fa <?php echo ($_m->estado) ? 'fa-check color-green' : 'fa-window-close color-red'; ?>"></i>
-                                                            <?php echo ($_m->estado) ? 'Publicado' : 'Archivado'; ?>
+                                                            <i class="fa <?php echo ($_m->status) ? 'fa-check color-green' : 'fa-window-close color-red'; ?>"></i>
+                                                            <?php echo ($_m->status) ? 'Publicado' : 'Archivado'; ?>
                                                         </a>
                                                     </td>
                                                     <td class="text-center hidden-xs"><?php echo $_m->id; ?></td>

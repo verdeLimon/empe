@@ -90,6 +90,7 @@ if (is_admin()) {
     require APP . 'routes/paginas' . EXT;
     require APP . 'routes/panel' . EXT;
     require APP . 'routes/categorias' . EXT;
+    require APP . 'routes/usuarios' . EXT;
 //    require APP . 'routes/posts' . EXT;
 //    require APP . 'routes/users' . EXT;
 //    require APP . 'routes/variables' . EXT;

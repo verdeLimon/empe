@@ -7,7 +7,7 @@
 </div>-->
 <?php
 $menus = Registry::get('menus');
-$menup = $menus['paginas'];
+$menup = $menus['categorias'];
 $nuevo = $menup['submenu']['nuevo'];
 //var_dump($submenu);
 ?>
@@ -20,7 +20,7 @@ $nuevo = $menup['submenu']['nuevo'];
                 <div class="row">
                     <div class="ol-md-12">
                         <ol class="breadcrumb">
-                            <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Paginas</a></li>
+                            <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Categorias</a></li>
                             <li class="active">Editar</li>
                         </ol>
                     </div>
@@ -33,7 +33,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                             <i class="fa fa-mail-reply"></i> Volver
                                         </a>-->
                     <a href="<?php echo Uri::to('admin/' . $menup['url']); ?>" class="btn btn-light-grey btn-menu">
-                        <i class="fa fa-mail-reply"></i> Volver a paginas
+                        <i class="fa fa-mail-reply"></i> Volver a categorias
                     </a>
                 </div>
             </div>
@@ -76,18 +76,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                             ));
                                             ?>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="form-field-3">
-                                                <i class="fa fa-file-text-o"></i> Contenido
-                                            </label>
-                                            <?php
-                                            echo Form::textarea('html', Input::previous('html', $_pg->html), array(
-                                                'id' => 'field-3',
-                                                'data-rule-required' => 'true',
-                                                'rows' => '17'
-                                            ));
-                                            ?>
-                                        </div>
+
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
@@ -125,6 +114,7 @@ $nuevo = $menup['submenu']['nuevo'];
 <?php echo $footer; ?>
 <script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jquery.blockUI.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/jquery.validate.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/localization/messages_es_PE.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/tinymce/js/tinymce/tinymce.min.js'); ?>"></script>

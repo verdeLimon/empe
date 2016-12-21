@@ -32,9 +32,8 @@ Route::collection(array('before' => 'auth,csrf'), function() {
      * POST
      */
     Route::post('admin/categorias/nuevo', function() {
-        $input = Input::get(array('titulo', 'descripcion', 'html', 'slug', 'estado', 'usuario_id'));
+        $input = Input::get(array('titulo', 'descripcion', 'estado'));
         $input['slug'] = slug($input['titulo']);
-        $input['usuario_id'] = Auth::user()->id;
         $validator = new Validator($input);
         $validator->add('duplicate', function($str) {
             return count(Pagina::all(array('conditions' => "slug = '" . $str . "'"))) == 0;
@@ -50,14 +49,12 @@ Route::collection(array('before' => 'auth,csrf'), function() {
             Notify::danger($errors);
             return Response::redirect('admin/categorias/nuevo');
         }
-        $pg = new Pagina();
-        $pg->titulo = $input['titulo'];
-        $pg->descripcion = $input['descripcion'];
-        $pg->html = $_POST['html'];
-        $pg->slug = $input['slug'];
-        $pg->estado = $input['estado'];
-        $pg->usuario_id = $input['usuario_id'];
-        $pg->save();
+        $cat = new Categoria();
+        $cat->titulo = $input['titulo'];
+        $cat->descripcion = $input['descripcion'];
+        $cat->slug = $input['slug'];
+        $cat->estado = $input['estado'];
+        $cat->save();
         Input::clean();
         Notify::success(__('pages.created'));
         return Response::redirect('admin/categorias/');
@@ -69,7 +66,7 @@ Route::collection(array('before' => 'auth,csrf'), function() {
     Route::get('admin/categorias/editar/(:num)', function($id) {
         $vars['messages'] = Notify::read();
         $vars['token'] = Csrf::token();
-        $vars['_pg'] = Pagina::find($id);
+        $vars['_pg'] = Categoria::find($id);
         return View::create('categorias/editar', $vars)
                         ->partial('header', 'categorias/header')
                         ->partial('menu', 'categorias/menu')
@@ -80,9 +77,9 @@ Route::collection(array('before' => 'auth,csrf'), function() {
      * POST
      */
     Route::post('admin/categorias/editar/(:num)', function($id) {
-        $input = Input::get(array('titulo', 'descripcion', 'html', 'slug', 'estado', 'usuario_id'));
+        $input = Input::get(array('titulo', 'descripcion', 'estado'));
         $input['slug'] = slug($input['titulo']);
-        $input['usuario_id'] = Auth::user()->id;
+
         $validator = new Validator($input);
 //        $validator->add('duplicate', function($str) {
 //            return count(Pagina::all(array('conditions' => "slug = '" . $str . "'"))) == 0;
@@ -98,14 +95,12 @@ Route::collection(array('before' => 'auth,csrf'), function() {
             Notify::danger($errors);
             return Response::redirect('admin/categorias/editar/' . $id);
         }
-        $pg = Pagina::find($id);
-        $pg->titulo = $input['titulo'];
-        $pg->descripcion = $input['descripcion'];
-        $pg->html = $_POST['html'];
-        $pg->slug = $input['slug'];
-        $pg->estado = $input['estado'];
-        $pg->usuario_id = $input['usuario_id'];
-        $pg->save();
+        $cat = Categoria::find($id);
+        $cat->titulo = $input['titulo'];
+        $cat->descripcion = $input['descripcion'];
+        $cat->slug = $input['slug'];
+        $cat->estado = $input['estado'];
+        $cat->save();
         Notify::success(__('pages.updated'));
         Input::clean();
         return Response::redirect('admin/categorias');
@@ -116,9 +111,9 @@ Route::collection(array('before' => 'auth,csrf'), function() {
      */
     Route::get('admin/categorias/editar/(:any)/(:num)', function($op, $id) {
         try {
-            $pg = Pagina::find($id);
-            $pg->estado = $op;
-            $pg->save();
+            $cat = Categoria::find($id);
+            $cat->estado = $op;
+            $cat->save();
             Notify::success('<b>' . ucfirst($op) . '</b> correctamente.');
         } catch (Exception $exc) {
             Notify::error('No se pudo completar la peticion.' . $exc->getMessage());
@@ -131,9 +126,9 @@ Route::collection(array('before' => 'auth,csrf'), function() {
      */
     Route::get('admin/categorias/papelera/enviar/(:num)', function( $id ) {
         try {
-            $pg = Pagina::find($id);
-            $pg->estado = 'papelera';
-            $pg->save();
+            $cat = Categoria::find($id);
+            $cat->estado = 'papelera';
+            $cat->save();
             Notify::success('<b>Enviado a la papelera</b> correctamente.');
         } catch (Exception $exc) {
             Notify::error('No se pudo completar la peticion.' . $exc->getMessage());
@@ -145,9 +140,9 @@ Route::collection(array('before' => 'auth,csrf'), function() {
      */
     Route::get('admin/categorias/papelera/restaurar/(:num)', function( $id ) {
         try {
-            $pg = Pagina::find($id);
-            $pg->estado = 'publicado';
-            $pg->save();
+            $cat = Categoria::find($id);
+            $cat->estado = 'publicado';
+            $cat->save();
             Notify::success('<b>P&aacute;gina restaurada</b> correctamente.');
         } catch (Exception $exc) {
             Notify::error('No se pudo completar la peticion.' . $exc->getMessage());
@@ -159,7 +154,7 @@ Route::collection(array('before' => 'auth,csrf'), function() {
      * papelera index
      */
     Route::get('admin/categorias/papelera', function() {
-        $pagination = Pagina::all(array(
+        $pagination = Categoria::all(array(
                     'conditions' => "estado='papelera'"
         ));
         $vars['messages'] = Notify::read();
@@ -170,15 +165,7 @@ Route::collection(array('before' => 'auth,csrf'), function() {
                         ->partial('footer', 'partials/footer');
     });
 
-    /**
-     * papelera index
-     */
-    Route::get('admin/categorias/media', function() {
-        return View::create('categorias/media')
-                        ->partial('header', 'categorias/header')
-                        ->partial('menu', 'categorias/menu')
-                        ->partial('footer', 'partials/footer');
-    });
+
 
 
 

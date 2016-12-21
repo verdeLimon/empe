@@ -349,9 +349,9 @@ class Utils {
         $out = array();
         foreach ($data as $row) {
             if (!is_null($options)) {
-                $out[] = $row->to_a($options);
+                $out[] = $row->to_array($options);
             } else {
-                $out[] = $row->to_json();
+                $out[] = $row->to_array();
             }
         }
         return $out;

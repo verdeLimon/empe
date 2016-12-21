@@ -5,7 +5,8 @@ class Pagina extends ActiveRecord\Model {
 
     static $table_name = 'web_posts';
     static $belongs_to = array(
-        array('autor', 'foreign_key' => 'usuario_id', 'class_name' => 'Usuario')
+        array('autor', 'foreign_key' => 'usuario_id', 'class_name' => 'Usuario'),
+        array('categoria', 'foreign_key' => 'categoria_id', 'class_name' => 'Categoria')
     );
 
 //   static $has_one = array(

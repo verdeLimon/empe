@@ -7,7 +7,7 @@
 </div>-->
 <?php
 $menus = Registry::get('menus');
-$menup = $menus['menu'];
+$menup = $menus['usuarios'];
 $nuevo = $menup['submenu']['nuevo'];
 ?>
 <div class="openerp openerp_webclient_container" style="height: calc(100% - 34px);">
@@ -19,7 +19,7 @@ $nuevo = $menup['submenu']['nuevo'];
                 <div class="row">
                     <div class="ol-md-12">
                         <ol class="breadcrumb">
-                            <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Menu</a></li>
+                            <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Usuarios</a></li>
                             <li class="active">Nuevo</li>
                         </ol>
                     </div>
@@ -48,14 +48,28 @@ $nuevo = $menup['submenu']['nuevo'];
                                     <form method="post" action="<?php echo Uri::to('admin/' . $menup['url'] . '/' . $nuevo['url']); ?>" id="form_nuevo">
                                         <input name="token" type="hidden" value="<?php echo $token; ?>">
                                         <div class="row">
-                                            <div class="col-md-9">
+                                            <div class="col-md-7">
                                                 <div class="form-group">
                                                     <label for="form-field-1">
-                                                        <i class="fa fa-angle-double-right"></i> Nombre
+                                                        <i class="fa fa-angle-double-right"></i> Nombre y apellidos
                                                     </label>
                                                     <?php
-                                                    echo Form::text('nombre', Input::previous('nombre'), array(
-                                                        'placeholder' => 'Nombre',
+                                                    echo Form::text('real_name', Input::previous('real_name'), array(
+                                                        'placeholder' => 'Nombre y apellidos',
+                                                        'autocomplete' => 'off',
+                                                        'class' => 'form-control',
+                                                        'data-rule-required' => 'true',
+                                                        'id' => 'field-1'
+                                                    ));
+                                                    ?>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="form-field-1">
+                                                        <i class="fa fa-angle-double-right"></i> Nombre de usuario
+                                                    </label>
+                                                    <?php
+                                                    echo Form::text('username', Input::previous('username'), array(
+                                                        'placeholder' => 'Nombre de usuario',
                                                         'autocomplete' => 'off',
                                                         'class' => 'form-control',
                                                         'data-rule-required' => 'true',
@@ -65,11 +79,11 @@ $nuevo = $menup['submenu']['nuevo'];
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="form-field-2">
-                                                        <i class="fa fa-angle-double-right"></i> Descripcion
+                                                        <i class="fa fa-angle-double-right"></i> Contraseña
                                                     </label>
                                                     <?php
-                                                    echo Form::text('descripcion', Input::previous('descripcion'), array(
-                                                        'placeholder' => 'Descripcion',
+                                                    echo Form::password('password', array(
+                                                        'placeholder' => 'Contraseña',
                                                         'autocomplete' => 'off',
                                                         'class' => 'form-control',
                                                         'data-rule-required' => 'true',
@@ -77,15 +91,58 @@ $nuevo = $menup['submenu']['nuevo'];
                                                     ));
                                                     ?>
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="form-field-2">
+                                                        <i class="fa fa-angle-double-right"></i> Repita la contraseña
+                                                    </label>
+                                                    <?php
+                                                    echo Form::password('password2', array(
+                                                        'placeholder' => 'igual que el anterior',
+                                                        'autocomplete' => 'off',
+                                                        'class' => 'form-control',
+                                                        'data-rule-required' => 'true',
+                                                        'id' => 'field-2'
+                                                    ));
+                                                    ?>
+                                                </div>
+
                                             </div>
-                                            <div class="col-md-3">
+
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label for="form-field-2">
+                                                        <i class="fa fa-angle-double-right"></i> Correo electronico
+                                                    </label>
+                                                    <?php
+                                                    echo Form::text('email', Input::previous('email'), array(
+                                                        'placeholder' => 'Correo electronico',
+                                                        'autocomplete' => 'off',
+                                                        'class' => 'form-control',
+                                                        'data-rule-required' => 'true',
+                                                        'id' => 'field-2'
+                                                    ));
+                                                    ?>
+                                                </div>
                                                 <div class="form-group">
                                                     <label for="form-field-22">
                                                         <i class="fa fa-check-square-o"></i> Estado
                                                     </label>
                                                     <?php
-                                                    $estados = array('1' => 'Publicado', '0' => 'Archivado');
-                                                    echo Form::select('estado', $estados, Input::previous('estado'), array('class' => 'form-control'));
+                                                    $estados = array('active' => 'Activo', 'inactive' => 'Inactivo');
+                                                    echo Form::select('status', $estados, Input::previous('status'), array('class' => 'form-control'));
+                                                    ?>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="form-field-3">
+                                                        <i class="fa fa-file-text-o"></i> Acerca del usuario
+                                                    </label>
+                                                    <?php
+                                                    echo Form::textarea('bio', Input::previous('bio'), array(
+                                                        'id' => 'field-3',
+                                                        'data-rule-required' => 'true',
+                                                        'class' => 'form-control',
+                                                        'rows' => '4'
+                                                    ));
                                                     ?>
                                                 </div>
                                             </div>

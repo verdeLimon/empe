@@ -131,7 +131,7 @@ Route::collection(array('before' => 'auth'), function() {
      * ordenar
      * GET json
      */
-    Route::post('admin/api/menu/ordenar/(:num)', function( $id) {
+    Route::post('admin/api/menu/ordenar/(:num)', function($id) {
         $json = Input::get(array('data'));
         $menuitems = JSON::decode($json['data']);
         //var_dump($menuitems);

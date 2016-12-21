@@ -52,6 +52,7 @@ $nuevo = $menup['submenu']['nuevo'];
 <?php echo $footer; ?>
 <script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jquery.blockUI.js'); ?>" type="text/javascript"></script>
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/jquery.validate.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/elFinder/js/elfinder.min.js'); ?>" type="text/javascript"></script>

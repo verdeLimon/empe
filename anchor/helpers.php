@@ -133,7 +133,7 @@ function menus() {
             'url' => 'usuarios',
             'submenu' => array(
                 'nuevo' => array(
-                    'titulo' => 'Crear usuarios',
+                    'titulo' => 'Crear usuario',
                     'icon' => 'fa-plus',
                     'url' => 'nuevo'
                 )

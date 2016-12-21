@@ -7,7 +7,7 @@
 </div>-->
 <?php
 $menus = Registry::get('menus');
-$menup = $menus['paginas'];
+$menup = $menus['categorias'];
 $nuevo = $menup['submenu']['nuevo'];
 //var_dump($submenu);
 ?>
@@ -20,14 +20,14 @@ $nuevo = $menup['submenu']['nuevo'];
                 <div class="row">
                     <div class="ol-md-12">
                         <ol class="breadcrumb">
-                            <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Paginas</a></li>
+                            <li><a href="<?php echo Uri::to('admin/' . $menup['url']); ?>">Categorias</a></li>
                             <li class="active">papelera</li>
                         </ol>
                     </div>
                 </div>
                 <div class="subhead">
                     <a href="<?php echo Uri::to('admin/' . $menup['url']); ?>" class="btn btn-light-grey btn-menu">
-                        <i class="fa fa-mail-reply fa-15px"></i> Volver a paginas
+                        <i class="fa fa-mail-reply fa-15px"></i> Volver a categorias
                     </a>
                     <!--                    <a href="?m=ravance" class="btn btn-light-grey btn-menu">
                                             <i class="fa fa-mail-reply"></i> Volver a registro de avances
@@ -53,13 +53,13 @@ $nuevo = $menup['submenu']['nuevo'];
                                         <th>Acciones</th>
                                         <th class="hidden-xs">Estado</th>
                                         <th>T&iacute;tulo</th>
-                                        <th class="text-center hidden-xs">Autor</th>
+
                                         <th class="text-center hidden-xs">Fecha</th>
                                         <th class="text-center hidden-xs">ID</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($paginas as $_p): ?>
+                                    <?php foreach ($categorias as $_p): ?>
                                         <tr>
                                             <td>
                                                 <div class="btn-group btn-group-sm">
@@ -74,7 +74,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                                 </a>
                                             </td>
                                             <td><?php echo $_p->titulo; ?></td>
-                                            <td class="text-center hidden-xs"><?php echo $_p->autor->username; ?></td>
+
                                             <td class="text-center hidden-xs"><?php echo $_p->created_at->format('d-m-Y'); ?></td>
                                             <td class="text-center hidden-xs"><?php echo $_p->id; ?></td>
                                         </tr>
@@ -93,6 +93,7 @@ $nuevo = $menup['submenu']['nuevo'];
 <?php echo $footer; ?>
 <script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('anchor/views/assets/js/jquery.blockUI.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/js/jqueryvalidation/jquery.validate.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/datatables/js/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/datatables/js/dataTables.bootstrap.min.js'); ?>"></script>

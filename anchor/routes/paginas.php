@@ -22,6 +22,8 @@ Route::collection(array('before' => 'auth,csrf'), function() {
     Route::get('admin/paginas/nuevo', function() {
         $vars['messages'] = Notify::read();
         $vars['token'] = Csrf::token();
+
+        $vars['categorias'] = Categoria::dropdown();
         return View::create('paginas/nuevo', $vars)
                         ->partial('header', 'paginas/header')
                         ->partial('menu', 'paginas/menu')
@@ -32,7 +34,7 @@ Route::collection(array('before' => 'auth,csrf'), function() {
      * POST
      */
     Route::post('admin/paginas/nuevo', function() {
-        $input = Input::get(array('titulo', 'descripcion', 'html', 'slug', 'estado', 'usuario_id'));
+        $input = Input::get(array('titulo', 'descripcion', 'html', 'slug', 'estado', 'usuario_id', 'categoria_id'));
         $input['slug'] = slug($input['titulo']);
         $input['usuario_id'] = Auth::user()->id;
         $validator = new Validator($input);
@@ -57,6 +59,7 @@ Route::collection(array('before' => 'auth,csrf'), function() {
         $pg->slug = $input['slug'];
         $pg->estado = $input['estado'];
         $pg->usuario_id = $input['usuario_id'];
+        $pg->categoria_id = $input['categoria_id'];
         $pg->save();
         Input::clean();
         Notify::success(__('pages.created'));
@@ -69,6 +72,7 @@ Route::collection(array('before' => 'auth,csrf'), function() {
     Route::get('admin/paginas/editar/(:num)', function($id) {
         $vars['messages'] = Notify::read();
         $vars['token'] = Csrf::token();
+        $vars['categorias'] = Categoria::dropdown();
         $vars['_pg'] = Pagina::find($id);
         return View::create('paginas/editar', $vars)
                         ->partial('header', 'paginas/header')
@@ -80,7 +84,7 @@ Route::collection(array('before' => 'auth,csrf'), function() {
      * POST
      */
     Route::post('admin/paginas/editar/(:num)', function($id) {
-        $input = Input::get(array('titulo', 'descripcion', 'html', 'slug', 'estado', 'usuario_id'));
+        $input = Input::get(array('titulo', 'descripcion', 'html', 'slug', 'estado', 'usuario_id', 'categoria_id'));
         $input['slug'] = slug($input['titulo']);
         $input['usuario_id'] = Auth::user()->id;
         $validator = new Validator($input);
@@ -105,6 +109,7 @@ Route::collection(array('before' => 'auth,csrf'), function() {
         $pg->slug = $input['slug'];
         $pg->estado = $input['estado'];
         $pg->usuario_id = $input['usuario_id'];
+        $pg->categoria_id = $input['categoria_id'];
         $pg->save();
         Notify::success(__('pages.updated'));
         Input::clean();
