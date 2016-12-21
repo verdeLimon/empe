@@ -46,7 +46,8 @@ Route::collection(array('before' => 'auth'), function() {
         $validator->check('email')
                 ->is_email(__('users.email_missing'));
         $validator->check('password')
-                ->is_max(6, __('users.password_too_short', 6));
+                ->is_max(6, __('users.password_too_short', 6))
+                ->is_equal($input['password2'], __('users.password_equal')); //password_equal
         $validator->check('username')
                 ->is_regex('/^[A-Za-z0-9_]+$/', __('users.username_slug'))//username_slug
                 ->is_duplicate(__('users.username_exist'));

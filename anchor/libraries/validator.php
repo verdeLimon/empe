@@ -52,7 +52,9 @@ class Validator {
         $this->methods['contains'] = function($str, $needle) {
             return strpos($str, $needle) !== false;
         };
-
+        $this->methods['equal'] = function($str1, $str2) {
+            return $str1 == $str2;
+        };
         $this->methods['regex'] = function($str, $pattern) {
             return preg_match($pattern, $str);
         };

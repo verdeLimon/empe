@@ -29,6 +29,7 @@ return array(
     'username_slug' => 'El nombre de usuario solo puede contener letras, numeros y guiones bajos.',
     'password' => 'Contrase&ntilde;a',
     'password_explain' => '',
+    'password_equal' => 'Las contraseñas no coinciden',
     'password_too_short' => 'La contraseña debe contener como minimo %s caracters',
     'new_password' => 'New Password',
     'email' => 'Email',
