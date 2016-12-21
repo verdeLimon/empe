@@ -82,11 +82,11 @@ function menus() {
                     'icon' => 'fa-pencil',
                     'url' => 'nuevo'
                 ),
-                'categoria' => array(
-                    'titulo' => 'Categorias',
-                    'icon' => 'fa-tags',
-                    'url' => 'categorias'
-                ),
+//                'categoria' => array(
+//                    'titulo' => 'Categorias',
+//                    'icon' => 'fa-tags',
+//                    'url' => 'categorias'
+//                ),
                 'papelera' => array(
                     'titulo' => 'Papelera',
                     'icon' => 'fa-trash',
@@ -99,6 +99,22 @@ function menus() {
                 )
             )
         ),
+        'categorias' => array(
+            'titulo' => 'Categorias',
+            'icon' => 'fa-tags',
+            'url' => 'categorias',
+            'submenu' => array(
+                'nuevo' => array(
+                    'titulo' => 'Crear categoria',
+                    'icon' => 'fa-pencil',
+                    'url' => 'nuevo'
+                ),
+                'papelera' => array(
+                    'titulo' => 'Papelera',
+                    'icon' => 'fa-trash',
+                    'url' => 'papelera'
+                ))
+        ),
         'menu' => array(
             'titulo' => 'Menu',
             'icon' => 'fa-list',
@@ -110,17 +126,6 @@ function menus() {
                     'url' => 'nuevo'
                 )
             )
-        ),
-        'categorias' => array(
-            'titulo' => 'Categorias',
-            'icon' => 'fa-tags',
-            'url' => 'categorias',
-            'submenu' => array(
-                'nuevo' => array(
-                    'titulo' => 'Crear categoria',
-                    'icon' => 'fa-pencil',
-                    'url' => 'nuevo'
-                ))
         ),
         'usuarios' => array(
             'titulo' => 'Usuarios',

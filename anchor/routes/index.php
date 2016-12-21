@@ -1,5 +1,11 @@
 <?php
 
+//Route::get(array('/'), function () {
+//    return Response::redirect('reportes/indice/sol');
+//});
+
+
+
 Route::get(array('index'), function() {
     $vars['data'] = Encuestado::find(11306);
     $vars['se'] = Situacionempresa::all(array('select' => 'formalizacion , COUNT(*) as total', 'group' => 'formalizacion'));

@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'url' => '/web',
+    'url' => '/empe',
     'index' => '',
     'timezone' => 'America/Lima',
     'key' => 'W2IV8AgcXaqsFLp7FqYZOZVVSwAuy3oV',
