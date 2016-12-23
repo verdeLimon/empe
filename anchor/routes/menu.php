@@ -154,14 +154,15 @@ Route::collection(array('before' => 'auth'), function() {
      */
     Route::post('admin/api/menu/guardar/(:num)', function($menu_id) {
         $json = Input::get(array('data'));
-        $post = JSON::decode($json['data']);
-        $item = ($post->id) ? Menuitem::find($post->id) : new Menuitem();
-        $item->texto = $post->texto;
-        $item->url = $post->url;
-        $item->tipo = $post->tipo;
-        $item->orden = ($post->id) ? $item->orden : Menuitem::count(array('conditions' => 'menu_id = ' . $menu_id)) + 1;
-        $item->target = $post->target;
-        $item->parent_id = $post->parent_id;
+        $item_ed = JSON::decode($json['data']);
+
+        $item = ($item_ed->id) ? Menuitem::find($item_ed->id) : new Menuitem();
+        $item->texto = $item_ed->texto;
+        $item->url = $item_ed->url;
+        $item->tipo = $item_ed->tipo;
+        $item->orden = ($item_ed->id) ? $item->orden : Menuitem::count(array('conditions' => 'menu_id = ' . $menu_id)) + 1;
+        $item->target = $item_ed->target;
+        $item->parent_menuitem_id = $item_ed->parent_menuitem_id;
         $item->menu_id = $menu_id;
         $item->save();
         return json_encode(array(

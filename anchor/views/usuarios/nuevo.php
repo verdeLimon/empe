@@ -59,12 +59,12 @@ $nuevo = $menup['submenu']['nuevo'];
                                                         'autocomplete' => 'off',
                                                         'class' => 'form-control',
                                                         'data-rule-required' => 'true',
-                                                        'id' => 'field-1'
+                                                        'id' => 'form-field-1'
                                                     ));
                                                     ?>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="form-field-1">
+                                                    <label for="form-field-2">
                                                         <i class="fa fa-angle-double-right"></i> Nombre de usuario
                                                     </label>
                                                     <?php
@@ -73,12 +73,12 @@ $nuevo = $menup['submenu']['nuevo'];
                                                         'autocomplete' => 'off',
                                                         'class' => 'form-control',
                                                         'data-rule-required' => 'true',
-                                                        'id' => 'field-1'
+                                                        'id' => 'form-field-2'
                                                     ));
                                                     ?>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="form-field-2">
+                                                    <label for="form-field-3">
                                                         <i class="fa fa-angle-double-right"></i> Contraseña
                                                     </label>
                                                     <?php
@@ -87,12 +87,13 @@ $nuevo = $menup['submenu']['nuevo'];
                                                         'autocomplete' => 'off',
                                                         'class' => 'form-control',
                                                         'data-rule-required' => 'true',
-                                                        'id' => 'field-2'
+                                                        'data-rule-minlength' => '6',
+                                                        'id' => 'form-field-3'
                                                     ));
                                                     ?>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="form-field-2">
+                                                    <label for="form-field-4">
                                                         <i class="fa fa-angle-double-right"></i> Repita la contraseña
                                                     </label>
                                                     <?php
@@ -101,16 +102,17 @@ $nuevo = $menup['submenu']['nuevo'];
                                                         'autocomplete' => 'off',
                                                         'class' => 'form-control',
                                                         'data-rule-required' => 'true',
-                                                        'id' => 'field-2'
+                                                        'data-rule-equalto' => '#form-field-3',
+                                                        'data-msg-equalto' => 'Ambas contraseñas deben ser iguales',
+                                                        'id' => 'form-field-4'
                                                     ));
                                                     ?>
                                                 </div>
-
                                             </div>
 
                                             <div class="col-md-5">
                                                 <div class="form-group">
-                                                    <label for="form-field-2">
+                                                    <label for="form-field-5">
                                                         <i class="fa fa-angle-double-right"></i> Correo electronico
                                                     </label>
                                                     <?php
@@ -119,29 +121,33 @@ $nuevo = $menup['submenu']['nuevo'];
                                                         'autocomplete' => 'off',
                                                         'class' => 'form-control',
                                                         'data-rule-required' => 'true',
-                                                        'id' => 'field-2'
+                                                        'data-rule-email' => 'true',
+                                                        'id' => 'form-field-5'
                                                     ));
                                                     ?>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="form-field-22">
+                                                    <label for="form-field-6">
                                                         <i class="fa fa-check-square-o"></i> Estado
                                                     </label>
                                                     <?php
                                                     $estados = array('active' => 'Activo', 'inactive' => 'Inactivo');
-                                                    echo Form::select('status', $estados, Input::previous('status'), array('class' => 'form-control'));
+                                                    echo Form::select('status', $estados, Input::previous('status'), array(
+                                                        'class' => 'form-control',
+                                                        'id' => 'form-field-6'
+                                                    ));
                                                     ?>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="form-field-3">
+                                                    <label for="form-field-7">
                                                         <i class="fa fa-file-text-o"></i> Acerca del usuario
                                                     </label>
                                                     <?php
                                                     echo Form::textarea('bio', Input::previous('bio'), array(
                                                         'id' => 'field-3',
-                                                        'data-rule-required' => 'true',
                                                         'class' => 'form-control',
-                                                        'rows' => '4'
+                                                        'rows' => '4',
+                                                        'id' => 'form-field-7'
                                                     ));
                                                     ?>
                                                 </div>
@@ -174,7 +180,7 @@ $nuevo = $menup['submenu']['nuevo'];
     $(function () {
 
 
-        //$('#form_nuevo').validate();
+        $('#form_nuevo').validate();
 
     });
 </script>

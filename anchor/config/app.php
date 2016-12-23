@@ -8,7 +8,7 @@ return array(
     'language' => 'es_PE',
     'encoding' => 'UTF-8',
     'date_format' => 'jS M, Y',
-    'theme' => 'empe',
+    'theme' => 'gra_empe',
     'sitename' => 'demo demo',
     'description' => ' desc desc'
 );

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery treetable</title>
+        <link rel="stylesheet" href="css/screen.css" media="screen" />
+        <link rel="stylesheet" href="css/jquery.treetable.css" />
+        <link rel="stylesheet" href="css/jquery.treetable.theme.default.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    </head>
+    <body>
+        <div id="main">
+
+            <!--                <tbody data-bind="foreach: TreeView">
+                                                <tr data-bind="attr: { 'data-tt-id': id ,'data-tt-parent-id': Parentid}, css: { 'leaf': Parentid , 'branch': !Parentid}">
+                                                    <td><span data-bind="text: Name,css: {'file': Parentid, 'folder': !Parentid}"></span></td>
+                                                    <td><span data-bind="text: Status"></span></td>
+                                                    <td><span data-bind="text: id"></span></td>
+                                                </tr>
+                                            </tbody>-->
+
+
+
+            <table data-bind="treetable: tasks,treeOptions: { initialState: 'expanded',expandable: true } ">
+                <tbody data-bind="foreach: tasks">
+                    <tr data-bind="attr: { 'data-tt-id': id, 'data-tt-parent-id': parentId }">
+                        <td><span data-bind="text: title,css: {'file': parentId, 'folder': !parentId}"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button data-bind="click:lol">bb</button>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-debug.js"></script>
+
+
+        <script src="jquery.treetable.js"></script>
+        <script type="text/javascript">
+
+
+
+            ko.bindingHandlers.treetable = {
+                update: function (element, valueAccessor, allBindingsAccessor) {
+                    var dependency = ko.utils.unwrapObservable(valueAccessor()),
+                            options = ko.toJS(allBindingsAccessor().treeOptions || {});
+
+                    setTimeout(function () {
+                        $(element).treetable(options);
+                    }, 0);
+                }
+            };
+
+
+            var ViewModel = function () {
+                var self = this;
+
+                var data = [
+                    {
+                        id: 1,
+                        parentId: null,
+                        level: 0,
+                        title: "Task #1",
+                        idAsString: "13f4cde4300436b1a0574b64"
+        },
+        {
+            id: 2,
+            parentId: 1,
+            level: 1,
+            title: "Task #1.1",
+            idAsString: "23f4cde4300436b1a0574b64"
+        },
+        {
+            id: 3,
+            parentId: 1,
+            level: 2,
+            title: "Task #1.1.1",
+            idAsString: "43f4cde4300436b1a0574b64"
+        },
+        {
+            id: 4,
+            parentId: 1,
+            level: 0,
+            title: "Task #2",
+            idAsString: "33f4cde4300436b1a0574b64"
+        },
+        {
+            id: 5,
+            parentId: 1,
+            level: 0,
+            title: "Task #3",
+            idAsString: "53f4cde4300436b1a0574b64"
+        }
+    ];
+
+    self.tasks = ko.observableArray(data);
+    self.lol = function(){
+        self.tasks = ko.observableArray(data);
+    }
+};
+
+ko.applyBindings(new ViewModel());
+
+
+
+        </script>
+    </body>
+</html>

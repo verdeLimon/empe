@@ -47,6 +47,22 @@ $nuevo = $menup['submenu']['nuevo'];
                 <div class="oe_clear">
 
                     <?php echo $messages; ?>
+                    <table data-bind="treetable: item.menuitems_o,treeOptions: { initialState: 'expanded',expandable: true } " class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="sortable:{  data:  item.menuitems_o, afterMove: callback }">
+                            <tr data-bind="attr: { 'data-tt-id': id, 'data-tt-parent-id': parent_menuitem_id }">
+                                <td><span data-bind="text:texto" class="name" style="min-width: 120px; display: inline-block;"></span></td>
+                                <td><span data-bind="html:url2" class="text-muted hidden-sm hidden-xs" style="font-size: 11px;"></span></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <!-- Tab panes -->
                     <ul class="nav nav-tabs">
                         <li class="active">
@@ -59,6 +75,9 @@ $nuevo = $menup['submenu']['nuevo'];
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane fade in active">
+
+
+
                             <ul class="list-group" style="margin-bottom: 0;border-bottom:1px solid #ddd;">
                                 <li class="list-group-item">
                                     <div class="checkbox">
@@ -211,13 +230,16 @@ $nuevo = $menup['submenu']['nuevo'];
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout-select2.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/ko.editables.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout.mapping-latest.debug.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/jquery-treetable-master/jquery.treetable.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/js/knockoutjs/ko.treetable.js'); ?>"></script>
+
+
 <script src="<?php echo asset('anchor/views/assets/js/default.js'); ?>" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
 
 //        $.fn.modal.Constructor.prototype.enforceFocus = function () {};
         $.fn.select2.defaults.set("theme", "bootstrap");
-
         var id = <?php echo $id; ?>;
         function Item(options) {
             var self = this;
@@ -240,12 +262,13 @@ $nuevo = $menup['submenu']['nuevo'];
             self.item = ko.mapping.fromJS(data, mapping);
             self.paginas = ko.mapping.fromJS([]);
             self.ne = ko.observable(); //contenedor editar o nuevo
-            //ordenar
+//ordenar
             self.callback = function () {
                 $.post(base + "admin/api/menu/ordenar/" + id, {data: ko.toJSON(self.item.menuitems_o)}, function (data) {
                     try {
                         var res = JSON.parse(data);
                         //alert(res.msg);
+                        self.reload();
                         noty2(res.msg, 'success');
                     } catch (e) {
                         self.reload();
@@ -272,7 +295,7 @@ $nuevo = $menup['submenu']['nuevo'];
                 alert(item);
             }
             self.nuevo = function () {
-                var nuevo = new Item({"id": null, "texto": "", "url": "", "tipo": "pagina", "estado": 1, "orden": 1, "target": "_self", "parent_id": 0, "menu_id": id});
+                var nuevo = new Item({"id": null, "texto": "", "url": "", "tipo": "pagina", "estado": 1, "orden": 1, "target": "_self", "parent_menuitem_id": null, "menu_id": id});
                 ko.editable(nuevo);
                 nuevo.beginEdit();
                 self.ne(nuevo);
@@ -302,6 +325,7 @@ $nuevo = $menup['submenu']['nuevo'];
                 $.getJSON(base + "admin/api/menu/items/" + id, function (data) {
                     ko.mapping.fromJS(data, mapping, self.item);
                 });
+
             };
         }
         $.getJSON(base + "admin/api/menu/items/" + id, function (data) {
