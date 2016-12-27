@@ -9,6 +9,10 @@ class Pagina extends ActiveRecord\Model {
         array('categoria', 'foreign_key' => 'categoria_id', 'class_name' => 'Categoria')
     );
 
+    public static function slug($slug) {
+        return self::first(array('conditions' => "slug = '$slug'"));
+    }
+
 //   static $has_one = array(
 //     array('marcologico','foreign_key'=>'proy_id')
 //   );

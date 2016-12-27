@@ -162,7 +162,7 @@ Route::collection(array('before' => 'auth'), function() {
         $item->tipo = $item_ed->tipo;
         $item->orden = ($item_ed->id) ? $item->orden : Menuitem::count(array('conditions' => 'menu_id = ' . $menu_id)) + 1;
         $item->target = $item_ed->target;
-        $item->parent_menuitem_id = $item_ed->parent_menuitem_id;
+        $item->parent_menuitem_id = isset($item_ed->parent_menuitem_id) ? $item_ed->parent_menuitem_id : 0;
         $item->menu_id = $menu_id;
         $item->save();
         return json_encode(array(

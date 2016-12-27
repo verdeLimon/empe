@@ -35,25 +35,14 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <img src="<?php echo theme_url('/assets/img/logo_GRA.png'); ?>" class="img-responsive" alt="Responsive image">
+                            <a href="<?php echo base_url(); ?>">
+                                <img src="<?php echo theme_url('/assets/img/logo_GRA.png'); ?>" class="img-responsive" alt="Pagina Principal">
+                            </a>
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-left">
-                                <li class="active"><a href="#">Inicio</a></li>
-                                <li><a href="#about">Objetivos</a></li>
-                                <li><a href="#contact">Resultados</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li class="dropdown-header">Nav header</li>
-                                        <li><a href="#">Separated link</a></li>
-                                        <li><a href="#">One more separated link</a></li>
-                                    </ul>
-                                </li>
+                                <li class="active"><a href="<?php echo base_url(); ?>">Inicio</a></li>
+                                <?php echo build_main_menu(get_menu('main')); ?>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="job-login.html">Contactos</a></li>
@@ -64,31 +53,33 @@
                     </div>
                 </nav>
             </div>
-
+<!--            <pre>
+            <?php print_r(get_menu('main')); ?>
+            </pre>-->
 <!--            <div class="intro jobs-intro hasOverly" style="background-image: url(<?php echo theme_url('/assets/images/jobs/1.jpg'); ?>); background-position: center center;">
-                <div class="dtable hw100">
-                    <div class="dtable-cell hw100">
-                        <div class="container text-center">
-                            <h1 class="intro-title animated fadeInDown"> Find the Right Job </h1>
-                            <p class="sub animateme fittext3 animated fadeIn"> Find the latest jobs available in your area. </p>
-                            <div class="row search-row animated fadeInUp">
-                                <div class="col-lg-4 col-sm-4 search-col relative locationicon">
-                                    <i class="icon-location-2 icon-append"></i>
-                                    <input type="text" name="country" id="autocomplete-ajax" class="form-control locinput input-rel searchtag-input has-icon" placeholder="city, state, or zip" value="">
-                                </div>
-                                <div class="col-lg-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
-                                    <input type="text" name="ads" class="form-control has-icon" placeholder="job title, keywords or company" value="">
-                                </div>
-                                <div class="col-lg-4 col-sm-4 search-col">
-                                    <button class="btn btn-primary btn-search btn-block"><i class="icon-search"></i><strong>Find
-                                            Jobs</strong></button>
-                                </div>
-                            </div>
-                            <div class="resume-up">
-                                <a><i class="icon-doc-4"></i></a> <a><b>Upload your CV</b></a> and easily apply to jobs from any
-                                device!
-                            </div>
-                        </div>
-                    </div>
+<div class="dtable hw100">
+    <div class="dtable-cell hw100">
+        <div class="container text-center">
+            <h1 class="intro-title animated fadeInDown"> Find the Right Job </h1>
+            <p class="sub animateme fittext3 animated fadeIn"> Find the latest jobs available in your area. </p>
+            <div class="row search-row animated fadeInUp">
+                <div class="col-lg-4 col-sm-4 search-col relative locationicon">
+                    <i class="icon-location-2 icon-append"></i>
+                    <input type="text" name="country" id="autocomplete-ajax" class="form-control locinput input-rel searchtag-input has-icon" placeholder="city, state, or zip" value="">
                 </div>
-            </div>-->
+                <div class="col-lg-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
+                    <input type="text" name="ads" class="form-control has-icon" placeholder="job title, keywords or company" value="">
+                </div>
+                <div class="col-lg-4 col-sm-4 search-col">
+                    <button class="btn btn-primary btn-search btn-block"><i class="icon-search"></i><strong>Find
+                            Jobs</strong></button>
+                </div>
+            </div>
+            <div class="resume-up">
+                <a><i class="icon-doc-4"></i></a> <a><b>Upload your CV</b></a> and easily apply to jobs from any
+                device!
+            </div>
+        </div>
+    </div>
+</div>
+</div>-->

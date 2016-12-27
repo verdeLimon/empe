@@ -12,14 +12,14 @@ Route::get(array('index'), function() {
 //    $vars['se2'] = Situacionempresa::find(11306);
     return new Template('page');
 });
-Route::get('index2', function() {
-    $custom = Ubicacion::find_by_sql("SELECT enc.ruc,enc.razonsocial,enc.direccion  FROM encuestados enc "
-                    . "left join ubicacion ubi on (enc.idubicacion = ubi.idubicacion) "
-                    . "where ubi.idprovincia = 1");
-    $columns = Ubicacion::table()->columns;
-    echo "<pre>";
-    print_r($columns);
-    echo "</pre>";
+//Route::get('index2', function() {
+//    $custom = Ubicacion::find_by_sql("SELECT enc.ruc,enc.razonsocial,enc.direccion  FROM encuestados enc "
+//                    . "left join ubicacion ubi on (enc.idubicacion = ubi.idubicacion) "
+//                    . "where ubi.idprovincia = 1");
+//    $columns = Ubicacion::table()->columns;
+//    echo "<pre>";
+//    print_r($columns);
+//    echo "</pre>";
 
 //    $todos = Ubicacion::all(array('group' => 'provincia', 'order' => 'idprovincia'));
 //    echo "<table border='1'>";
@@ -61,6 +61,6 @@ Route::get('index2', function() {
 //    echo "<br>";
 //    echo "<br>";
     //$custom = Ubicacion::find_by_sql('select title from `books`');
-});
+//});
 
 

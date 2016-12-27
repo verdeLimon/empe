@@ -47,22 +47,6 @@ $nuevo = $menup['submenu']['nuevo'];
                 <div class="oe_clear">
 
                     <?php echo $messages; ?>
-                    <table data-bind="treetable: item.menuitems_o,treeOptions: { initialState: 'expanded',expandable: true } " class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody data-bind="sortable:{  data:  item.menuitems_o, afterMove: callback }">
-                            <tr data-bind="attr: { 'data-tt-id': id, 'data-tt-parent-id': parent_menuitem_id }">
-                                <td><span data-bind="text:texto" class="name" style="min-width: 120px; display: inline-block;"></span></td>
-                                <td><span data-bind="html:url2" class="text-muted hidden-sm hidden-xs" style="font-size: 11px;"></span></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
                     <!-- Tab panes -->
                     <ul class="nav nav-tabs">
                         <li class="active">
@@ -75,9 +59,6 @@ $nuevo = $menup['submenu']['nuevo'];
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane fade in active">
-
-
-
                             <ul class="list-group" style="margin-bottom: 0;border-bottom:1px solid #ddd;">
                                 <li class="list-group-item">
                                     <div class="checkbox">
@@ -122,7 +103,7 @@ $nuevo = $menup['submenu']['nuevo'];
                             </button>
 <!--                            <pre data-bind="text: ko.toJSON(item.menuitems_o)"></pre>-->
                             <!-- modal nuevo -->
-                            <form id="koform">
+                            <form id="koform" method="post">
                                 <div data-bind="with:$root.ne" id="mymodal" class="modal fade" role="dialog">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -131,6 +112,17 @@ $nuevo = $menup['submenu']['nuevo'];
                                                                                             <h4 class="modal-title">Modal title</h4>
                                                                                         </div>-->
                                             <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label for="selectmodal"> Menu Padre </label>
+                                                    <select data-bind="options: $parent.item.menuitems_o,
+                                                                        optionsText: 'texto',
+                                                                        optionsValue: 'id',
+                                                                        value: parent_menuitem_id,
+                                                                        optionsCaption: '-- SELECCIONE --',
+                                                                        select2: { }" style="width:100%" id="selectmodal2" name="padre" class="form-control">
+
+                                                    </select>
+                                                </div>
                                                 <div class="form-group">
                                                     <label for="ietitulo">Titulo </label>
                                                     <input data-bind="textInput:texto " type="text" class="form-control" id="ietitulo" placeholder="Titulo" data-rule-required="true">
@@ -184,7 +176,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                                         </label>
                                                     </div>
                                                 </div>
-<!--                                                <pre data-bind="text: ko.toJSON($root.ne)"></pre>-->
+                                                <pre data-bind="text: ko.toJSON($root.ne)"></pre>
                                             </div>
                                             <div class="modal-footer">
                                                 <button data-bind="click: $parent.cancelar" type="button" class="btn btn-danger" data-dismiss="modal">
@@ -230,8 +222,7 @@ $nuevo = $menup['submenu']['nuevo'];
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout-select2.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/ko.editables.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout.mapping-latest.debug.js'); ?>"></script>
-<script src="<?php echo asset('anchor/views/assets/jquery-treetable-master/jquery.treetable.js'); ?>"></script>
-<script src="<?php echo asset('anchor/views/assets/js/knockoutjs/ko.treetable.js'); ?>"></script>
+
 
 
 <script src="<?php echo asset('anchor/views/assets/js/default.js'); ?>" type="text/javascript"></script>
