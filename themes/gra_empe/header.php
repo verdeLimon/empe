@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><?php echo page_title(' bbb '); ?> - <?php echo site_name(); ?></title>
+        <link rel="shortcut icon" href="favicon.ico" />
         <meta name="description" content="<?php echo site_description(); ?>">
         <link rel="stylesheet" href="<?php echo theme_url('/assets/bootstrap/css/bootstrap.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo theme_url('/assets/font-awesome/css/font-awesome.min.css'); ?>">

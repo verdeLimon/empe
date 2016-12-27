@@ -98,8 +98,8 @@ if (is_admin()) {
 } else {
     require APP . 'routes/sitio' . EXT;
     //require APP . 'routes/index' . EXT;
-    require APP . 'routes/api/comunes' . EXT;
-    require APP . 'routes/capitulo_1' . EXT;
-    require APP . 'routes/capitulo_2' . EXT;
-    require APP . 'routes/capitulo_3' . EXT;
+    // require APP . 'routes/api/comunes' . EXT;
+//    require APP . 'routes/capitulo_1' . EXT;
+//    require APP . 'routes/capitulo_2' . EXT;
+//    require APP . 'routes/capitulo_3' . EXT;
 }

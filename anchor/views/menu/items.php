@@ -145,7 +145,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                                 <!-- ko if: tipo()=='url' -->
                                                 <div class="form-group">
                                                     <label for="idurl">URL </label>
-                                                    <input data-bind="textInput: url" type="text" name="optionsRadios" class="form-control" id="idurl" data-rule-required="true"  data-rule-url="true">
+                                                    <input data-bind="textInput: url" type="text" name="optionsRadios" class="form-control" id="idurl" data-rule-required="true">
                                                 </div>
                                                 <!-- /ko -->
                                                 <!-- ko if: tipo()=='pagina' -->
@@ -176,7 +176,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                                         </label>
                                                     </div>
                                                 </div>
-                                                <pre data-bind="text: ko.toJSON($root.ne)"></pre>
+<!--                                                <pre data-bind="text: ko.toJSON($root.ne)"></pre>-->
                                             </div>
                                             <div class="modal-footer">
                                                 <button data-bind="click: $parent.cancelar" type="button" class="btn btn-danger" data-dismiss="modal">

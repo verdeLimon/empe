@@ -133,7 +133,7 @@ $nuevo = $menup['submenu']['nuevo'];
             selector: 'textarea#field-3',
             language: 'es',
             theme: 'modern',
-            relative_urls: true,
+            relative_urls: false,
             plugins: [
                 'moxiemanager advlist autolink lists link image charmap print preview hr anchor pagebreak',
                 'searchreplace wordcount visualblocks visualchars code fullscreen',

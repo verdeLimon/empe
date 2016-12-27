@@ -13,7 +13,6 @@ Route::get('(:any)/(:any)', function ( $categoria, $slug) {
     if (!$pagina = Pagina::slug($slug)) {
         return Response::create(new Template('404'), 404);
     }
-
     $vars['pagina'] = $pagina;
     return new Template('pagina', $vars);
 });
