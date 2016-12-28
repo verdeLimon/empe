@@ -946,12 +946,15 @@ button.btn-search {
     font-style: normal;
     transition: all 0.1s ease 0s;
     /*    font-size: 12px;*/
+    display: block;
     color: #4e575d;
 }
 .cat-list ul li a:hover,
 .cat-list a:hover {
-    text-decoration: underline;
-    color: #345676;
+    /*    text-decoration: underline;
+  color: #345676;*/
+    background: #f8f8f8;
+    color:#222;
 }
 .cat-list.arrow li {
     background: url("../images/arrow-right.png") no-repeat scroll left center rgba(0, 0, 0, 0);

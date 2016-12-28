@@ -9,8 +9,8 @@ return array(
             'hostname' => 'localhost',
             'port' => '3306',
             'username' => 'root',
-            'password' => 'root',
-            'database' => 'anchor_db',
+            'password' => '',
+            'database' => 'empe_db',
             'charset' => 'utf8'
         )
     )

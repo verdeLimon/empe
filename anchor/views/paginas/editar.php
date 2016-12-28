@@ -146,12 +146,18 @@ $nuevo = $menup['submenu']['nuevo'];
             language: 'es',
             theme: 'modern',
             relative_urls: false,
-            remove_script_host: false,
+            remove_script_host: true,
+            schema: "html5",
             plugins: [
                 'moxiemanager advlist autolink lists link image charmap print preview hr anchor pagebreak',
                 'searchreplace wordcount visualblocks visualchars code fullscreen',
                 'insertdatetime media nonbreaking save table contextmenu directionality',
                 'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
+            ],
+            image_class_list: [
+                {title: 'None', value: ''},
+                {title: 'responsive', value: 'img-responsive'},
+                {title: 'thumbnail', value: 'img-thumbnail'}
             ],
             toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image preview media | forecolor backcolor emoticons',
             image_advtab: true

@@ -158,6 +158,7 @@ Route::collection(array('before' => 'auth'), function() {
 
         $item = ($item_ed->id) ? Menuitem::find($item_ed->id) : new Menuitem();
         $item->texto = $item_ed->texto;
+        $item->slug = slug($item_ed->texto);
         $item->url = $item_ed->url;
         $item->tipo = $item_ed->tipo;
         $item->orden = ($item_ed->id) ? $item->orden : Menuitem::count(array('conditions' => 'menu_id = ' . $menu_id)) + 1;

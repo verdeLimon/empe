@@ -9,7 +9,7 @@
             </li>
         </ul>
         <ul class=" pull-right navbar-link footer-nav">
-            <li> &copy; 2015 Gobiernno</li>
+            <li> &copy; <?php echo date('Y'); ?> Gobierno Regional de Ayacucho</li>
         </ul>
     </div>
 </div>
