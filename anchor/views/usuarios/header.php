@@ -58,6 +58,11 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right oe_user_menu_placeholder" style="">
+                    <li>
+                        <a href="<?php echo Uri::to(''); ?>" target="_blank">
+                            <i class="fa fa-globe" aria-hidden="true"></i> Ver web
+                        </a>
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-user" aria-hidden="true"></i>

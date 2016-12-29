@@ -13,6 +13,7 @@
         max-width: 1024px;
     }
 }
+
 a {
     color: #369;
     outline: none!important;
@@ -710,7 +711,7 @@ body {
 }
 .intro {
     width: 100%;
-    background-image: url(../../images/bg3.jpg);
+    background-image: url(../images/bg3.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -852,6 +853,7 @@ button.btn-search {
     min-heightheight: 70%;
     min-height: calc(100% - 220px);
     padding: 30px 0;
+
 }
 .inner-box {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -1490,11 +1492,19 @@ button.btn-search {
     list-style: none;
 }
 .list-filter ul li a {
+    background: url("../images/arrow-right.png") no-repeat scroll left center rgba(0, 0, 0, 0);
     border-radius: 5px;
     display: block;
-    padding: 2px 15px 2px 5px;
+    padding: 2px 15px 2px 12px;
     position: relative;
     color: #4e575d;
+}
+.list-filter ul li a:hover {
+    /*    text-decoration: underline;
+  color: #345676;*/
+    background: #f8f8f8;
+    color:#222;
+    background: url("../images/arrow-right.png") no-repeat scroll left center #f8f8f8;
 }
 .list-filter ul ul {
     padding-left: 15px;
@@ -2423,7 +2433,7 @@ td.ads-details-td {
     font-weight: 300;
 }
 .about-parallax-bottom {
-    background: url(../../images/bg3.jpg) center center fixed;
+    background: url(../images/bg3.jpg) center center fixed;
     background-size: cover;
     padding: 80px 0;
     display: block;

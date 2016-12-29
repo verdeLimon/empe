@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo __('global.manage'); ?> <?php echo Config::app('sitename'); ?></title>
+        <title><?php echo __('global.manage'); ?> :: <?php echo Config::app('sitename'); ?></title>
         <link rel="shortcut icon" type="image/png" href="<?php echo asset('anchor/views/assets/img/favicon.png'); ?>" />
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/bootstrap/css/bootstrap.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/font-awesome/css/font-awesome.min.css'); ?>">
@@ -57,6 +57,11 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right oe_user_menu_placeholder" style="">
+                    <li>
+                        <a href="<?php echo Uri::to(''); ?>" target="_blank">
+                            <i class="fa fa-globe" aria-hidden="true"></i> Ver web
+                        </a>
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-user" aria-hidden="true"></i>

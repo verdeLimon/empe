@@ -21,7 +21,7 @@ return array(
     'submit' => 'Submit',
     'close' => 'Close',
     'status' => 'Status',
-    'manage' => 'Manage',
+    'manage' => 'Administrar',
     'reset' => 'Reset',
     'all' => 'All',
     'cancel' => 'Cancel',

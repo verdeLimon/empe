@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo page_title(' bbb '); ?> - <?php echo site_name(); ?></title>
+        <title><?php echo site_name(); ?></title>
         <link rel="shortcut icon" href="favicon.ico" />
         <meta name="description" content="<?php echo site_description(); ?>">
         <link rel="stylesheet" href="<?php echo theme_url('/assets/bootstrap/css/bootstrap.min.css'); ?>">
@@ -46,9 +46,9 @@
                                 <?php echo build_main_menu(get_menu('main')); ?>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="job-login.html">Contactos</a></li>
-                                <li><a href="job-signup.html">...</a></li>
-                                <li><img src="<?php echo theme_url('/assets/images/site/Logo_Ministerio.png'); ?>" class="img-responsive" alt="Responsive image"></li>
+                                <li><a href="#">Contactos</a></li>
+                                <!--                                <li><a href="job-signup.html">...</a></li>-->
+                                <li><img src="<?php echo theme_url('/assets/img/logo_aitec.png'); ?>" style="width: 200px;height:59px;" class="img-responsive" alt="AITEC INGENIEROS"></li>
                             </ul>
                         </div>
                     </div>

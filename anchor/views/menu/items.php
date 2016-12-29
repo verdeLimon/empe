@@ -313,6 +313,7 @@ $nuevo = $menup['submenu']['nuevo'];
                 });
             }
             self.reload = function () {
+                self.loadpg();
                 $.getJSON(base + "admin/api/menu/items/" + id, function (data) {
                     ko.mapping.fromJS(data, mapping, self.item);
                 });

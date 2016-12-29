@@ -1,19 +1,19 @@
 <?php theme_include('header'); ?>
-<div class="search-row-wrapper" style="background-image: url(<?php echo theme_url('/assets/images/jobs/ibg.jpg'); ?>); background-size: cover; background-position: center center;">
-    <div class="container text-center">
-        <div class="col-sm-3">
-            <select class="form-control" name="category" id="search-category">
-                <option selected="selected" value="">Todos los resultados</option>
-            </select>
-        </div>
-        <div class="col-sm-3">
-            <select class="form-control" name="location" id="id-location">
-                <option selected="selected" value="">Todos los resultados</option>
-            </select>
-        </div>
-        <div class="col-sm-3">
-            <button class="btn btn-block btn-primary"> Buscar resultados <i class="fa fa-search"></i></button>
-        </div>
+<div class="search-row-wrapper" style="background-image: url(<?php echo theme_url('/assets/images/ibg.jpg'); ?>); background-size: cover; background-position: center center;">
+    <div class="container text-center" id="arriba">
+        <!--        <div class="col-sm-3">
+                    <select class="form-control" name="category" id="search-category">
+                        <option selected="selected" value="">Todos los resultados</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control" name="location" id="id-location">
+                        <option selected="selected" value="">Todos los resultados</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-block btn-primary"> Buscar resultados <i class="fa fa-search"></i></button>
+                </div>-->
     </div>
 </div>
 <div class="main-container">
@@ -28,6 +28,93 @@
         </div>-->
     <div class="container">
         <div class="row">
+            <div class = "col-sm-3 page-sidebar col-thin-left">
+                <aside>
+                    <div class="panel sidebar-panel">
+                        <div class="panel-heading"><i class="icon-lamp"></i> Informacion</div>
+                        <div class="panel-content">
+                            <div class="panel-body text-left">
+                                <ul class="cat-list arrow">
+                                    <li>
+                                        <a href="<?php echo base_url(); ?>">Inicio</a>
+                                    </li>
+                                    <?php foreach (get_menu('derecha') as $_mi): ?>
+                                        <li>
+                                            <a href="<?php echo make_url($_mi) ?>" target="<?php echo $_mi->target; ?>"> <?php echo $_mi->texto ?> </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <p><a class="pull-right" href="#"> Conocer más... <i class="fa fa-angle-double-right"></i> </a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inner-box">
+                        <!--                        <div class="categories-list  list-filter">
+                                                    <h5 class="list-title"><strong><a href="#">All Categories</a></strong></h5>
+                                                    <ul class=" list-unstyled">
+                                                        <li><a href="sub-category-sub-location.html"><span class="title">Electronics</span><span class="count">&nbsp;8626</span></a>
+                                                        </li>
+                                                        <li><a href="sub-category-sub-location.html"><span class="title">Automobiles </span><span class="count">&nbsp;123</span></a></li>
+                                                        <li><a href="sub-category-sub-location.html"><span class="title">Property </span><span class="count">&nbsp;742</span></a></li>
+                                                        <li><a href="sub-category-sub-location.html"><span class="title">Services </span><span class="count">&nbsp;8525</span></a></li>
+                                                        <li><a href="sub-category-sub-location.html"><span class="title">For Sale </span><span class="count">&nbsp;357</span></a></li>
+                                                        <li><a href="sub-category-sub-location.html"><span class="title">Learning </span><span class="count">&nbsp;3576</span></a></li>
+                                                        <li><a href="sub-category-sub-location.html"><span class="title">Jobs </span><span class="count">&nbsp;453</span></a></li>
+                                                        <li><a href="sub-category-sub-location.html"><span class="title">Cars &amp; Vehicles</span><span class="count">&nbsp;801</span></a>
+                                                        </li>
+                                                        <li><a href="sub-category-sub-location.html"><span class="title">Other</span><span class="count">&nbsp;9803</span></a></li>
+                                                    </ul>
+                                                </div>-->
+                        <div class="locations-list  list-filter">
+                            <h5 class="list-title"><strong><a href="#">Búsqueda</a></strong></h5>
+                            <form role="form" class="form-inline ">
+                                <div class="form-group col-sm-6 no-padding">
+                                    <input placeholder="" id="minPrice" class="form-control" type="text">
+                                </div>
+
+
+                                <div class="form-group col-sm-3">
+                                    <button class="btn btn-default btn-block-xs" type="submit">
+                                        <i class="fa fa-search"></i> Buscar
+                                    </button>
+                                </div>
+                            </form>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <!--                    <div class = "inner-box">
+                                                                                            <h2 class = "title-2">Top Job Categories </h2>
+                                            <div class = "inner-box-content">
+                                                <ul class = "cat-list arrow">
+                                                    <li>
+                                                        <a href = "#">Que es <span class = "count">?</span> </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href = "#">Presentación <span class = "count"></span> </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href = "#">Objetivos<span class = "count"></span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href = "#">Conclusiones <span class = "count"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href = "#"> <span class = "count">723</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>-->
+                    <div class = "inner-box no-padding">
+                        <div class = "inner-box-content"><a href = "#"><img class = "img-responsive" src = "<?php echo theme_url('/assets/images/site/app.jpg'); ?>" alt = "tv"></a>
+                        </div>
+                    </div>
+<!--                    <div class = "inner-box no-padding"><img class = "img-responsive" src = "<?php echo theme_url('/assets/images/add2.jpg'); ?>" alt = "">
+                    </div>-->
+                </aside>
+            </div>
             <div class="col-sm-9 page-content col-thin-right">
                 <div class="inner inner-box ads-details-wrapper">
                     <h2> <?php echo $pagina->titulo; ?> </h2>
@@ -40,51 +127,241 @@
                     <div class="Ads-Details ">
                         <?php echo $pagina->html; ?>
                         <div class="content-footer text-left">
-                            <a href="#applyJob" data-toggle="modal" class="btn  btn-primary"> <i class=" icon-mail-2"></i> Apply Online </a>
-                            <small> or. Send your CV to: <a class="__cf_email__" href="http://templatecycle.com/cdn-cgi/l/email-protection" data-cfemail="0162607364647341666c60686d2f626e6c">[email&#160;protected]</a>
-
-                            </small>
+                            <a href="#arriba" class="btn  btn-primary"> <i class="fa fa-angle-up"></i> Volver arriba </a>
+<!--                            <small> or. Send your CV to: career@gmail.com</small>-->
                         </div>
                     </div>
                 </div>
-
             </div>
+        </div>
+        <div style = "clear: both"></div>
+        <!--        <div class = "col-lg-12 content-box ">
+                    <div class = "row row-featured">
+                        <div style = "clear: both"></div>
+                        <div class = " relative  content  clearfix">
+                            <div class = "">
+                                <div class = "tab-lite">
 
-            <div class="col-sm-3  page-sidebar-right">
-                <aside>
-                    <div class="panel sidebar-panel panel-contact-seller">
-                        <div class="panel-heading">Company Information</div>
-                        <div class="panel-content user-info">
-                            <div class="panel-body text-center">
-                                <div class="seller-info">
-                                    <div class="company-logo-thumb">
-                                        <a><img alt="img" class="img-responsive img-circle" src="images/jobs/company-logos/17.jpg"> </a></div>
-                                    <h3 class="no-margin"> Data Systems Ltd</h3>
-                                    <p>Location: <strong>New York</strong></p>
-                                    <p> Web: <strong>www.demoweb.com</strong></p>
+                                    <ul role = "tablist" class = "nav nav-tabs ">
+                                        <li class = "active" role = "presentation"><a data-toggle = "tab" role = "tab" aria-controls = "tab1" href = "#tab1" aria-expanded = "true"><i class = "icon-location-2"></i>Top Job Locations</a></li>
+                                        <li role = "presentation" class = ""><a data-toggle = "tab" role = "tab" aria-controls = "tab2" href = "#tab2" aria-expanded = "false"><i class = "icon-briefcase"></i>Top Job Titles</a></li>
+                                        <li role = "presentation" class = ""><a data-toggle = "tab" role = "tab" aria-controls = "tab3" href = "#tab3" aria-expanded = "false"><i class = "icon-commerical-building"></i>Top Companies</a></li>
+                                    </ul>
+
+                                    <div class = "tab-content">
+                                        <div role = "tabpanel" class = "tab-pane active" id = "tab1">
+                                            <div class = "col-lg-12 tab-inner">
+                                                <div class = "row">
+                                                    <ul class = "cat-list col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#">Atlanta</a></li>
+                                                        <li><a href = "#"> Dallas </a></li>
+                                                        <li><a href = "#"> New York </a></li>
+                                                        <li><a href = "#">Santa Ana/Anaheim </a></li>
+                                                        <li><a href = "#">Wichita </a></li>
+                                                        <li><a href = "#"> Anchorage </a></li>
+                                                        <li><a href = "#"> Miami </a></li>
+                                                        <li><a href = "#">Los Angeles</a></li>
+                                                    </ul>
+                                                    <ul class = "cat-list cat-list-border col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#">Boston </a></li>
+                                                        <li><a href = "#">Houston</a></li>
+                                                        <li><a href = "#">Salt Lake City </a></li>
+                                                        <li><a href = "#">Virginia Beach </a></li>
+                                                        <li><a href = "#"> San Diego </a></li>
+                                                        <li><a href = "#">San Francisco </a></li>
+                                                        <li><a href = "#">Tampa </a></li>
+                                                        <li><a href = "#"> Washington DC </a></li>
+                                                    </ul>
+                                                    <ul class = "cat-list cat-list-border col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#">Virginia Beach </a></li>
+                                                        <li><a href = "#"> San Diego </a></li>
+                                                        <li><a href = "#">San Francisco </a></li>
+                                                        <li><a href = "#">Tampa </a></li>
+                                                        <li><a href = "#"> Washington DC </a></li>
+                                                        <li><a href = "#">Boston </a></li>
+                                                        <li><a href = "#">Houston</a></li>
+                                                        <li><a href = "#">Salt Lake City </a></li>
+                                                    </ul>
+                                                    <ul class = "cat-list cat-list-border col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#">Salt Lake City </a></li>
+                                                        <li><a href = "#">San Francisco </a></li>
+                                                        <li><a href = "#">Tampa </a></li>
+                                                        <li><a href = "#"> Washington DC </a></li>
+                                                        <li><a href = "#">Virginia Beach </a></li>
+                                                        <li><a href = "#"> San Diego </a></li>
+                                                        <li><a href = "#">Boston </a></li>
+                                                        <li><a href = "#">Houston</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role = "tabpanel" class = "tab-pane" id = "tab2">
+                                            <div class = "col-lg-12 tab-inner">
+                                                <div class = "row">
+                                                    <ul class = "cat-list cat-list-border col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#">
+                                                                Full Time Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Part Time Jobs
+                                                                Retail Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Construction Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Marketing Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Accounting Jobs
+                                                                Customer Service Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Security Jobs
+                                                            </a></li>
+                                                        <li><a href = "#">Engineering Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Maintenance Jobs
+                                                            </a></li>
+                                                    </ul>
+                                                    <ul class = "cat-list col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#"> Hospitality Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Government Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Medical Assistant Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Nursing Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Pharmacy Assistant Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Data Entry Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Receptionist Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Welding Jobs
+                                                            </a></li>
+                                                    </ul>
+                                                    <ul class = "cat-list cat-list-border col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#"> Criminal Justice Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> HSE Manager Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Pharmaceutical Sales Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Electrician Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Pharmacy Technician Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Graphic Design Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Homeland Security Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> CNA Jobs
+                                                            </a></li>
+                                                    </ul>
+                                                    <ul class = "cat-list cat-list-border col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#"> Online Teaching Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Police Officer Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Federal Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Flight Attendant Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Cruise Ship Jobs
+                                                            </a></li>
+                                                        <li><a href = "#">Housekeeping Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Working at Home Jobs
+                                                            </a></li>
+                                                        <li><a href = "#"> Warehouse Work Jobs
+                                                            </a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role = "tabpanel" class = "tab-pane" id = "tab3">
+                                            <div class = "col-lg-12 tab-inner">
+                                                <div class = "row">
+                                                    <ul class = "cat-list cat-list-border col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#">
+                                                                Aramark Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> AT&T Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Armellini Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Aflac Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Avon Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Aon Service Corporation Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> AmeriBanc National Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> ASML Jobs & Careers
+                                                            </a></li>
+                                                    </ul>
+                                                    <ul class = "cat-list cat-list-border col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#"> Bankers Life Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Comcast Cable Communications Jobs &
+                                                                Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Capgemini Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Combined Insurance Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> CNO Services Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Coca Cola Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Doherty Employment Group Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Enterprise Rent-A-Car Jobs & Careers
+                                                            </a></li>
+                                                    </ul>
+                                                    <ul class = "cat-list col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href = "#"> General Electric Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#">Johnson Controls Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Kenan Advantage Group Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href = "#"> Macy's Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> PepsiCo Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> Proquire LLC Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> Pilot Travel Centers Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> PPG Industries Inc Jobs & Careers
+                                                            </a></li>
+                                                    </ul>
+                                                    <ul class="cat-list cat-list-border col-sm-3  col-xs-6 col-xxs-12">
+                                                        <li><a href="#"> Quintiles Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> UPS Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> Uline Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> Safeway Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> Seagate Technology Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> Tenet Healthcare Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#">TruGreen Jobs & Careers
+                                                            </a></li>
+                                                        <li><a href="#"> UnitedHealth Group Jobs & Careers
+                                                            </a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="panel sidebar-panel">
-                        <div class="panel-heading"><i class="icon-lamp"></i> Successful CV Tips</div>
-                        <div class="panel-content">
-                            <div class="panel-body text-left">
-                                <ul class="list-check">
-                                    <li> Tailor a CV to a specific job</li>
-                                    <li> Keep it simple</li>
-                                    <li> Include key information - personal details</li>
-                                    <li> Showcase achievements</li>
-                                </ul>
-                                <p><a class="pull-right" href="#"> Know more <i class="fa fa-angle-double-right"></i> </a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </aside>
-            </div>
-
-        </div>
+                </div>-->
     </div>
 </div>
 

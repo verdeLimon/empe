@@ -9,6 +9,6 @@ return array(
     'encoding' => 'UTF-8',
     'date_format' => 'jS M, Y',
     'theme' => 'gra_empe',
-    'sitename' => 'demo demo',
-    'description' => ' desc desc'
+    'sitename' => 'Gobierno Regional de Ayacucho, Encuesta Mypes 2016',
+    'description' => 'Ancuesta Mypes 2016 Gobierno Regional de Ayacucho'
 );

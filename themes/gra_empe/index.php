@@ -8,8 +8,9 @@
                     <div class="inner">
                         <h2>
                             <i class="icon-th-list"></i>
-                            <span>Resultados por </span>
-                            Provincias <a class="sell-your-item" href="#"> </a>
+                            <span>Resultados </span>
+                            <!--                            Provincias <a class="sell-your-item" href="#"> -->
+                            </a>
                         </h2>
                     </div>
                 </div>
@@ -80,53 +81,50 @@
         <div class="row">
             <div class = "col-sm-3 page-sidebar col-thin-left">
                 <aside>
-                    <div class="panel sidebar-panel">
-                        <div class="panel-heading"><i class="icon-lamp"></i> Informacion</div>
-                        <div class="panel-content">
-                            <div class="panel-body text-left">
-                                <ul class="cat-list arrow">
+                    <div class="inner-box">
+                        <div class="categories-list  list-filter">
+                            <h5 class="list-title uppercase"><i class="icon-lamp"></i> Información</h5>
+                            <ul class=" list-unstyled list-border arrow">
+                                <li class="active">
+                                    <a href="<?php echo base_url(); ?>">Inicio</a>
+                                </li>
+                                <?php foreach (get_menu('derecha') as $_mi): ?>
                                     <li>
-                                        <a href="<?php echo base_url(); ?>">Inicio</a>
+                                        <a href="<?php echo make_url($_mi) ?>" target="<?php echo $_mi->target; ?>"> <?php echo $_mi->texto ?> </a>
                                     </li>
-                                    <?php foreach (get_menu('derecha') as $_mi): ?>
-                                        <li>
-                                            <a href="<?php echo make_url($_mi) ?>" target="<?php echo $_mi->target; ?>"> <?php echo $_mi->texto ?> </a>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                                <p><a class="pull-right" href="#"> Conocer más... <i class="fa fa-angle-double-right"></i> </a></p>
-                            </div>
+                                <?php endforeach; ?>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="inner-box">
-                        <!--                        <div class="categories-list  list-filter">
-                                                    <h5 class="list-title"><strong><a href="#">All Categories</a></strong></h5>
-                                                    <ul class=" list-unstyled">
-                                                        <li><a href="sub-category-sub-location.html"><span class="title">Electronics</span><span class="count">&nbsp;8626</span></a>
+                    <!--                    <div class="panel sidebar-panel">
+                                            <div class="panel-heading"><i class="icon-lamp"></i> Informacion</div>
+                                            <div class="panel-content">
+                                                <div class="panel-body text-left">
+                                                    <ul class="cat-list arrow">
+                                                        <li class="active">
+                                                            <a href="<?php echo base_url(); ?>">Inicio</a>
                                                         </li>
-                                                        <li><a href="sub-category-sub-location.html"><span class="title">Automobiles </span><span class="count">&nbsp;123</span></a></li>
-                                                        <li><a href="sub-category-sub-location.html"><span class="title">Property </span><span class="count">&nbsp;742</span></a></li>
-                                                        <li><a href="sub-category-sub-location.html"><span class="title">Services </span><span class="count">&nbsp;8525</span></a></li>
-                                                        <li><a href="sub-category-sub-location.html"><span class="title">For Sale </span><span class="count">&nbsp;357</span></a></li>
-                                                        <li><a href="sub-category-sub-location.html"><span class="title">Learning </span><span class="count">&nbsp;3576</span></a></li>
-                                                        <li><a href="sub-category-sub-location.html"><span class="title">Jobs </span><span class="count">&nbsp;453</span></a></li>
-                                                        <li><a href="sub-category-sub-location.html"><span class="title">Cars &amp; Vehicles</span><span class="count">&nbsp;801</span></a>
-                                                        </li>
-                                                        <li><a href="sub-category-sub-location.html"><span class="title">Other</span><span class="count">&nbsp;9803</span></a></li>
+                    <?php foreach (get_menu('derecha') as $_mi): ?>
+                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                            <a href="<?php echo make_url($_mi) ?>" target="<?php echo $_mi->target; ?>"> <?php echo $_mi->texto ?> </a>
+                                                                                                                                                                                                                                        </li>
+                    <?php endforeach; ?>
                                                     </ul>
-                                                </div>-->
+                                                    <p><a class="pull-right" href="#"> Conocer más... <i class="fa fa-angle-double-right"></i> </a></p>
+                                                </div>
+                                            </div>
+                                        </div>-->
+                    <div class="inner-box">
                         <div class="locations-list  list-filter">
-                            <h5 class="list-title"><strong><a href="#">Price range</a></strong></h5>
+                            <h5 class="list-title"><strong><a href="#">Búsqueda</a></strong></h5>
                             <form role="form" class="form-inline ">
-                                <div class="form-group col-sm-4 no-padding">
-                                    <input placeholder="$ 2000 " id="minPrice" class="form-control" type="text">
+                                <div class="form-group col-sm-6 no-padding">
+                                    <input placeholder="" id="minPrice" class="form-control" type="text">
                                 </div>
-                                <div class="form-group col-sm-1 no-padding text-center hidden-xs"> -</div>
-                                <div class="form-group col-sm-4 no-padding">
-                                    <input placeholder="$ 3000 " id="maxPrice" class="form-control" type="text">
-                                </div>
-                                <div class="form-group col-sm-3 no-padding">
-                                    <button class="btn btn-default pull-right btn-block-xs" type="submit">GO
+                                <div class="form-group col-sm-3">
+                                    <button class="btn btn-default btn-block-xs" type="submit">
+                                        <i class="fa fa-search"></i> Buscar
                                     </button>
                                 </div>
                             </form>
@@ -134,8 +132,8 @@
                         </div>
                         <div style="clear:both"></div>
                     </div>
-                    <div class = "inner-box">
-                        <!--                                                <h2 class = "title-2">Top Job Categories </h2>-->
+                    <!-- <div class = "inner-box">
+                                                                       <h2 class = "title-2">Top Job Categories </h2>
                         <div class = "inner-box-content">
                             <ul class = "cat-list arrow">
                                 <li>
@@ -157,7 +155,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div>-->
                     <div class = "inner-box no-padding">
                         <div class = "inner-box-content"><a href = "#"><img class = "img-responsive" src = "<?php echo theme_url('/assets/images/site/app.jpg'); ?>" alt = "tv"></a>
                         </div>
@@ -167,93 +165,97 @@
                 </aside>
             </div>
             <div class="col-sm-9 page-content col-thin-right">
-                <div class="content-footer text-left">&nbsp;</div>
                 <div class="inner inner-box ads-details-wrapper">
                     <div class="Ads-Details ">
                         <div class="row">
-                            <div class="ads-details-info jobs-details-info col-md-8">
-                                <p>A front-end web developer is responsible for implementing visual and interactive
-                                    elements that
-                                    users engage with through their web browser when using a web application. They
-                                    are usually supported by back-end web
-                                    developers, who are responsible for server-side application logic and
-                                    integration of the work front-end developers do.</p>
-                                <h4 class="text-uppercase ">Duties &amp; Responsibilities:</h4>
-                                <ul>
-                                    <li>Develop new user-facing features</li>
-                                    <li>Build reusable code and libraries for future use</li>
-                                    <li>Ensure the technical feasibility of UI/UX designs</li>
-                                    <li>Optimize application for maximum speed and scalability</li>
-                                    <li>Assure that all user input is validated before submitting to back-end</li>
-                                    <li>Collaborate with other team members and stakeholders</li>
-                                    <li>Responds to, researches, and resolves on-going client inquiries.</li>
-                                    <li>Writes functional requirements for systems in standard template format.</li>
-                                    <li>Interacts with project sponsor(s), internal team members, client, and vendor
-                                        project team members to develop and maintain project management documents
-                                    </li>
-                                    <li>Strives to manage stakeholder expectations via planning and work outcomes.
-                                    </li>
-                                    <li>Other duties as assigned.</li>
-                                </ul>
-                                <h4 class="text-uppercase ">Skills/Qualifications:</h4>
-                                <ul>
-                                    <li>Proficient understanding of web markup, including HTML5, CSS3</li>
-                                    <li>Basic understanding of server-side CSS pre-processing platforms, such as
-                                        LESS and SASS
-                                    </li>
-                                    <li>Proficient understanding of client-side scripting and JavaScript frameworks,
-                                        including jQuery
-                                    </li>
-                                    <li>Proficient understanding of cross-browser compatibility issues and ways to
-                                        work around them.
-                                    </li>
-                                    <li>Proficient understanding of code versioning tools, such as <strong>{{Git /
-Mercurial / SVN}}</strong></li>
-                                </ul>
-                                <h4 class="text-uppercase">Preferred Technical Experience:</h4>
-                                <ul>
-                                    <li>Bachelor's degree or higher in a related discipline (preferred but not
-                                        required
-                                    </li>
-                                    <li>Minimum 2 + years in a front - end development position</li>
-                                </ul>
-                                <p>If you are looking for a great career opportunity with a company experiencing
-                                    growth, apply online today.&#8203;</p>
-                                <p class="text-muted">Applicant must enclose his/her Photograph with CV</p>
-                            </div>
-                            <div class="col-md-4">
-                                <aside class="panel panel-body panel-details job-summery">
-                                    <ul>
-                                        <li><p class=" no-margin "><strong>Industry:</strong> IT </p></li>
-                                        <li><p class=" no-margin "><strong>Start Date:</strong> ASAP </p></li>
-                                        <li><p class=" no-margin "><strong>Company:</strong> Data Systems Ltd. </p>
-                                        </li>
-                                        <li>
-                                            <p class=" no-margin "><strong>Salary:</strong> $30k - $51k a year</p>
-                                        </li>
-                                        <li>
-                                            <p class="no-margin"><strong>Work type:</strong> Full Time</p>
-                                        </li>
-                                        <li>
-                                            <p class="no-margin"><strong>Location:</strong> New York </p>
-                                        </li>
-                                    </ul>
-                                </aside>
-                                <div class="ads-action">
-                                    <ul class="list-border">
-                                        <li><a href="#"> <i class=" fa icon-mail"></i> Email job</a></li>
-                                        <li><a href="#" data-toggle="modal"> <i class="fa icon-print"></i> Print job</a>
-                                        </li>
-                                        <li><a href="#"> <i class=" fa fa-heart"></i> Save job</a></li>
-                                        <li><a href="#"> <i class="fa fa-share-alt"></i> Share job</a></li>
-                                    </ul>
+                            <div class="ads-details-info jobs-details-info col-md-12">
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="<?php echo base_url('files/fotos/coordinaciones/1.jpg'); ?>" alt="First slide">
+                                            <div class="carousel-caption">
+                                                <h3></h3>
+                                                <p>.</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="<?php echo base_url('files/fotos/coordinaciones/2.jpg'); ?>" alt="Second slide">
+                                            <div class="carousel-caption">
+                                                <h3>Second slide</h3>
+                                                <p>.</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="<?php echo base_url('files/fotos/coordinaciones/3.jpg'); ?>" alt="Third slide">
+                                            <div class="carousel-caption">
+                                                <h3></h3>
+                                                <p>.</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="<?php echo base_url('files/fotos/coordinaciones/4.jpg'); ?>" alt="Third slide">
+                                            <div class="carousel-caption">
+                                                <h3></h3>
+                                                <p>.</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="<?php echo base_url('files/fotos/coordinaciones/5.jpg'); ?>" alt="Third slide">
+                                            <div class="carousel-caption">
+                                                <h3></h3>
+                                                <p>.</p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="<?php echo base_url('files/fotos/coordinaciones/6.jpg'); ?>" alt="Third slide">
+                                            <div class="carousel-caption">
+                                                <h3></h3>
+                                                <p>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right">
+                                        </span>
+                                    </a>
                                 </div>
+                                <p>&nbsp;</p>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="#" class="btn btn-primary btn-lg  btn-block" style="padding:20px 0">
+                                            <i class="fa fa-file"></i> Resultados
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#" class="btn btn-success btn-lg btn-block"  style="padding:20px 0">
+                                            <i class="fa fa-database"></i> Base de datos
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#" class="btn btn-info btn-lg btn-block" style="padding:20px 0">
+                                            <i class="fa fa-pie-chart"></i> Consulta de resultados
+                                        </a>
+                                    </div>
+                                </div>
+                                <p class="text-muted">&nbsp;</p>
                             </div>
+
                         </div>
-                        <div class="content-footer text-left">
-                            <a href="#applyJob" data-toggle="modal" class="btn  btn-primary"> <i class="fa fa-angle-up"></i> Volver arriba </a>
-<!--                            <small> or. Send your CV to: career@gmail.com</small>-->
-                        </div>
+                        <!--                        <div class="content-footer text-left">
+                                                    <a href="#applyJob" data-toggle="modal" class="btn  btn-primary"> <i class="fa fa-angle-up"></i> Volver arriba </a>
+                                                    <small> or. Send your CV to: career@gmail.com</small>
+                                                </div>-->
                     </div>
                 </div>
             </div>
@@ -507,9 +509,9 @@ Mercurial / SVN}}</strong></li>
 <!-- /jqxwidget chart -->
 <script type="text/javascript">
 //<![CDATA[
-$(document).ready(function () {
+    $(document).ready(function () {
 
-});
+    });
 //]]>
 </script>
 </body>
