@@ -44,7 +44,7 @@
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
-                                <p><a class="pull-right" href="#"> Conocer más... <i class="fa fa-angle-double-right"></i> </a></p>
+<!--                                <p><a class="pull-right" href="#"> Conocer más... <i class="fa fa-angle-double-right"></i> </a></p>-->
                             </div>
                         </div>
                     </div>

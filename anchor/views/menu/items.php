@@ -203,9 +203,7 @@ $nuevo = $menup['submenu']['nuevo'];
     <!-- /main -->
 </div>
 <!-- /container -->
-
 <?php echo $footer; ?>
-
 <script>var base = '<?php echo Uri::to(''); ?>';</script>
 <script src="<?php echo asset('anchor/views/assets/js/jquery.min.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/jquery-ui-1.12.1/jquery-ui.min.js'); ?>" type="text/javascript"></script>
@@ -222,9 +220,6 @@ $nuevo = $menup['submenu']['nuevo'];
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout-select2.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/ko.editables.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout.mapping-latest.debug.js'); ?>"></script>
-
-
-
 <script src="<?php echo asset('anchor/views/assets/js/default.js'); ?>" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
@@ -286,6 +281,7 @@ $nuevo = $menup['submenu']['nuevo'];
                 alert(item);
             }
             self.nuevo = function () {
+                self.loadpg();//actualizar paginas
                 var nuevo = new Item({"id": null, "texto": "", "url": "", "tipo": "pagina", "estado": 1, "orden": 1, "target": "_self", "parent_menuitem_id": null, "menu_id": id});
                 ko.editable(nuevo);
                 nuevo.beginEdit();
@@ -295,6 +291,7 @@ $nuevo = $menup['submenu']['nuevo'];
                 });
             }
             self.editar = function (item) {
+                self.loadpg();//actualizar paginas
                 ko.editable(item);
                 item.beginEdit();
                 self.ne(item);
@@ -312,12 +309,14 @@ $nuevo = $menup['submenu']['nuevo'];
                     ko.mapping.fromJS(data, mapping, self.paginas);
                 });
             }
-            self.reload = function () {
-                self.loadpg();
+            self.loadmenu = function () {
                 $.getJSON(base + "admin/api/menu/items/" + id, function (data) {
                     ko.mapping.fromJS(data, mapping, self.item);
                 });
-
+            }
+            self.reload = function () {
+                self.loadmenu();
+                self.loadpg();
             };
         }
         $.getJSON(base + "admin/api/menu/items/" + id, function (data) {

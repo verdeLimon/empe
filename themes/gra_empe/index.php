@@ -106,9 +106,9 @@
                                                             <a href="<?php echo base_url(); ?>">Inicio</a>
                                                         </li>
                     <?php foreach (get_menu('derecha') as $_mi): ?>
-                                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                                            <a href="<?php echo make_url($_mi) ?>" target="<?php echo $_mi->target; ?>"> <?php echo $_mi->texto ?> </a>
-                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                                <li>
+                                                                                                                                                                                                                                                                                    <a href="<?php echo make_url($_mi) ?>" target="<?php echo $_mi->target; ?>"> <?php echo $_mi->texto ?> </a>
+                                                                                                                                                                                                                                                                                </li>
                     <?php endforeach; ?>
                                                     </ul>
                                                     <p><a class="pull-right" href="#"> Conocer más... <i class="fa fa-angle-double-right"></i> </a></p>
@@ -189,7 +189,7 @@
                                         <div class="item">
                                             <img src="<?php echo base_url('files/fotos/coordinaciones/2.jpg'); ?>" alt="Second slide">
                                             <div class="carousel-caption">
-                                                <h3>Second slide</h3>
+                                                <h3></h3>
                                                 <p>.</p>
                                             </div>
                                         </div>
@@ -230,6 +230,16 @@
                                         </span>
                                     </a>
                                 </div>
+                                <!--                                <div class="main-text hidden-xs">
+                                                                    <div class="col-md-12 text-center">
+                                                                        <h1></h1>
+                                                                        <h3></h3>
+                                                                        <div class="">
+                                                                            <a class="btn btn-clear btn-sm btn-min-block" href="#">Más información</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>-->
+
                                 <p>&nbsp;</p>
                                 <div class="row">
                                     <div class="col-md-4">

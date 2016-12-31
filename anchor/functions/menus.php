@@ -39,7 +39,6 @@ function build_main_menu($rows, $parent = 0) {
             if (has_children($rows, $row->id)) {
                 $result .= build_main_menu($rows, $row->id);
             }
-
             $result .= "</li>";
         }
     }
@@ -52,8 +51,7 @@ function build_main_menu($rows, $parent = 0) {
 
 function get_menu($menu) {
     $menus = Menu::first(array('conditions' => "posicion = '$menu' and estado = '1'"));
-
-    return $menus->menuitems;
+    return $menus->menuitems_m;
 }
 
 /*
