@@ -91,8 +91,8 @@ if (is_admin()) {
     require APP . 'routes/panel' . EXT;
     require APP . 'routes/categorias' . EXT;
     require APP . 'routes/usuarios' . EXT;
-//    require APP . 'routes/posts' . EXT;
-//    require APP . 'routes/users' . EXT;
+    require APP . 'routes/config' . EXT;
+    require APP . 'routes/modulos' . EXT;
 //    require APP . 'routes/variables' . EXT;
 //    require APP . 'routes/pagetypes' . EXT;
 } else {

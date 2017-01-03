@@ -2,7 +2,7 @@
 
 class Menuitem extends ActiveRecord\Model {
 
-    static $table_name = 'web_menuitem';
+    static $table_name = 'web_menuitems';
     static $belongs_to = array(
         array('menu', 'foreign_key' => 'menu_id'),
         array('parent_menuitem', 'foreign_key' => 'parent_menuitem_id', 'class_name' => 'Menuitem')

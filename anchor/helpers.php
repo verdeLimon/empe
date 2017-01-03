@@ -59,6 +59,23 @@ function readable_size($size) {
     return round($size / pow(1024, ($i = floor(log($size, 1024)))), 2) . ' ' . $unit[$i];
 }
 
+/**
+ * Timezones list with GMT offset
+ *
+ * @return array
+ * @link http://stackoverflow.com/a/9328760
+ */
+function tz_list() {
+    $zones_array = array();
+    $timestamp = time();
+    foreach (timezone_identifiers_list() as $key => $zone) {
+        date_default_timezone_set($zone);
+        $zones_array[$key]['zone'] = $zone;
+        $zones_array[$key]['diff_from_GMT'] = 'UTC/GMT ' . date('P', $timestamp);
+    }
+    return $zones_array;
+}
+
 function menus() {
     $menus = array(
         'panel' => array(

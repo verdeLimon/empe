@@ -1,21 +1,13 @@
 <?php
 
-class Pagina extends ActiveRecord\Model {
+class PaginaModulo extends ActiveRecord\Model {
     # explicit table name since our table is not "books"
 
-    static $table_name = 'web_paginas';
+    static $table_name = 'web_pagina_modulo';
     static $belongs_to = array(
-        array('autor', 'foreign_key' => 'usuario_id', 'class_name' => 'Usuario'),
-        array('categoria', 'foreign_key' => 'categoria_id', 'class_name' => 'Categoria')
+        array('modulo', 'foreign_key' => 'modulo_id', 'class_name' => 'Modulo'),
+        array('pagina', 'foreign_key' => 'pagina_id', 'class_name' => 'Pagina')
     );
-    static $has_many = array(
-        array('modulos', 'through' => 'paginamodulos'),
-        array('paginamodulos', 'foreign_key' => 'pagina_id', 'class_name' => 'PaginaModulo')
-    );
-
-    public static function slug($slug) {
-        return self::first(array('conditions' => "slug = '$slug'"));
-    }
 
 //   static $has_one = array(
 //     array('marcologico','foreign_key'=>'proy_id')
