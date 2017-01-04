@@ -156,18 +156,18 @@ function menus() {
                 )
             )
         ),
-        'modulos' => array(
-            'titulo' => 'M&oacute;dulos',
-            'icon' => 'fa-th-large',
-            'url' => 'modulos',
-            'submenu' => array(
-                'nuevo' => array(
-                    'titulo' => 'Crear m&oacute;dulo',
-                    'icon' => 'fa-plus',
-                    'url' => 'nuevo'
-                ))
-        ),
-        /*        'media' => array(
+        /* 'modulos' => array(
+          'titulo' => 'M&oacute;dulos',
+          'icon' => 'fa-th-large',
+          'url' => 'modulos',
+          'submenu' => array(
+          'nuevo' => array(
+          'titulo' => 'Crear m&oacute;dulo',
+          'icon' => 'fa-plus',
+          'url' => 'nuevo'
+          ))
+          ),
+          'media' => array(
           'titulo' => 'Media',
           'icon' => 'fa-picture-o',
           'url' => 'media',

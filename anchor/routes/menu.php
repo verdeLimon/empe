@@ -110,7 +110,7 @@ Route::collection(array('before' => 'auth'), function() {
         $vars['messages'] = Notify::read();
         //$vars['menue'] = Menu::find($id);
         $vars['id'] = $id;
-
+        $vars['menuu'] = Menu::find($id);
         return View::create('menu/items', $vars)
                         ->partial('header', 'menu/itemheader')
                         ->partial('menu', 'menu/menu')

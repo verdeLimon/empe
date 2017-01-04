@@ -55,10 +55,16 @@ $nuevo = $menup['submenu']['nuevo'];
                                 <strong data-bind="text: item.nombre"></strong>
                             </a>
                         </li>
+                        <li role="presentation">
+                            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                                <i class="fa fa-sort"></i>
+                                <strong>Ordenar</strong>
+                            </a>
+                        </li>
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane fade in active">
+                        <div class="tab-pane fade in active" id="home">
                             <ul class="list-group" style="margin-bottom: 0;border-bottom:1px solid #ddd;">
                                 <li class="list-group-item">
                                     <div class="checkbox">
@@ -192,12 +198,40 @@ $nuevo = $menup['submenu']['nuevo'];
                             </form>
                             <!-- /modal nuevo -->
                         </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="dd" id="nestable3">
+                                <ol class="dd-list">
+                                    <li class="dd-item dd3-item" data-id="13">
+                                        <div class="dd-handle dd3-handle"> </div><div class="dd3-content">Item 13</div>
+                                    </li>
+                                    <li class="dd-item dd3-item" data-id="14">
+                                        <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 14</div>
+                                    </li>
+                                    <li class="dd-item dd3-item" data-id="15">
+                                        <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 15</div>
+                                        <ol class="dd-list">
+                                            <li class="dd-item dd3-item" data-id="16">
+                                                <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 16</div>
+                                            </li>
+                                            <li class="dd-item dd3-item" data-id="17">
+                                                <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 17</div>
+                                            </li>
+                                            <li class="dd-item dd3-item" data-id="18">
+                                                <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 18</div>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </div>
+                            <textarea id="nestable2-output"></textarea>
+                            <button  type="button" class="btn btn-success btn-sm">
+                                <i class="fa fa-save"></i>
+                                Guardar orden
+                            </button>
+                        </div>
                     </div>
-
                 </div>
             </div>
-
-
         </div>
     </div>
     <!-- /main -->
@@ -220,9 +254,37 @@ $nuevo = $menup['submenu']['nuevo'];
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout-select2.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/ko.editables.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/knockoutjs/knockout.mapping-latest.debug.js'); ?>"></script>
+<script src="<?php echo asset('anchor/views/assets/Nestable/jquery.nestable.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('anchor/views/assets/js/default.js'); ?>" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
+        var updateOutput = function (e)
+        {
+            var list = e.length ? e : $(e.target),
+                    output = list.data('output');
+            if (window.JSON) {
+                output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+            } else {
+                output.val('JSON browser support required for this demo.');
+            }
+        };
+
+
+
+        $('#nestable-menu').on('click', function (e)
+        {
+            var target = $(e.target),
+                    action = target.data('action');
+            if (action === 'expand-all') {
+                $('.dd').nestable('expandAll');
+            }
+            if (action === 'collapse-all') {
+                $('.dd').nestable('collapseAll');
+            }
+        });
+
+        $('#nestable3').nestable().on('change', updateOutput);
+        updateOutput($('#nestable3').data('output', $('#nestable2-output')));
 
 //        $.fn.modal.Constructor.prototype.enforceFocus = function () {};
         $.fn.select2.defaults.set("theme", "bootstrap");

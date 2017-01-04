@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/select2/css/select2.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/select2/css/select2-bootstrap.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/css/template.css'); ?>">
+        <link rel="stylesheet" href="<?php echo asset('anchor/views/assets/Nestable/nestable.css'); ?>">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>

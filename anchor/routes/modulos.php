@@ -1,8 +1,6 @@
 <?php
 
 Route::collection(array('before' => 'auth,csrf,install_exists'), function() {
-
-
     Route::get('admin/modulos', function() {
         $pg = Pagina::find(23);
         echo "<pre>";
@@ -10,3 +8,4 @@ Route::collection(array('before' => 'auth,csrf,install_exists'), function() {
         echo "</pre>";
     });
 });
+//[{"id":1, "children":[{"id":6}]}, {"id":2, "children":[{"id":17}, {"id":10}]}]
