@@ -5002,9 +5002,11 @@ header.header--app .row {
     padding-right: 0;
 }
 .main__navigation .navbar-nav{
-    border: 1px solid blue
+    border: 1px solid blue;
 }
-
+.main__navigation .navbar-nav li{
+    margin: 0;
+}
 .main__navigation ul {
     margin: 0;
     padding: 0;
