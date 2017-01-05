@@ -1,0 +1,1387 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> </title>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <meta name="description" content="<?php echo site_description(); ?>">
+        <link rel="shortcut icon" href="//www.sandiego.gov/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <style type="text/css">div#mainContent .btn{margin:2px;}</style>
+        <title>City of San Diego Official Website</title>
+        <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,800,700|Merriweather:400,700" media="all">
+        <link type="text/css" rel="stylesheet" href="assets/css/main.min.css" media="all">
+    </head>
+    <body>
+
+        <div id="outer-wrap">
+            <div id="inner-wrap">
+                <header class="l-padding-mobile-hs header--fixed">
+
+                    <div id="header-alert">
+                    </div>
+
+                    <div class="l-constrained row l-padding-td l-padding-desktop-tn">
+
+                        <div class="twelve columns hide-on-mobile text-right">
+                            <div class="quicklinks background--cerulean">
+                                <ul class="l-margin-bs l-margin-tn">
+                                    <li class="hidden"><a href="/user">Login</a></li>
+                                    <li class="hidden"><a href="">Text Size <span class="text-sm">A</span> <span class="text-nm current">A</span> <span class="text-lg">A</span></a></li>
+                                    <li class="google-translate"><div id="google_translate_element"></div></li>
+                                    <li class="hidden"><a href="">High Contrast</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="three columns no-gutters logo--wrap">
+                            <a href="/" class="logo">
+                                <img src="assets/img/logo.png" alt="The City of San Diego" width="205" height="50" class="hide-on-mobile">
+                                <img src="assets/img/logo-mark-blue.png" alt="The City of San Diego" width="163" height="132" class="hide-on-desktop">
+                            </a>
+                        </div>
+
+                        <div class="six columns text-center hide-on-mobile">
+                            <div class="card--weather">
+                                <i class="icon-cloud"></i>
+                                <p class="temperature"><span class="degrees">64</span>&deg;</p>
+                                <p><strong>S D <br> Weather</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="three columns no-gutters form--search-wrap">
+                            <a href="" class="search-icon search-icon--open"><i class="icon-magnifier"></i> </a>
+                            <form method="get" action="" target="_self" name="googleSearch" id="search-block-form" class="form--search" accept-charset="UTF-8">
+                                <div>
+                                    <div class="l-container">
+                                        <h2 class="visuallyhidden">Search form</h2>
+                                        <div class="form-item form-type-textfield form-item-search-block-form">
+                                            <label class="visuallyhidden" for="edit-search-block-form--2">Search</label>
+                                            <input title="" type="search" id="search-block-form--2" name="q" value="" placeholder="" size="15" maxlength="128" class="form-text">
+                                        </div>
+                                        <div class="form-actions form-wrapper" id="edit-actions">
+                                            <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Static navbar -->
+                    <div class="l-container navigation__wrap">
+                        <div class="l-constrained">
+                            <div class="menu-btn menu-btn--open">
+                                <a id="nav-open-btn" class="menu-toggle js-menu-toggle" href="#nav"><span class="">Menu</span><span class="menu-toggle__line"></span></a>
+                            </div>
+                            <nav class="main__navigation main-navigation nav-primary navbar navbar-default">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div id="navbar" class="navbar-collapse collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li style="width: auto;">
+                                                <a href="/" style="padding-top:18px;">
+                                                    <i class="icon-home hide-on-desktop"></i>
+                                                    <span class="hide-on-desktop">Home</span>
+                                                    <i class="icon-home hide-on-mobile"></i>
+                                                </a>
+                                            </li>
+                                            <li class="has__dropdown">
+                                                <a href="/leisure" class="dropdown-parent">
+                                                    <i class="icon-chevron-right hide-on-desktop"></i>
+                                                    Leisure <i class="icon-chevron-down hide-on-mobile"></i>
+                                                    <span>Explore, Play + Events</span>
+                                                </a>
+                                            </li>
+                                            <li class="has__dropdown">
+                                                <a href="/resident-resources" class="dropdown-parent">
+                                                    <i class="icon-chevron-right hide-on-desktop"></i>
+                                                    Resident<i class="icon-chevron-down hide-on-mobile"></i>
+                                                    <span>Pay Now, Parking + Help</span>
+                                                </a>
+                                            </li>
+                                            <li class="has__dropdown">
+                                                <a href="/doing-business" class="dropdown-parent">
+                                                    <i class="icon-chevron-right hide-on-desktop"></i>
+                                                    Doing Business <i class="icon-chevron-down hide-on-mobile"></i>
+                                                    <span>Fix, Plan + Build</span>
+                                                </a>
+                                            </li>
+                                            <li class="has__dropdown">
+                                                <a href="/public-library" class="dropdown-parent">
+                                                    <i class="icon-chevron-right hide-on-desktop"></i>
+                                                    Library <i class="icon-chevron-down hide-on-mobile"></i>
+                                                    <span>Learn, Connect + Discover</span>
+                                                </a>
+                                            </li>
+                                            <li class="has__dropdown">
+                                                <a href="/public-safety" class="dropdown-parent">
+                                                    <i class="icon-chevron-right hide-on-desktop"></i>Public Safety <i class="icon-chevron-down hide-on-mobile"></i>
+                                                    <span>Police, Fire + Lifeguards</span>
+                                                </a>
+                                            </li>
+                                            <li class="has__dropdown">
+                                                <a href="/city-hall" class="dropdown-parent">
+                                                    <i class="icon-chevron-right hide-on-desktop"></i>City Hall <i class="icon-chevron-down hide-on-mobile"></i>
+                                                    <span>City Officials + Departments</span>
+                                                </a>
+                                            </li>
+                                            <li class="has__dropdown dropdown">
+                                                <a href="#" class="dropdown-parent dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="icon-chevron-right hide-on-desktop"></i>City Hall <i class="icon-chevron-down hide-on-mobile"></i>
+                                                    <span>City Officials + Departments</span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Action</a></li>
+                                                    <li><a href="#">Another action</a></li>
+                                                    <li><a href="#">Something else here</a></li>
+                                                    <li role="separator" class="divider"></li>
+                                                    <li class="dropdown-header">Nav header</li>
+                                                    <li><a href="#">Separated link</a></li>
+                                                    <li><a href="#">One more separated link</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div><!--/.nav-collapse -->
+                                </div><!--/.container-fluid -->
+                            </nav>
+                            <nav id="nav" class="main__navigation main-navigation nav-primary" role="navigation">
+                                <ul>
+                                    <li style="width: auto;"><a href="/" style="padding-top:18px;"><i class="icon-home hide-on-desktop"></i><span class="hide-on-desktop" style="font-size:18px;text-transform:uppercase;font-weight:600;">Home</span><i class="icon-home hide-on-mobile" style="color:black;font-size:24px;"></i></a></li>
+                                    <li class="has__dropdown">
+                                        <a href="/leisure" class="dropdown-parent">
+                                            <i class="icon-chevron-right hide-on-desktop"></i>Leisure <i class="icon-chevron-down hide-on-mobile"></i>
+                                            <span>Explore, Play + Events</span>
+                                        </a>
+                                    </li>
+                                    <li class="has__dropdown">
+                                        <a href="/resident-resources" class="dropdown-parent">
+                                            <i class="icon-chevron-right hide-on-desktop"></i>Resident<i class="icon-chevron-down hide-on-mobile"></i>
+                                            <span>Pay Now, Parking + Help</span>
+                                        </a>
+                                    </li>
+                                    <li class="has__dropdown">
+                                        <a href="/doing-business" class="dropdown-parent">
+                                            <i class="icon-chevron-right hide-on-desktop"></i>Doing Business <i class="icon-chevron-down hide-on-mobile"></i>
+                                            <span>Fix, Plan + Build</span>
+                                        </a>
+                                    </li>
+                                    <li class="has__dropdown">
+                                        <a href="/public-library" class="dropdown-parent">
+                                            <i class="icon-chevron-right hide-on-desktop"></i>Library <i class="icon-chevron-down hide-on-mobile"></i>
+                                            <span>Learn, Connect + Discover</span>
+                                        </a>
+                                    </li>
+                                    <li class="has__dropdown">
+                                        <a href="/public-safety" class="dropdown-parent">
+                                            <i class="icon-chevron-right hide-on-desktop"></i>Public Safety <i class="icon-chevron-down hide-on-mobile"></i>
+                                            <span>Police, Fire + Lifeguards</span>
+                                        </a>
+                                    </li>
+                                    <li class="has__dropdown">
+                                        <a href="/city-hall" class="dropdown-parent">
+                                            <i class="icon-chevron-right hide-on-desktop"></i>City Hall <i class="icon-chevron-down hide-on-mobile"></i>
+                                            <span>City Officials + Departments</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </header><div class="container main" role="main"><div class="hero__slides">
+                        <div class="l-constrained row">
+                            <div class="six columns hero__content">
+                                <div id="hero__slides--primary" class="hero__slides--content hidden">
+                                    <div id="block-views-department-slides-block-1" class="block block-views">
+                                        <div class="content">
+                                            <div class="view view-department-slides view-id-department_slides view-display-id-block_1 view-dom-id-fd857a9543d0262abf97a7e8f9e909f5">
+                                                <div class="view-content">
+                                                    <ul class="slides"> <li class="">
+                                                            <div> <div><div><p>City of San Diego Wins Best of the Web Award for Redesigned Web Portal</p>
+                                                                        <p><a class="btn btn--primary btn--sm" href="/blog/city-san-diego-wins-best-web-award-redesigned-web-portal" style="padding: 10px 40px;" title="Read more about the new sandiego.gov">Read More</a></p>
+                                                                    </div></div> </div>
+                                                            <div class="views-field views-field-field-link-url"> <div class="field-content"></div> </div></li>
+                                                    </ul> </div>
+                                            </div> </div>
+                                    </div>
+                                </div>
+                                <div class="custom-navigation custom-navigation--primary hidden">
+                                    <a href="#" class="flex-prev"><i class="icon-chevron-left"></i></a>
+                                    <a href="#" class="flex-next"><i class="icon-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__slides--img">
+                            <ul class="slides">
+                                <li>
+                                    <div class="hero__bg" style="background-image:url('assets/img/home-hero-1.jpg');"></div>
+                                    <div class="hero--credit">
+                                        <p>Image by Cindy Devin</p>
+                                    </div>
+                                    <script>hero_put_bg_credit();</script>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <main role="main">
+                        <div class="l-constrained l-padding-mobile-hd background-white">
+                            <div id="get_it_done" class="l-container l-padding-hd l-padding-desktop-td hidden">
+                                <div id="block-webform-client-block-13161" class="block block-webform">
+                                    <div class="content">
+                                        <div class="row"><div class="twelve columns"><h2>Get It Done</h2></div></div><form class="webform-client-form webform-client-form-13161 antibot-hidden row l-margin-ts l-margin-desktop-bd" enctype="multipart/form-data" style="display: none;" action="/antibot" method="post" id="webform-client-form-13161" accept-charset="UTF-8"><div><div class="form__step"><fieldset class="webform-component-fieldset step-1 three columns webform-component--step-1 form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>1</span>&nbsp;&nbsp;I Need To...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--step-1--i-need-to">
+                                                                <label class="element-invisible" for="edit-submitted-step-1-i-need-to">I need to </label>
+                                                                <select id="edit-submitted-step-1-i-need-to" name="submitted[step_1][i_need_to]" class="form-select"><option value="apply" selected="selected">Apply</option><option value="status">Check Status of</option><option value="find">Find</option><option value="pay">Pay</option><option value="register">Register</option><option value="report">Report</option><option value="request">Request</option><option value="view">View</option><option value="watch">Watch</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-2 three columns webform-component--apply-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>2</span>&nbsp;&nbsp;Apply...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--apply-set--Apply">
+                                                                <label class="element-invisible" for="edit-submitted-apply-set-apply">Apply </label>
+                                                                <select id="edit-submitted-apply-set-apply" name="submitted[apply_set][Apply]" class="form-select"><option value="business_license" selected="selected">Business License</option><option value="business_tax">Business Tax Certificate</option><option value="jobs">City Job Opportunities</option><option value="internship">Internship</option><option value="library_card">Library Card</option><option value="building_permit">Minor Residential Building Permit</option><option value="park_permits">Park Permits</option><option value="passport_application">Passport</option><option value="board_application">Serve on a Board or Commission</option><option value="rv_parking">Temporary Overnight RV Parking Permit</option><option value="volunteer">Volunteer Opportunity</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-2 three columns webform-component--status-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>2</span>&nbsp;&nbsp;Check Status of...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--status-set--status">
+                                                                <label class="element-invisible" for="edit-submitted-status-set-status">Status </label>
+                                                                <select id="edit-submitted-status-set-status" name="submitted[status_set][status]" class="form-select"><option value="get_it_done_status" selected="selected">Get It Done Report</option><option value="parking_ticket_status">Parking Ticket</option><option value="trash_status">Trash Service Request</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-2 three columns webform-component--find-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>2</span>&nbsp;&nbsp;Find...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--find-set--find">
+                                                                <label class="element-invisible" for="edit-submitted-find-set-find">Find </label>
+                                                                <select id="edit-submitted-find-set-find" name="submitted[find_set][find]" class="form-select"><option value="bid_contract" selected="selected">Bid &amp; Contract Opportunities</option><option value="job_opportunities">City Job Opportunities</option><option value="construction_permits">Construction Permit Information</option><option value="construction_project">Construction Project Information</option><option value="agenda_minutes">Council Agendas and Minutes</option><option value="internship">Internship Opportunities</option><option value="public_notices">Public Notices</option><option value="recreation">Recreational Programs</option><option value="recycled_water">Recycled Water Availability</option><option value="business_incubators">Startup Business Incubators and Accelerators</option><option value="trash_collection">Trash Collection Schedule</option><option value="unclaimed_monies">Unclaimed Monies</option><option value="volunteer">Volunteer Opportunities</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-2 three columns webform-component--pay-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>2</span>&nbsp;&nbsp;Pay...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--pay-set--pay">
+                                                                <label class="element-invisible" for="edit-submitted-pay-set-pay">Pay </label>
+                                                                <select id="edit-submitted-pay-set-pay" name="submitted[pay_set][pay]" class="form-select"><option value="pay_business_tax">Business Tax</option><option value="pay_delinquent" selected="selected">Delinquent Account</option><option value="pay_library_fees">Library Fees</option><option value="pay_parking_ticket">Parking Ticket</option><option value="pay_rental_tax">Rental Tax</option><option value="pay_water_bill">Water Bill</option><option value="tot_tmd">TOT/TMD Assessment</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-2 three columns webform-component--register-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>2</span>&nbsp;&nbsp;Register...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--register-set--register">
+                                                                <label class="element-invisible" for="edit-submitted-register-set-register">Register </label>
+                                                                <select id="edit-submitted-register-set-register" name="submitted[register_set][register]" class="form-select"><option value="register_alarm" selected="selected">Alarm Permit</option><option value="register_email_jobs">Email Notices for City Job Openings</option><option value="register_emergency">Emergency Notification System</option><option value="register_park_recreation">Park and Recreation Activities</option><option value="tot_tmd">TOT/TMD Assessment</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-2 three columns webform-component--report-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>2</span>&nbsp;&nbsp;Report...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--report-set--report">
+                                                                <label class="element-invisible" for="edit-submitted-report-set-report">Report </label>
+                                                                <select id="edit-submitted-report-set-report" name="submitted[report_set][report]" class="form-select"><option value="police_complaint" selected="selected">Complaint on Police Practices</option><option value="dead_animal">Dead Animal</option><option value="disability">Disability-Related Concern</option><option value="discrimination">Discrimination Complaint</option><option value="fraud">Fraud, Waste, or Abuse</option><option value="graffiti">Graffiti</option><option value="alcohol">Illegal Alcohol Sales</option><option value="drug">Illegal Drug Activity</option><option value="litter_dumping">Litter/Dumping</option><option value="noise">Noise Complaint</option><option value="non_emergency_crime">Non-emergency Crime</option><option value="parking_meter">Parking Meter Issue</option><option value="pothole">Pothole</option><option value="street_sidewalk">Problem on Street or Sidewalk</option><option value="sidewalk_maintenance">Sidewalk Maintenance</option><option value="storm_drain">Storm Drain Issue</option><option value="street_flooding">Street Flooding</option><option value="street_light">Street Light Issue</option><option value="traffic_sign">Traffic Sign Problem</option><option value="traffic_signal">Traffic Signal Problem</option><option value="tree_hazard">Tree Hazard</option><option value="abandoned_vehicle">Vehicle (Abandoned)</option><option value="inoperable_vehicle">Vehicle (Inoperable)</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-2 three columns webform-component--request-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>2</span>&nbsp;&nbsp;Request...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--request-set--request">
+                                                                <label class="element-invisible" for="edit-submitted-request-set-request">Request </label>
+                                                                <select id="edit-submitted-request-set-request" name="submitted[request_set][request]" class="form-select"><option value="appeal">Appeal for Parking Ticket</option><option value="fire_safety">Fire Safety Presentation</option><option value="fire_tour">Fire Station Tour</option><option value="donate_info">Information about How to Donate to the City</option><option value="traffic_sign">New Traffic Signal or Sign</option><option value="park_facility">Park Facility Availability</option><option value="police_patrols">Police Patrols</option><option value="ride_along">Police Ride Along</option><option value="public_records">Public Records</option><option value="water">Start or Stop Water Service</option><option value="street_sweeping">Street Sweeping</option><option value="water_tour">Water Purification Facility Tour</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-2 three columns webform-component--view-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>2</span>&nbsp;&nbsp;View...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--view-set--view">
+                                                                <label class="element-invisible" for="edit-submitted-view-set-view">View </label>
+                                                                <select id="edit-submitted-view-set-view" name="submitted[view_set][view]" class="form-select"><option value="crime_map" selected="selected">Crime Map</option><option value="library">Library Account</option><option value="map">Map Gallery</option><option value="park_map">Park Facilities Map</option><option value="problems_reported">Problems Reported</option><option value="unclaimed_monies">Unclaimed Monies</option><option value="utilities_map">Utilities Undergrounding Maps</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-2 three columns webform-component--watch-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>2</span>&nbsp;&nbsp;Watch...</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-select webform-component--watch-set--watch">
+                                                                <label class="element-invisible" for="edit-submitted-watch-set-watch">Watch </label>
+                                                                <select id="edit-submitted-watch-set-watch" name="submitted[watch_set][watch]" class="form-select"><option value="watch_council_webcasts" selected="selected">Council Webcasts</option></select>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-3 five columns webform-component--apply-options-set form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>3</span>&nbsp;&nbsp;Apply Now</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-1">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply for a business tax certificate</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for a business license" href="/treasurer/taxesfees/btax/btaxhow">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-volunteer">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply for a volunteer opportunity</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for an volunteer opportunity" href="/volunteer-program">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-9">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply for a business tax certificate</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for a business tax certificate" href="/treasurer/taxesfees/btax/btaxhow">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-internship">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply for an internship</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for an internship" href="/volunteer-program/youth">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-4">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply for a permit to hold an event at a City park</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for a Park Permit" href="/park-and-recreation/parks/permits/index">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-3">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply to serve on a City board or commission</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply to Serve on a Board or Commission" href="/city-clerk/boards-commissions/application">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-7">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply for permits to obtain simple no-plan electrical, plumbing and mechanical permits for minor residential installations&nbsp;</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for a Minor Residential Building Permit" href="/development-services/industry/simplepermits/index">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-6">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Make an appointment to apply for a U.S. passport</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for a passport" href="/city-clerk/inforecords/passport">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-8">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply for a job with the City</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for a City job opportunity" href="/empopp/current">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-5">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Residents may obtain a temporary permit that allows overnight parking of recreational vehicles on the resident's block.</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for a temporary overnight RV parking permit" href="/parking/permits/torvp/index">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--apply-options-set--apply-2">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply for a City library card</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Apply for a Library Card" href="/public-library/services/lending/librarycard">Apply Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-3 five columns webform-component--status-options form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>3</span>&nbsp;&nbsp;Check Status Now</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--status-options--status-3">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Check the status of a Get it Done report.</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Check the status of a Get it Done report" href="https://getitdone.force.com/TSWViewReportByList">Check Status</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--status-options--status-1">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Track status of trash, litter or recycling service request&nbsp;</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Check Status of a Trash Service Request" href="https://apps.sandiego.gov/econtainer/control/servicerequesttracking">Check Status</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--status-options--status-2">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Check the status of a parking citation / ticket</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Check Status of a Parking Ticket" href="http://duncan.imageenforcement.com/ImageOnlySites/SanDiegoImages">Check Status</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-3 five columns webform-component--find-options form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>3</span>&nbsp;&nbsp;Find Now</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--find-options--find-6">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">See areas where recycled water is available</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find Recycled Water Availability" href="/water/recycled/availability/index">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-10">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Find information about recreational activities and programs at City parks</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find Information about Recreational Programs" href="/park-and-recreation/activities">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-8">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Startups looking for office space, business mentoring, investment and other valuable resources can find &nbsp;information on the interactive map</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find Startup Business Incubators and Accelerators" href="/economic-development/industry/incubatorsaccelerators">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-2">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Find the trash and recycling schedule for your home</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find Trash Collection Schedule" href="https://apps.sandiego.gov/econtainer/control/searchaddressinfo">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-volunteer">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Find volunteer opportunities</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find volunteer opportunities" href="/volunteer-program">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-3">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Find bid and contract opportunities with the City</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find Bid &amp; Contract Opportunities" href="/purchasing/bids-contracts">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-5">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Search the City's official advertising and notices with information about public hearings, bid and contract opportunities, City ordinances and resolutions, and many other official notices</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find Public Notices" href="/city-clerk/officialdocs/notices">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-9">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Apply for a job with the City</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find City Job Opportunities" href="/empopp/current">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-4">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Find information regarding City construction projects</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find Construction Project Information" href="/cip/projectinfo">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-1">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Find official City documents on file at the City Clerk's Office</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find Council Agendas and Minutes" href="/city-clerk/officialdocs">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-internship">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Find internship opportunities.</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find internship opportunities" href="/volunteer-program/youth">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-7">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Use OpenDSD for online access to data about construction permits</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find construction permit information" href="/development-services/opendsd/index">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--find-options--find-unclaimed-monies">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Find unclaimed monies</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Find unclaimed monies" href="/comptroller/reports/unclaimed">Find Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-3 five columns webform-component--payment-options form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>3</span>&nbsp;&nbsp;Payment Now</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--payment-options--pay-5">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Pay your TOT/TMD Assessment</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" href="https://webapps.sandiego.gov/TOTPay" title="Pay TOT/TMD Assessment">Pay Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--payment-options--pay-1">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Pay your water and sewer bill</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Pay a Water Bill" href="/customercare">Pay Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--payment-options--pay-7">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Make a rental tax payment</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" href="https://webapps.sandiego.gov/BTaxRTaxPay/Login.aspx?ReturnUrl=%2fBTaxRTaxPay" title="Pay Rental Tax">Pay Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--payment-options--pay-2">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Pay a parking citation / ticket</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Pay a Parking Ticket" href="https://www.dspayments.com/SanDiego">Pay Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--payment-options--pay-4">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Make payments to a delinquent account</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Pay a Delinquent Account" href="/treasurer/delinquent">Pay Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--payment-options--pay-3">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">View a library bill and pay your library fines</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Pay Library Fees" href="/public-library/services/lending/onlinebills">Pay Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--payment-options--pay-6">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Make business tax payment</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" href="https://webapps.sandiego.gov/BTaxRTaxPay/Login.aspx?ReturnUrl=%2fBTaxRTaxPay" title="Pay Business Tax">Pay Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-3 five columns webform-component--register-options form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>3</span>&nbsp;&nbsp;Register Now</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--register-options--register-5">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Register for Transient Occupancy Registration</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Register for Transient Occupancy Registration" href="https://webapps.sandiego.gov/TOTOnlineApp">Register Now</a></div>
+                                                                </div>
+                                                                <p>&nbsp;</p>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--register-options--register-4">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Register for permits for systems with fire/harmful gas and burglary/robbery alarm sensors</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Register for an Alarm Permit" href="https://pdpermits.sandiego.gov/">Register Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--register-options--register-2">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Register to receive an email notice for City job openings</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Register for Email Notices for City Job Openings" href="http://agency.governmentjobs.com/sandiego/default.cfm?action=openjobrequest">Register Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--register-options--register-3">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Register for Alert San Diego emergency notification system</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Register for the Emergency Notification System" href="/ohs/emergencynotification/">Register Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--register-options--register-1">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Register recreational activities at City parks and recreation centers</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Register for Park and Recreation Activities" href="https://apm.activecommunities.com/sdparkandrec/Activity_Search">Register Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-3 five columns webform-component--report-options form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>3</span>&nbsp;&nbsp;Report Now</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--report-options--report-6">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">File a discrimination complaint</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a Discrimination Complaint" href="/human-relations/pdf/complain.pdf">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-4">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report illegal alcohol sales</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report illegal alcohol sales" href="/police/forms/alcohol">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-9">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">File a report about an abandoned vehicle</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report an Abandoned Vehicle" href="https://getitdone.force.com/TSWNewReport?type=Abandoned%20Vehicle">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-7">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">File a report about a vehicle on private property that is inoperable, e.g, missing tires, missing engine</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report an Inoperable Vehicle" href="/police/services/units/traffic/abandonedvehicle/inoperable">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-5">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">File a complaint about police practices</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="File a complaint about police practices" href="/citizensreviewboard/filing/complaint-form">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-19">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a dead animal</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a dead animal" href="https://getitdone.force.com/TSWNewReport?type=Dead%20Animal">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-disability">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">If you are denied access to a City program, service or activity due to a disability, the City's Office of ADA Compliance and Accessibility wants to know.</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a Disability-Related Concern" href="https://www.sandiego.gov/adacompliance/complaint/complaintform">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-11">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">The <a href="/auditor/resources/fraudhotline">Fraud Hotline</a> is designed for reporting suspected cases of fraud, waste, or abuse.</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report fraud, waste, or abuse" href="/auditor/resources/fraudhotline" data-mce-="">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-20">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report graffiti</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report graffiti" href="https://getitdone.force.com/TSWNewReport?type=Graffiti">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-10">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">File a report about illegal drug and narcotics activities in your neighborhood</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report Illegal Drug Activity" href="/police/forms/citizen-request">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-21">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report litter/dumping</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report litter/dumping" href="https://getitdone.force.com/TSWNewReport?type=Litter/Dumping">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-8">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">File a noise complaint</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="File a Noise Complaint" href="/ced/report/investigation">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-1">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a non-emergency crime to police</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a non-emergency crime" href="http://www.sandiego.gov/police/crimereports/startaccess">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-14">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a&nbsp;parking meter issue</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a parking meter issue" href="https://getitdone.force.com/TSWNewReport?type=Parking%20Meter">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-15">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a&nbsp;pothole</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a pothole" href="https://getitdone.force.com/TSWNewReport?type=Pothole">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-2">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a pothole or other street-related problem</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a Problem on Street or Sidewalk" href="https://getitdone.force.com/TSWNewReport?type=Sidewalk">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-17">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report sidewalk maintenance</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report sidewalk maintenance" href="https://getitdone.force.com/TSWNewReport?type=Sidewalk">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-3">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a problem with a storm drain in your neighborhood</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a Storm Drain Issue" href="https://getitdone.force.com/TSWNewReport?type=Storm%20Drain">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-16">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report street flooding</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report street flooding" href="https://getitdone.force.com/TSWNewReport?type=Street%20Flooded">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-12">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a street light issue</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a street light issue" href="https://getitdone.force.com/TSWNewReport?type=Street%20Light">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-18">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a traffic sign problem</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a traffic sign problem" href="https://getitdone.force.com/TSWNewReport?type=Traffic%20Sign">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-13">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a traffic signal problem</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a traffic signal problem" href="https://getitdone.force.com/TSWNewReport?type=Traffic%20Signal">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--report-options--report-22">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Report a tree hazard</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Report a tree hazard" href="https://getitdone.force.com/TSWNewReport?type=Tree%20Hazard">Report Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-3 five columns webform-component--request-options form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>3</span>&nbsp;&nbsp;Request Now</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--request-options--request-4">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Request more police patrols in your neighborhood</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request police patrols" href="/police/forms/citizen-request">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-12">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Access self-serve options in managing your water and sewer account</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request to Start or Stop Water Service" href="/customercare">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-2">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Request street sweeping service for your street</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request street sweeping" href="https://getitdone.force.com/TSWNewReport?type=Street%20Sweeping">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-3">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Request a tour of the City's Water Purification Facility</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a title="Request a Water Purification Facility Tour" href="https://apps.sandiego.gov/ereg/purewatersd/courses.php?grp=public">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-1">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Request information about the availability of City park facilities</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request Park Facility Availability" href="https://apm.activecommunities.com/sdparkandrec/Facility_Search">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-10">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Submit a service request regarding a traffic sign, street striping or curb color painting, stop sign, traffic signal or other traffic safety measure</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request a New Traffic Signal or Sign" href="/tsw/servicerequests/trafficrequest">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-11">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Request an administrative review of your parking citation</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request Appeal for Parking Ticket" href="http://duncan.imageenforcement.com/AdminReviewSites/SanDiegoReview">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-7">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Request a presentation on fire safety</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request a presentation on fire safety" href="/fire/safety/speakers/presentations">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-6">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Request a tour of a City fire station</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request a tour of a City fire station" href="/fire/safety/speakers/tours">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-5">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Request a ride-a-long with a police officer</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request a Police Ride Along" href="/police/pdf/RideAlong.pdf">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-8">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Find out how you can help your community through donations to the City</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request Information About How to Donate to the City" href="/philanthropycenter/donate">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--request-options--request-13">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">File or Review a Public Records Request</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Request Public Records" href="https://sandiego.nextrequest.com/">Request Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-3 five columns webform-component--view-options form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>3</span>&nbsp;&nbsp;View Now</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--view-options--view-6">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">View problems reported</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="View Crime Map" href="https://getitdone.force.com/TSWViewReportByMap">View Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--view-options--view-4">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">View maps and data regarding undergrounding of utilities</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="View Utilities Undergrounding Maps" href="http://citymaps.sandiego.gov/imf/sites/uuc/index.jsp">View Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--view-options--view-2">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">View maps showing crimes and alerts of criminal activity</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="View Crime Map" href="/police/services/ewatch">View Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--view-options--view-5">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">View a map of City park facilities</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="View Park Facilities Map" href="/park-and-recreation/centers/map">View Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--view-options--view-1">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">View various City maps</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="View Map Gallery" href="http://sandiego.maps.arcgis.com/apps/PublicGallery/index.html?appid=99ca3e0f7a9a42e3a0667c4682bd78dc">View Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--view-options--view-3">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">View and manage your library account</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="View Library Account" href="https://sandiego.bibliocommons.com/user/login">View Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item webform-component webform-component-markup webform-component--view-options--view-unclaimed-monies">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">View unclaimed monies report</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="View unclaimed monies report" href="/comptroller/reports/unclaimed">View Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><div class="form__step"><fieldset class="webform-component-fieldset step-3 five columns webform-component--watch-options form-wrapper"><legend><span class="fieldset-legend"><span class='icon--circle'>3</span>&nbsp;&nbsp;Watch Now</span></legend><div class="fieldset-wrapper"><div class="form-item webform-component webform-component-markup webform-component--watch-options--watch-1">
+                                                                <div class="row">
+                                                                    <div class="eight columns">
+                                                                        <p class="l-padding-desktop-ts">Watch webcasts of City Council meetings</p>
+                                                                    </div>
+                                                                    <div class="four columns"><a class="btn btn--wide" title="Watch Council Webcasts" href="http://granicus.sandiego.gov/ViewPublisher.php?view_id=31">Watch Now</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div></fieldset>
+                                                </div><input type="hidden" name="details[sid]"/>
+                                                <input type="hidden" name="details[page_num]" value="1"/>
+                                                <input type="hidden" name="details[page_count]" value="1"/>
+                                                <input type="hidden" name="details[finished]" value="0"/>
+                                                <input type="hidden" name="form_build_id" value="form-0m5MtpAe0Zqq8vF2gguM19Y0QF6RTuYlZfLgum9E2uI"/>
+                                                <input type="hidden" name="form_id" value="webform_client_form_13161"/>
+                                                <div class="url-textfield"><div class="form-item form-type-textfield form-item-url">
+                                                        <label for="edit-url">Leave this field blank </label>
+                                                        <input autocomplete="off" type="text" id="edit-url" name="url" value="" size="20" maxlength="128" class="form-text"/>
+                                                    </div>
+                                                </div><div class="form-actions"><input class="btn form-submit" type="submit" name="op" value="Submit"/></div></div></form> </div>
+                                </div>
+                                <div id="block-bean-download-get-it-done-app" class="block block-bean">
+                                    <div class="content">
+                                        <div class="entity entity-bean bean-bean-html-block clearfix" about="/block/download-get-it-done-app" typeof="">
+                                            <div class="content">
+                                                <div class="field field-name-field-html-block-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p class="l-margin-desktop-bd l-margin-mobile-bm"><i class="icon-download2 icon--circle background--cerulean"></i> <a href="/get-it-done">Download the Get It Done App</a></p>
+                                                        </div></div></div> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="block-bean-homepage-featured-items" class="block block-bean">
+                                    <div class="content">
+                                        <div class="l-container background-off-white text-center l-padding-vm">
+                                            <div class="row">
+                                                <div class="twelve columns">
+                                                    <h2> </h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="field-collection-container clearfix">
+                                                    <div class="two columns">
+                                                    </div>
+                                                    <div class="sm-six two columns">
+                                                        <a href="/empopp">
+                                                            <img src="//www.sandiego.gov/sites/default/files/icon_employment.png">
+                                                            <h6>City Employment</h6>
+                                                        </a>
+                                                    </div>
+                                                    <div class="sm-six two columns">
+                                                        <a href="/economic-development">
+                                                            <img src="//www.sandiego.gov/sites/default/files/icon_startbusiness.png">
+                                                            <h6>Start a Business</h6>
+                                                        </a>
+                                                    </div>
+                                                    <div class="sm-six two columns">
+                                                        <a href="/opengov">
+                                                            <img src="//www.sandiego.gov/sites/default/files/icon_opengov.png">
+                                                            <h6>Open Government</h6>
+                                                        </a>
+                                                    </div>
+                                                    <div class="sm-six two columns">
+                                                        <a href="/investorinformation">
+                                                            <img src="//www.sandiego.gov/sites/default/files/icon_investorinfo.png">
+                                                            <h6>Investor Information</h6>
+                                                        </a>
+                                                    </div>
+                                                    <div class="two columns">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> </div>
+                                </div>
+                            </div>
+                            <div class="l-container l-padding-hd l-margin-mobile-td">
+                                <div class="row">
+                                    <div class="nine columns">
+                                        <div class="l-container l-padding-td">
+                                            <h2>Our San Diego</h2>
+                                            <div id="block-views-blog-cards-block" class="block block-views">
+                                                <div class="content">
+                                                    <div class="view view-blog-cards view-id-blog_cards view-display-id-block view-dom-id-f6d339e3bd2239c5c02cf45c8613fe0d">
+                                                        <div class="view-content">
+                                                            <div class="flexslider--mobile card__container l-margin-vd"> <ul class="slides"> <li class="card--wrap">
+                                                                        <div class="card background-off-white">
+                                                                            <div class="card__image">
+                                                                                <a href="/mayor/news/releases/more-700-homeless-veterans-enrolled-so-far-%E2%80%98housing-our-heroes%E2%80%99-campaign" class=""></a>
+                                                                            </div>
+                                                                            <div class="card__content">
+                                                                                <div class="card__meta hidden">
+                                                                                    <span class="card__date">20 Dec 2016</span>
+                                                                                    |
+                                                                                    <span class="card__author"><span class="username" xml:lang="" about="/users/cchadwick" typeof="sioc:UserAccount" property="foaf:name" datatype="">cchadwick</span></span>
+                                                                                </div>
+                                                                                <p class="card__headline">
+                                                                                    <a href="/mayor/news/releases/more-700-homeless-veterans-enrolled-so-far-%E2%80%98housing-our-heroes%E2%80%99-campaign" class="">More Than 700 Homeless Veterans Enrolled So Far in ‘Housing Our Heroes’ Campaign</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div> </li>
+                                                                    <li class="card--wrap">
+                                                                        <div class="card background-off-white">
+                                                                            <div class="card__image">
+                                                                                <a href="/mayor/news/mayor-faulconer-announces-ambitious-plans-preserve-and-enhance-mission-bay-park-balboa" class=""><img typeof="foaf:Image" src="//www.sandiego.gov/sites/default/files/styles/card_teaser_image/public/balboadanilowicz.jpg?itok=j2ubyxrW" width="260" height="124" alt="Balboa park."/></a>
+                                                                            </div>
+                                                                            <div class="card__content">
+                                                                                <div class="card__meta hidden">
+                                                                                    <span class="card__date">30 Jun 2016</span>
+                                                                                    |
+                                                                                    <span class="card__author"><span class="username" xml:lang="" about="/users/jlebron" typeof="sioc:UserAccount" property="foaf:name" datatype="">jlebron</span></span>
+                                                                                </div>
+                                                                                <p class="card__headline">
+                                                                                    <a href="/mayor/news/mayor-faulconer-announces-ambitious-plans-preserve-and-enhance-mission-bay-park-balboa" class="">Mayor Faulconer Announces Ambitious Plans to Preserve and Enhance Mission Bay Park, Balboa Park &amp; Other Regional Parks </a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div> </li>
+                                                                    <li class="card--wrap">
+                                                                        <div class="card background-off-white">
+                                                                            <div class="card__image">
+                                                                                <a href="http://insidesandiego.org/" class=""><img typeof="foaf:Image" src="//www.sandiego.gov/sites/default/files/styles/card_teaser_image/public/inside-san-diego-card.jpg?itok=1wf5q38j" width="260" height="124" alt="Photo of people playing chess"/></a>
+                                                                            </div>
+                                                                            <div class="card__content">
+                                                                                <div class="card__meta hidden">
+                                                                                    <span class="card__date">09 Dec 2016</span>
+                                                                                    |
+                                                                                    <span class="card__author"><span class="username" xml:lang="" about="/users/lkosta" typeof="sioc:UserAccount" property="foaf:name" datatype="">lkosta</span></span>
+                                                                                </div>
+                                                                                <p class="card__headline">
+                                                                                    <a href="http://insidesandiego.org/" class="">Inside San Diego Highlights City Programs and People Making a Difference in Our Communities</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div> </li>
+                                                                    <li class="card--wrap">
+                                                                        <div class="card background-off-white">
+                                                                            <div class="card__image">
+                                                                                <a href="/mayor/news/releases/mayor-faulconer-makes-dozens-public-data-sets-available-online-increase-transparency" class=""><img typeof="foaf:Image" src="//www.sandiego.gov/sites/default/files/styles/card_teaser_image/public/homepage.png?itok=qeHrSKpe" width="260" height="124" alt="San Diego&#039;s New Open Data Portal Homepage"/></a>
+                                                                            </div>
+                                                                            <div class="card__content">
+                                                                                <div class="card__meta hidden">
+                                                                                    <span class="card__date">06 Jul 2016</span>
+                                                                                    |
+                                                                                    <span class="card__author"><span class="username" xml:lang="" about="/users/jlebron" typeof="sioc:UserAccount" property="foaf:name" datatype="">jlebron</span></span>
+                                                                                </div>
+                                                                                <p class="card__headline">
+                                                                                    <a href="/mayor/news/releases/mayor-faulconer-makes-dozens-public-data-sets-available-online-increase-transparency" class="">Mayor Faulconer Makes Dozens of Public Data Sets Available Online to Increase Transparency</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div> </li>
+                                                                    <li class="card--wrap">
+                                                                        <div class="card background-off-white">
+                                                                            <div class="card__image">
+                                                                                <a href="/treasurer/minimum-wage-program" class=""><img typeof="foaf:Image" src="//www.sandiego.gov/sites/default/files/styles/card_teaser_image/public/bigstock-definition-of-the-word-minimum-94585493.jpg?itok=b0vkna0i" width="260" height="124"/></a>
+                                                                            </div>
+                                                                            <div class="card__content">
+                                                                                <div class="card__meta hidden">
+                                                                                    <span class="card__date">20 Jun 2016</span>
+                                                                                    |
+                                                                                    <span class="card__author"><span class="username" xml:lang="" about="/users/dbrabon" typeof="sioc:UserAccount" property="foaf:name" datatype="">dbrabon</span></span>
+                                                                                </div>
+                                                                                <p class="card__headline">
+                                                                                    <a href="/treasurer/minimum-wage-program" class="">What You Need to Know About the New Minimum Wage</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div> </li>
+                                                                    <li class="card--wrap">
+                                                                        <div class="card background-off-white">
+                                                                            <div class="card__image">
+                                                                                <a href="http://granicus.sandiego.gov/MediaPlayer.php?camera_id=5" class=""><img typeof="foaf:Image" src="//www.sandiego.gov/sites/default/files/styles/card_teaser_image/public/citytv_webstream_live.jpg?itok=OdUJPn4G" width="260" height="124" alt="CityTV Web Stream Live"/></a>
+                                                                            </div>
+                                                                            <div class="card__content">
+                                                                                <div class="card__meta hidden">
+                                                                                    <span class="card__date">06 May 2016</span>
+                                                                                    |
+                                                                                    <span class="card__author"><span class="username" xml:lang="" about="/users/rvazquez" typeof="sioc:UserAccount" property="foaf:name" datatype="">rvazquez</span></span>
+                                                                                </div>
+                                                                                <p class="card__headline">
+                                                                                    <a href="http://granicus.sandiego.gov/MediaPlayer.php?camera_id=5" class="">CityTV: Watch Live Coverage of City Council and Other Public Meetings</a>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div> </li>
+                                                                </ul></div> </div>
+                                                    </div> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="three columns">
+                                        <div class="l-container text-center--mobile l-margin-td">
+                                            <div id="block-views-homepage-notifications-block" class="block block-views">
+                                                <h2>Notifications</h2>
+                                                <div class="content">
+                                                    <div class="views-row-odd views-row-first views-row-last">
+                                                        <div class="card--notification row">
+                                                            <div class="icon two columns text-center l-margin-mobile-bd">
+                                                                <i class="icon-users background--sunshade"></i>
+                                                            </div>
+                                                            <div class="ten columns">
+                                                                <p>Legislative Recess, December 19 - January 6
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr--dashed"></p> </div>
+                                                </div>
+                                            </div>
+                                            <div id="block-bean-a-message-from-the-mayor" class="block block-bean">
+                                                <h2>A Message from the Mayor</h2>
+                                                <div class="content">
+                                                    <div class="entity entity-bean bean-bean-html-block clearfix" about="/block/a-message-from-the-mayor" typeof="">
+                                                        <div class="content">
+                                                            <div class="field field-name-field-html-block-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"> <img src="/sites/all/themes/sandiego/assets/dist/img/avatar-mayor.png" width="51" height="51" alt="" class="pull-left l-margin-rs">
+                                                                        <p class="text-small">From our spectacular coast to scenic communities to scientific innovations, new opportunities start in San Diego every day. The City of San Diego is committed to serving all our neighborhoods, fostering an economically prosperous community and creating a world-class city for all. Together, we're building our better future.</p>
+                                                                        <p class="text-small" style="font-weight:600;">Mayor Kevin L. Faulconer</p>
+                                                                        <a href="/mayor" class="btn btn--secondary btn--wide l-margin-ts">Visit the Mayor's Site</a></div></div></div> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="explore-sd-container l-container l-padding-hd l-margin-mobile-tm">
+                                <div class="row">
+                                    <div class="twelve columns l-margin-bd">
+                                        <h2>Explore San Diego</h2>
+                                    </div>
+                                    <div class="row l-margin-bm">
+                                        <div class="six columns l-margin-mobile-bd">
+                                            <div class="view view-locations-map view-id-locations_map view-display-id-block_1 view-dom-id-334cb698cac3343513895f8b4f0a6e93">
+                                                <div class="view-content">
+                                                    <div style="width: 100%; height: 400px;" id="gmap-auto11map-gmap0" class="gmap-control gmap-gmap gmap gmap-map gmap-auto11map-gmap"><noscript>Javascript is required to view this map.</noscript></div> </div>
+                                            </div> </div>
+                                        <div class="six columns">
+                                            <div class="row hidden">
+                                                <div class="twelve columns">
+                                                    <h6 class="l-margin-tn l-padding-hd">I am looking for...</h6>
+                                                </div>
+                                                <div class="six columns">
+                                                    <div class="l-margin-bd l-padding-hd">
+                                                    </div>
+                                                </div>
+                                                <div class="six columns">
+                                                    <div class="l-margin-bd l-padding-hd">
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row event__wrap">
+                                                <div class="six columns">
+                                                    <div class="l-padding-hd">
+                                                        <div class="view view-events view-id-events view-display-id-block view-dom-id-31f3bcda76ae51154b3c88b06ee85bab">
+                                                            <div class="view-header">
+                                                                <div class="view-header">
+                                                                    <h3 class="l-margin-tn l-margin-bs"><img src="../sites/all/themes/sandiego/assets/dist/img/gmap-markers/event-marker.png" width="14" height="16" alt=""/> Events</h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="view-content">
+                                                                <div class="row l-margin-bd">
+                                                                    <div class="event__date">
+                                                                        <span class="event--month"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-04T11:00:00-08:00">Jan</span></span>
+                                                                        <span class="event--day"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-04T11:00:00-08:00">4</span></span>
+                                                                    </div>
+                                                                    <div class="event__info">
+                                                                        <p class="l-padding-ls l-margin-bn"><a href="/event/curbside-bites-food-truck-markets-wed-lunch-52">Curbside Bites Food Truck Markets (Wed. Lunch)</a></p>
+                                                                    </div> </div>
+                                                                <div class="row l-margin-bd">
+                                                                    <div class="event__date">
+                                                                        <span class="event--month"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-04T16:00:00-08:00">Jan</span></span>
+                                                                        <span class="event--day"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-04T16:00:00-08:00">4</span></span>
+                                                                    </div>
+                                                                    <div class="event__info">
+                                                                        <p class="l-padding-ls l-margin-bn"><a href="/event/ocean-beach-certified-farmers-market-wednesdays-54">Ocean Beach Certified Farmer&#039;s Market (Wednesdays)</a></p>
+                                                                    </div> </div>
+                                                                <div class="row l-margin-bd">
+                                                                    <div class="event__date">
+                                                                        <span class="event--month"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-05T15:00:00-08:00">Jan</span></span>
+                                                                        <span class="event--day"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-05T15:00:00-08:00">5</span></span>
+                                                                    </div>
+                                                                    <div class="event__info">
+                                                                        <p class="l-padding-ls l-margin-bn"><a href="/event/north-park-thursday-market-49">North Park Thursday Market</a></p>
+                                                                    </div> </div>
+                                                                <div class="row l-margin-bd">
+                                                                    <div class="event__date">
+                                                                        <span class="event--month"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-05T17:00:00-08:00">Jan</span></span>
+                                                                        <span class="event--day"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-05T17:00:00-08:00">5</span></span>
+                                                                    </div>
+                                                                    <div class="event__info">
+                                                                        <p class="l-padding-ls l-margin-bn"><a href="/event/memorial-park-carnival-11-day-event-9">Memorial Park Carnival (11-Day Event)</a></p>
+                                                                    </div> </div>
+                                                                <div class="row l-margin-bd">
+                                                                    <div class="event__date">
+                                                                        <span class="event--month"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-06T17:00:00-08:00">Jan</span></span>
+                                                                        <span class="event--day"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-01-06T17:00:00-08:00">6</span></span>
+                                                                    </div>
+                                                                    <div class="event__info">
+                                                                        <p class="l-padding-ls l-margin-bn"><a href="/event/memorial-park-carnival-11-day-event-8">Memorial Park Carnival (11-Day Event)</a></p>
+                                                                    </div> </div>
+                                                            </div>
+                                                            <div class="view-footer">
+                                                                <p><a class="fine-print" href="/events">View All Events</a></p>
+                                                            </div>
+                                                        </div> </div>
+                                                </div>
+                                                <div class="six columns">
+                                                    <div class="l-padding-hd">
+                                                        <div class="view view-attractions-list view-id-attractions_list view-display-id-block_1 view-dom-id-a664b2c48bb625576b98ce1fd699b31c">
+                                                            <div class="view-header">
+                                                                <h3 class="l-margin-tn"><img src="../sites/all/themes/sandiego/assets/dist/img/gmap-markers/attraction-marker.png" width="14" height="16" alt=""/> Attractions</h3>
+                                                            </div>
+                                                            <div class="view-content">
+                                                                <div class="views-field views-field-path"> <span class="field-content"><p class="l-margin-bs"><a href="http://www.balboapark.org/">Balboa Park</a></p>
+                                                                    </span> </div>
+                                                                <div class="views-field views-field-path"> <span class="field-content"><p class="l-margin-bs"><a href="http://www.belmontpark.com/">Belmont Park</a></p>
+                                                                    </span> </div>
+                                                                <div class="views-field views-field-path"> <span class="field-content"><p class="l-margin-bs"><a href="http://www.mcasd.org/">Museum of Contemporary Art San Diego</a></p>
+                                                                    </span> </div>
+                                                                <div class="views-field views-field-path"> <span class="field-content"><p class="l-margin-bs"><a href="http://zoo.sandiegozoo.org/">San Diego Zoo</a></p>
+                                                                    </span> </div>
+                                                                <div class="views-field views-field-path"> <span class="field-content"><p class="l-margin-bs"><a href="http://seaworldparks.com/en/seaworld-sandiego/">SeaWorld</a></p>
+                                                                    </span> </div> </div>
+                                                            <div class="view-footer">
+                                                                <p><a class="fine-print" href="/attractions">View All Attractions</a></p>
+                                                            </div>
+                                                        </div> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </main>
+                </div><footer class="l-constrained text-center--mobile">
+                    <div class="row">
+                        <div class="three columns footer--left l-padding-ad l-padding-vm">
+                            <div id="block-bean-footer-left" class="block block-bean">
+                                <div class="content">
+                                    <div class="entity entity-bean bean-bean-html-block clearfix" about="/block/footer-left" typeof="">
+                                        <div class="content">
+                                            <div class="field field-name-field-html-block-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"> <div class="row l-padding-desktop-ld">
+                                                            <div class="twelve columns no-gutters">
+                                                                <img src="/sites/all/themes/sandiego/assets/dist/img/logo--white--sm.png" alt="The City of San Diego - logo" width="49" height="39">
+                                                                <ul class="socials">
+                                                                    <li><a href="https://www.facebook.com/CityofSanDiego"><i class="icon-facebook"></i></a></li>
+                                                                    <li><a href="http://www.twitter.com/cityofsandiego/lists/allcity"><i class="icon-twitter"></i></a></li>
+                                                                    <li><a href="http://www.youtube.com/user/TheCityofSanDiego"><i class="icon-youtube"></i></a></li>
+                                                                    <li><a href="https://nextdoor.com/city/feed/748155/?i=wkjkutqnzmjazcaegxre"><i class="icon-nextdoor"></i></a></li>
+                                                                </ul>
+                                                                <p class="copyright">
+                                                                    Copyrighted © 2002-2017<br>
+                                                                    City of San Diego. All rights reserved.</p>
+                                                                <p class="l-margin-td l-padding-ts"><a href="http://www.govtech.com/cdg/Best-of-the-Web-Digital-Government-Achievement-Awards-2016-Winners-Announced.html"><img src="/sites/default/files/best-of-web-badge.png" alt="Center for Digital Government Best of the Web 2016 Winner"></a></p>
+                                                            </div>
+                                                        </div></div></div></div> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nine columns no-gutters">
+                            <ul class="footer--right l-padding-am row"><li class="four columns has-sub-nav" class="first expanded" data-menu-parent="menu-footer-menu-1"><p><strong>Council Districts</strong></p><ul class=""><li class="global-nav__sub-nav-items" class="first leaf" data-menu-parent="menu-footer-menu-2"><a href="/citycouncil/cd1" title="" class="global-nav__sub-nav-link">Councilmember Barbara Bry (District 1)</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/citycouncil/cd2" title="" class="global-nav__sub-nav-link">Councilmember Lorie Zapf (District 2)</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/citycouncil/cd3" title="" class="global-nav__sub-nav-link">Councilmember Chris Ward (District 3)</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/citycouncil/cd4" title="" class="global-nav__sub-nav-link">Council President Myrtle Cole (District 4)</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/citycouncil/cd5" title="" class="global-nav__sub-nav-link">Councilmember Mark Kersey (District 5)</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/citycouncil/cd6" title="" class="global-nav__sub-nav-link">Councilmember Chris Cate (District 6)</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/citycouncil/cd7" title="" class="global-nav__sub-nav-link">Councilmember Scott Sherman (District 7)</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/citycouncil/cd8" title="" class="global-nav__sub-nav-link">Councilmember David Alvarez (District 8)</a></li>
+                                        <li class="global-nav__sub-nav-items" class="last leaf" data-menu-parent="menu-footer-menu-2"><a href="/citycouncil/cd9" title="" class="global-nav__sub-nav-link">Councilmember Georgette Gómez (District 9) </a></li>
+                                    </ul></li>
+                                <li class="four columns has-sub-nav" class="expanded" data-menu-parent="menu-footer-menu-1"><p><strong>City Officials & Independent Offices</strong></p><ul class=""><li class="global-nav__sub-nav-items" class="first leaf" data-menu-parent="menu-footer-menu-2"><a href="/mayor" title="" class="global-nav__sub-nav-link">Office of Mayor Kevin L. Faulconer</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/cityattorney" title="" class="global-nav__sub-nav-link">City Attorney Mara W. Elliott</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="https://www.sandiego.gov/ethics" title="" class="global-nav__sub-nav-link">Ethics Commission</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/auditor" title="" class="global-nav__sub-nav-link">Office of the City Auditor</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/city-clerk" title="" class="global-nav__sub-nav-link">Office of the City Clerk</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/treasurer" title="" class="global-nav__sub-nav-link">Office of the City Treasurer</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="/iba" title="" class="global-nav__sub-nav-link">Office of the Independent Budget Analyst</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="https://www.sandiego.gov/empopp" title="" class="global-nav__sub-nav-link">Personnel Department</a></li>
+                                        <li class="global-nav__sub-nav-items" class="last leaf" data-menu-parent="menu-footer-menu-2"><a href="https://www.sdcers.org/" title="" class="global-nav__sub-nav-link">San Diego City Employees&#039; Retirement System</a></li>
+                                    </ul></li>
+                                <li class="four columns has-sub-nav" class="last expanded" data-menu-parent="menu-footer-menu-1"><p><strong>Government Agencies</strong></p><ul class=""><li class="global-nav__sub-nav-items" class="first leaf" data-menu-parent="menu-footer-menu-2"><a href="http://www.sandiegocounty.gov/" title="" class="global-nav__sub-nav-link">County of San Diego</a></li>
+                                        <li class="global-nav__sub-nav-items" class="leaf" data-menu-parent="menu-footer-menu-2"><a href="http://www.ca.gov/" title="" class="global-nav__sub-nav-link">State of California</a></li>
+                                        <li class="global-nav__sub-nav-items" class="last leaf" data-menu-parent="menu-footer-menu-2"><a href="https://www.usa.gov/" title="" class="global-nav__sub-nav-link">Federal Government</a></li>
+                                    </ul></li>
+                            </ul> </div>
+                    </div>
+            </div>
+            <div class="footer__privacy">
+                <div class="l-constrained row text-center l-padding-vd">
+                    <ul>
+                        <li><a href="/disclaimers">Disclaimers</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/accessibility">Accessibility</a></li>
+                        <li><a href="/translation">Language Translation</a></li>
+                        <li><a href="/contact">Contact the City</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <section class="leave-feedback js-leave-feedback">
+        <div class="leave-feedback__link-wrapper js-leave-feedback-link">
+            <h3 class="leave-feedback__link">Feedback</h3>
+            <span class="leave-feedback__close"></span>
+        </div>
+        <div id="block-webform-client-block-25116" class="block block-webform">
+            <div class="content">
+                <div class="antibot-no-js messages warning">You must have Javascript enabled to use this form.</div><form class="webform-client-form webform-client-form-25116 antibot-hidden" enctype="multipart/form-data" style="display: none;" action="/antibot" method="post" id="webform-client-form-25116" accept-charset="UTF-8"><div><div class="form-item webform-component webform-component-select webform-component--feedback-type">
+                            <label for="edit-submitted-feedback-type">Type <span class="form-required" title="This field is required.">*</span></label>
+                            <select required="required" id="edit-submitted-feedback-type" name="submitted[feedback_type]" class="form-select required"><option value="broken_link" selected="selected">Broken link</option><option value="content">Content Issue</option><option value="design">Design issue</option><option value="feature">Request a feature</option><option value="other">Other</option></select>
+                        </div>
+                        <div class="form-item webform-component webform-component-checkboxes webform-component--feedback-current-page">
+                            <label class="element-invisible" for="edit-submitted-feedback-current-page">Specific Web Page </label>
+                            <div id="edit-submitted-feedback-current-page" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-feedback-current-page-yes">
+                                    <input type="checkbox" id="edit-submitted-feedback-current-page-1" name="submitted[feedback_current_page][yes]" value="yes" checked="checked" class="form-checkbox"/> <label class="option" for="edit-submitted-feedback-current-page-1">My comments are for the current web page </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item webform-component webform-component-textarea webform-component--comments">
+                            <label for="edit-submitted-comments">Comments <span class="form-required" title="This field is required.">*</span></label>
+                            <div class="form-textarea-wrapper"><textarea required="required" id="edit-submitted-comments" name="submitted[comments]" cols="60" rows="5" class="form-textarea required"></textarea></div>
+                        </div>
+                        <div class="form-item webform-component webform-component-email webform-component--feedback-email-address">
+                            <label for="edit-submitted-feedback-email-address">Email Address (optional) </label>
+                            <input class="email form-text form-email" placeholder="name@example.com" type="email" id="edit-submitted-feedback-email-address" name="submitted[feedback_email_address]" size="60"/>
+                        </div>
+                        <input type="hidden" name="details[sid]"/>
+                        <input type="hidden" name="details[page_num]" value="1"/>
+                        <input type="hidden" name="details[page_count]" value="1"/>
+                        <input type="hidden" name="details[finished]" value="0"/>
+                        <input type="hidden" name="form_build_id" value="form-rHbMNIbPRIEiQ6IxgQs3wNVKlL0br2tPye53nu1WFXI"/>
+                        <input type="hidden" name="form_id" value="webform_client_form_25116"/>
+                        <div class="url-textfield"><div class="form-item form-type-textfield form-item-url">
+                                <label for="edit-url--2">Leave this field blank </label>
+                                <input autocomplete="off" type="text" id="edit-url--2" name="url" value="" size="20" maxlength="128" class="form-text"/>
+                            </div>
+                        </div><div class="form-actions"><input class="btn form-submit" type="submit" name="op" value="Submit"/></div></div></form> </div>
+        </div>
+    </section>
+
+</div>
+<script src="assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/script.js" type="text/javascript"></script>
+</body>
+</html>

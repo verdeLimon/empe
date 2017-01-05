@@ -82,7 +82,7 @@ $nuevo = $menup['submenu']['nuevo'];
                                     </strong>
                                 </li>
                             </ul>
-                            <ul data-bind="sortable:{  data:  item.menuitems_o, afterMove: callback }" class="list-group">
+                            <ul data-bind="foreach:item.menuitems_o" class="list-group">
                                 <li class="list-group-item">
                                     <div class="checkbox">
                                         <i class="fa fa-arrows"></i>
@@ -201,33 +201,28 @@ $nuevo = $menup['submenu']['nuevo'];
                         <div role="tabpanel" class="tab-pane" id="profile">
                             <div class="dd" id="nestable3">
                                 <ol class="dd-list">
-                                    <li class="dd-item dd3-item" data-id="13">
-                                        <div class="dd-handle dd3-handle"> </div><div class="dd3-content">Item 13</div>
-                                    </li>
-                                    <li class="dd-item dd3-item" data-id="14">
-                                        <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 14</div>
-                                    </li>
-                                    <li class="dd-item dd3-item" data-id="15">
-                                        <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 15</div>
-                                        <ol class="dd-list">
-                                            <li class="dd-item dd3-item" data-id="16">
-                                                <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 16</div>
-                                            </li>
-                                            <li class="dd-item dd3-item" data-id="17">
-                                                <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 17</div>
-                                            </li>
-                                            <li class="dd-item dd3-item" data-id="18">
-                                                <div class="dd-handle dd3-handle">Drag</div><div class="dd3-content">Item 18</div>
-                                            </li>
-                                        </ol>
-                                    </li>
+                                    <?php foreach ($menuu->sorted_items() as $key => $_mi): ?>
+                                        <li class="dd-item dd3-item" data-id="<?php echo $_mi->id; ?>">
+                                            <div class="dd-handle dd3-handle"></div><div class="dd3-content"><?php echo $_mi->texto; ?></div>
+                                            <?php if (count($_mi->childrens)): ?>
+                                                <ol class="dd-list">
+                                                    <?php foreach ($_mi->childrens as $__mi): ?>
+                                                        <li class="dd-item dd3-item" data-id="<?php echo $__mi->id; ?>">
+                                                            <div class="dd-handle dd3-handle"></div><div class="dd3-content"><?php echo $__mi->texto; ?></div>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ol>
+                                            <?php endif; ?>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ol>
+                                <br>
+                                <button id="ordenar"  type="button" class="btn btn-success btn-sm">
+                                    <i class="fa fa-save"></i>
+                                    Guardar orden
+                                </button>
                             </div>
-                            <textarea id="nestable2-output"></textarea>
-                            <button  type="button" class="btn btn-success btn-sm">
-                                <i class="fa fa-save"></i>
-                                Guardar orden
-                            </button>
+                            <input type="hidden" id="nestable2-output">
                         </div>
                     </div>
                 </div>
@@ -258,35 +253,6 @@ $nuevo = $menup['submenu']['nuevo'];
 <script src="<?php echo asset('anchor/views/assets/js/default.js'); ?>" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
-        var updateOutput = function (e)
-        {
-            var list = e.length ? e : $(e.target),
-                    output = list.data('output');
-            if (window.JSON) {
-                output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
-            } else {
-                output.val('JSON browser support required for this demo.');
-            }
-        };
-
-
-
-        $('#nestable-menu').on('click', function (e)
-        {
-            var target = $(e.target),
-                    action = target.data('action');
-            if (action === 'expand-all') {
-                $('.dd').nestable('expandAll');
-            }
-            if (action === 'collapse-all') {
-                $('.dd').nestable('collapseAll');
-            }
-        });
-
-        $('#nestable3').nestable().on('change', updateOutput);
-        updateOutput($('#nestable3').data('output', $('#nestable2-output')));
-
-//        $.fn.modal.Constructor.prototype.enforceFocus = function () {};
         $.fn.select2.defaults.set("theme", "bootstrap");
         var id = <?php echo $id; ?>;
         function Item(options) {
@@ -340,7 +306,16 @@ $nuevo = $menup['submenu']['nuevo'];
                 }
             };
             self.operar = function (item) {
-                alert(item);
+                //alert(ko.toJSON(item));
+                $.post(base + "admin/api/menu/operar", {data: ko.toJSON(item)}, function (data) {
+                    try {
+                        var res = JSON.parse(data);
+                        noty2(res.msg, 'success');
+                        self.reload();
+                    } catch (e) {
+                        alert("error:" + e);
+                    }
+                });
             }
             self.nuevo = function () {
                 self.loadpg();//actualizar paginas
@@ -386,6 +361,47 @@ $nuevo = $menup['submenu']['nuevo'];
             ko.applyBindings(vm);
             vm.loadpg();
         });
+        $("#ordenar").click(function () {
+            // alert("Handler for .click() called.");
+            var json = $("#nestable2-output").val();
+            $.post(base + "admin/api/menu/ordenar/" + id, {data: json}, function (data) {
+                try {
+                    var res = JSON.parse(data);
+                    noty2(res.msg, 'success');
+                } catch (e) {
+                    alert("error:" + e);
+                }
+            });
+        });
+
+        var updateOutput = function (e)
+        {
+            var list = e.length ? e : $(e.target),
+                    output = list.data('output');
+            if (window.JSON) {
+                output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+            } else {
+                output.val('JSON browser support required for this demo.');
+            }
+        };
+        $('#nestable-menu').on('click', function (e)
+        {
+            var target = $(e.target),
+                    action = target.data('action');
+            if (action === 'expand-all') {
+                $('.dd').nestable('expandAll');
+            }
+            if (action === 'collapse-all') {
+                $('.dd').nestable('collapseAll');
+            }
+        });
+        var $nestable = $('#nestable3').nestable({
+            maxDepth: 2
+//            expandBtnHTML: '<i class="icon-collapse-alt" data-action="expand"></i> <button data-action="expand">Expand</button>',
+//            collapseBtnHTML: '<button data-action="collapse"><i class="icon-collapse-alt"></i> Collapse</button>'
+        });
+        $nestable.on('change', updateOutput);
+        updateOutput($('#nestable3').data('output', $('#nestable2-output')));
     });
 </script>
 </body>

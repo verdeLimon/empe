@@ -135,12 +135,20 @@ Route::collection(array('before' => 'auth'), function() {
         $json = Input::get(array('data'));
         $menuitems = JSON::decode($json['data']);
         //var_dump($menuitems);
-        $cont = 0;
-        foreach ($menuitems as $key => $_i) {
+        $cont = 1;
+        foreach ($menuitems as $_i) {
             $_item = Menuitem::find($_i->id);
             //echo $_i->id . " 0rden = " . ($key + 1) . "<br>";
+            $_item->update_attributes(array('orden' => $cont, 'parent_menuitem_id' => 0));
             ++$cont;
-            $_item->update_attributes(array('orden' => ($key + 1)));
+            if (isset($_i->children)) {
+                foreach ($_i->children as $k => $_ic) {
+                    $_item = Menuitem::find($_ic->id);
+                    //echo $_ic->id . " O0rden = " . ($key + 1) . "<br>";
+                    $_item->update_attributes(array('orden' => $cont, 'parent_menuitem_id' => $_i->id));
+                    ++$cont;
+                }
+            }
         }
         return json_encode(array(
             'code' => true,
@@ -170,6 +178,24 @@ Route::collection(array('before' => 'auth'), function() {
             'code' => true,
             'num' => $item->id,
             'msg' => 'Item guardado correctamente'
+        ));
+    });
+    /**
+     * activar/desactivar menu
+     * GET json
+     */
+    Route::post('admin/api/menu/operar', function() {
+        // print_r($_POST);
+        $json = Input::get(array('data'));
+        $item_ed = JSON::decode($json['data']);
+
+        $item = Menuitem::find($item_ed->id);
+        $item->estado = ($item_ed->estado) ? 0 : 1;
+        $item->save();
+        return json_encode(array(
+            'code' => true,
+            'num' => $item->id,
+            'msg' => 'Item editado correctamente'
         ));
     });
 //    Route::post('admin/menu/update', function() {

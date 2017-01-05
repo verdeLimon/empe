@@ -1,0 +1,3 @@
+jQuery('main table').each(function(){
+    jQuery(this).wrapAll('<div class="overflowx" style="overflow-x:auto;"/>');
+});
